@@ -9,73 +9,77 @@ import {
   Share2,
   Info,
   ArrowRight,
-  ExternalLink
+  ExternalLink,
+  Target
 } from 'lucide-react'
 
 const styles = {
   container: { display: 'flex', flexDirection: 'column', gap: '32px' },
   header: { marginBottom: '8px' },
-  title: { fontSize: '1.875rem', fontWeight: 700, color: '#0f172a', marginBottom: '8px' },
-  summaryText: { fontSize: '1.125rem', color: '#475569', lineHeight: 1.6 },
+  branding: { display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' },
+  title: { fontSize: '2.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '8px', letterSpacing: '-0.025em' },
+  summaryText: { fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '900px' },
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
     gap: '20px'
   },
   card: {
     background: '#fff',
-    padding: '20px',
-    borderRadius: '12px',
+    padding: '24px',
+    borderRadius: '16px',
     border: '1px solid #e2e8f0',
     display: 'flex',
     flexDirection: 'column',
     gap: '12px',
-    transition: 'transform 0.2s, box-shadow 0.2s',
+    transition: 'all 0.2s ease-in-out',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
   },
   cardIcon: (color) => ({
-    width: '40px',
-    height: '40px',
-    borderRadius: '8px',
+    width: '48px',
+    height: '48px',
+    borderRadius: '12px',
     background: `${color}10`,
     color: color,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   }),
-  cardLabel: { fontSize: '0.875rem', fontWeight: 500, color: '#64748b' },
-  cardValue: { fontSize: '1.5rem', fontWeight: 700, color: '#1e293b' },
-  sectionTitle: { fontSize: '1.25rem', fontWeight: 700, color: '#1e293b', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' },
+  cardLabel: { fontSize: '0.9rem', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.025em' },
+  cardValue: { fontSize: '1.75rem', fontWeight: 800, color: '#1e293b' },
+  sectionTitle: { fontSize: '1.5rem', fontWeight: 800, color: '#1e293b', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '12px' },
   insightGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-    gap: '20px'
+    gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
+    gap: '24px'
   },
   insightCard: {
     background: '#fff',
-    padding: '24px',
-    borderRadius: '12px',
+    padding: '28px',
+    borderRadius: '16px',
     border: '1px solid #e2e8f0',
-    borderLeft: '4px solid #3b82f6',
+    borderLeft: '6px solid #3b82f6',
     display: 'flex',
     flexDirection: 'column',
-    gap: '12px',
+    gap: '16px',
+    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
   },
-  insightTitle: { fontSize: '1rem', fontWeight: 700, color: '#1e293b' },
-  insightFinding: { fontSize: '0.875rem', color: '#475569', lineHeight: 1.5 },
-  insightMeta: { display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '4px' },
+  insightTitle: { fontSize: '1.1rem', fontWeight: 800, color: '#1e293b' },
+  insightFinding: { fontSize: '0.95rem', color: '#334155', lineHeight: 1.6 },
+  insightMeta: { display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '4px' },
   badge: (bg, fg) => ({
-    padding: '2px 8px',
-    borderRadius: '4px',
+    padding: '4px 10px',
+    borderRadius: '6px',
     fontSize: '0.75rem',
-    fontWeight: 600,
+    fontWeight: 700,
     background: bg,
     color: fg,
   }),
   priorityBadge: (level) => {
     const colors = {
-      high: { bg: '#fee2e2', fg: '#991b1b' },
+      high: { bg: '#fee2e2', fg: '#b91c1c' },
       medium: { bg: '#fef3c7', fg: '#92400e' },
-      low: { bg: '#dcfce7', fg: '#166534' }
+      low: { bg: '#dcfce7', fg: '#15803d' }
     }
     const c = colors[level] || colors.medium
     return styles.badge(c.bg, c.fg)
@@ -93,93 +97,110 @@ export default function Home({ data, country, setSelectedEvidence }) {
     actor_map = [],
     validation_notes = [],
     edges = [],
-    traceability_matrix = { matrix: [] }
+    traceability_matrix = { matrix: [] },
+    admin_dependence = []
   } = data
+
+  const currentMatrix = traceability_matrix.matrix.filter(m => m.country.toLowerCase() === country.toLowerCase())
 
   const stats = {
     provisions: legal_provisions.length,
     instruments: source_hierarchy.length,
-    mechanisms: mechanism_map.length,
+    mechanisms: mechanism_map.length || [...new Set(currentMatrix.map(m => m.mechanism_id))].length,
     principles: principle_definitions.principles.length,
-    actors: Array.isArray(actor_map) ? actor_map.length : Object.keys(actor_map).length,
+    actors: Array.isArray(actor_map) ? actor_map.length : (actor_map ? Object.keys(actor_map).length : 0),
     manualReview: validation_notes.filter(n => n.manual_review_required === "true").length,
     edges: edges.length,
-    diagnosticRows: traceability_matrix.matrix.filter(m => m.country.toLowerCase() === country.toLowerCase()).length
+    diagnosticRows: currentMatrix.length
   }
 
-  const countryName = country.charAt(0).toUpperCase() + country.slice(1).replace('_', ' ')
+  const countryName = country === 'mexico' ? 'Mexico' : 'Costa Rica'
 
   const generateInsights = () => {
     const insights = []
 
-    // Insight: Strong anchoring but caveats
-    const strongAnchors = traceability_matrix.matrix.filter(
-      m => m.country.toLowerCase() === country.toLowerCase() && m.max_anchor_strength >= 4
-    )
-    if (strongAnchors.length > 0) {
+    // Insight 1: General Anchoring finding
+    const avgScore = currentMatrix.length > 0
+      ? currentMatrix.reduce((a, b) => a + (b.max_anchor_strength || 0), 0) / currentMatrix.length
+      : 0
+
+    if (avgScore > 3) {
       insights.push({
         title: "Strong statutory anchoring with operational caveats",
-        finding: `${strongAnchors.length} mechanisms show strong or integrated basis (score 4-5), yet manual review flags indicate implementation dependencies.`,
-        mechanism: strongAnchors[0].mechanism_name,
-        source: "principle_traceability_matrix.json",
-        implication: "High legal stability but requires verification of administrative operationalisation.",
-        priority: "medium"
-      })
-    }
-
-    // Insight: Accessibility manual review
-    const accessibilityIssues = traceability_matrix.matrix.filter(
-      m => m.country.toLowerCase() === country.toLowerCase() && m.principle_name === "accessibility_and_reasonable_accommodation" && m.max_anchor_strength < 3
-    )
-    if (accessibilityIssues.length > 0) {
-      insights.push({
-        title: "Accessibility requires manual review",
-        finding: "Generic access language detected in multiple instruments does not necessarily satisfy specific international standards (e.g. CRPD Art 29).",
+        finding: `The framework for ${countryName} shows an average anchoring score of ${avgScore.toFixed(1)}/5, indicating functional basis across major mechanisms, but specific operational dimensions require manual review.`,
         mechanism: "Multiple",
-        source: "validation_notes.json",
-        implication: "Potential gap in reasonable accommodation for political participation.",
-        priority: "high"
+        source: "principle_traceability_matrix.json",
+        implication: "High legal stability but potential 'declaratory gap' in administrative implementation.",
+        priority: "medium",
+        type: "insight"
+      })
+    } else {
+      insights.push({
+        title: "Partial anchoring detected across core mechanisms",
+        finding: `Significant mechanisms in ${countryName} show partial legal basis (score 1-2), suggesting a need for stronger statutory development beyond declaratory language.`,
+        mechanism: "Multiple",
+        source: "principle_traceability_matrix.json",
+        implication: "Lower institutional stability; reliance on administrative discretion.",
+        priority: "high",
+        type: "insight"
       })
     }
 
-    // Insight: Administrative dependence
-    if (data.admin_dependence && data.admin_dependence.length > 0) {
+    // Insight 2: Accessibility (PRIN-003)
+    const accessRows = currentMatrix.filter(m => m.principle_name === 'accessibility_and_reasonable_accommodation')
+    const lowAccess = accessRows.filter(m => (m.max_anchor_strength || 0) < 3)
+
+    if (accessRows.length > 0) {
       insights.push({
-        title: "Administrative dependence concentrated in selected mechanisms",
-        finding: "Core operations for several mechanisms depend on flexible administrative instruments rather than primary statutes.",
-        mechanism: "Referendum / Citizen Initiative",
+        title: "Accessibility requires specific manual review",
+        finding: `${lowAccess.length > 0 ? 'Gaps' : 'General language'} detected in accessibility anchoring. Generic access language often fails to satisfy CRPD Article 29 specificities for reasonable accommodation.`,
+        mechanism: "Accessibility",
+        source: "principle_traceability_matrix.json",
+        implication: "Potential exclusion of persons with disabilities from political participation processes.",
+        priority: "high",
+        principle_id: "PRIN-003",
+        type: "insight"
+      })
+    }
+
+    // Insight 3: Administrative Dependence
+    const highDep = admin_dependence.filter(d => (d.dependence_score || 0) > 0.6)
+    if (highDep.length > 0) {
+      insights.push({
+        title: "High administrative dependence detected",
+        finding: `Key mechanisms (e.g., ${highDep[0].mechanism_id}) depend heavily on flexible administrative instruments rather than primary statutes.`,
+        mechanism: highDep[0].mechanism_id,
         source: "administrative_dependence_metrics_v2.json",
-        implication: "Lower stability of anchoring; susceptible to regulatory change without legislative oversight.",
-        priority: "medium"
+        implication: "Legal preparedness is vulnerable to regulatory changes without legislative oversight.",
+        priority: "medium",
+        type: "insight"
       })
     }
 
-    // Insight: Actor modelling caveat (Mexico specific)
-    if (country === 'mexico') {
+    // Insight 4: Manual Review Area
+    const topGap = validation_notes.find(n => n.severity === "high")
+    if (topGap) {
       insights.push({
-        title: "Actor modelling caveat: Senate patch integrated",
-        finding: "Mexico's institutional network includes a specific patch for Senate functional relationships to reflect recent constitutional reforms.",
-        mechanism: "Legislative Oversight",
-        source: "mexico_senado_edges_patch.csv",
-        implication: "Network centrality metrics reflect the latest statutory hierarchy.",
-        priority: "low"
+        title: `Priority Manual Review: ${topGap.note_type.replace(/_/g, ' ')}`,
+        finding: topGap.description,
+        mechanism: topGap.affected_mechanism || "All",
+        source: "validation_notes.json",
+        implication: "Significant diagnostic gap that requires expert legal interpretation.",
+        priority: "high",
+        type: "insight"
       })
     }
 
-    // Insight: Mechanism absent
-    const absentMechs = traceability_matrix.matrix.filter(
-      m => m.country.toLowerCase() === country.toLowerCase() && m.max_anchor_strength === 0
-    )
-    if (absentMechs.length > 0) {
-      insights.push({
-        title: "Mechanism absent or vocabulary mismatch",
-        finding: `The mechanism '${absentMechs[0].mechanism_name}' was not detected in the current corpus with functional anchoring.`,
-        mechanism: absentMechs[0].mechanism_name,
-        source: "mechanism_map.json",
-        implication: "Genuine absence, vocabulary mismatch, or missing source coverage in the current pilot.",
-        priority: "high"
-      })
-    }
+    // Insight 5: Jurisprudence Support
+    insights.push({
+      title: "Jurisprudence layer available as interpretive support",
+      finding: "The interpretive layer refines diagnostic tests but does not increase domestic statutory anchor strength scores.",
+      mechanism: "Interpretive",
+      source: "jurisprudence_index.json",
+      implication: "Provides essential guidance for rights-based implementation of existing statutes.",
+      priority: "low",
+      type: "insight"
+    })
 
     return insights
   }
@@ -189,29 +210,35 @@ export default function Home({ data, country, setSelectedEvidence }) {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
+        <div style={styles.branding}>
+          <Target size={32} color="#38bdf8" />
+          <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#38bdf8', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+            NormTrace Political Rights
+          </span>
+        </div>
         <h1 style={styles.title}>Executive Analytical Summary: {countryName}</h1>
         <p style={styles.summaryText}>
-          This pilot maps <strong>{stats.provisions}</strong> legal provisions,
+          Diagnostic legal preparedness mapping for political participation rights.
+          This pilot maps <strong>{stats.provisions}</strong> provisions,
           <strong> {stats.instruments}</strong> instruments,
           <strong> {stats.mechanisms}</strong> mechanisms and
-          <strong> {stats.diagnosticRows}</strong> principle-mechanism diagnostic rows for {countryName}.
+          <strong> {stats.diagnosticRows}</strong> principle-mechanism diagnostic rows.
         </p>
       </div>
 
       <div style={styles.grid}>
         <SummaryCard icon={FileText} label="Legal Provisions" value={stats.provisions} color="#3b82f6" />
-        <SummaryCard icon={Book} label="Instruments Reviewed" value={stats.instruments} color="#10b981" />
-        <SummaryCard icon={Settings} label="Mechanisms Mapped" value={stats.mechanisms} color="#8b5cf6" />
-        <SummaryCard icon={Shield} label="Principles Traced" value={stats.principles} color="#f59e0b" />
-        <SummaryCard icon={Users} label="Actors Identified" value={stats.actors} color="#ec4899" />
+        <SummaryCard icon={Book} label="Instruments" value={stats.instruments} color="#10b981" />
+        <SummaryCard icon={Settings} label="Mechanisms" value={stats.mechanisms} color="#8b5cf6" />
+        <SummaryCard icon={Shield} label="Principles" value={stats.principles} color="#f59e0b" />
+        <SummaryCard icon={Users} label="Actors" value={stats.actors} color="#ec4899" />
         <SummaryCard icon={AlertTriangle} label="Manual Review Flags" value={stats.manualReview} color="#ef4444" />
-        <SummaryCard icon={Share2} label="Functional Network Edges" value={stats.edges} color="#06b6d4" />
-        <SummaryCard icon={Info} label="High/Med Caveats" value={validation_notes.length} color="#64748b" />
+        <SummaryCard icon={Share2} label="Network Edges" value={stats.edges} color="#06b6d4" />
       </div>
 
-      <section>
+      <section style={{ marginTop: '20px' }}>
         <div style={styles.sectionTitle}>
-          <ArrowRight size={20} />
+          <ArrowRight size={28} color="#3b82f6" />
           Analytical Insights
         </div>
         <div style={styles.insightGrid}>
@@ -219,7 +246,7 @@ export default function Home({ data, country, setSelectedEvidence }) {
             <div key={idx} style={styles.insightCard}>
               <div style={styles.insightTitle}>{insight.title}</div>
               <div style={styles.insightFinding}>{insight.finding}</div>
-              <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
+              <div style={{ fontSize: '0.85rem', color: '#64748b', background: '#f8fafc', padding: '12px', borderRadius: '8px' }}>
                 <strong>Implication:</strong> {insight.implication}
               </div>
               <div style={styles.insightMeta}>
@@ -228,22 +255,25 @@ export default function Home({ data, country, setSelectedEvidence }) {
                 <span style={styles.priorityBadge(insight.priority)}>Priority: {insight.priority}</span>
               </div>
               <button
-                onClick={() => setSelectedEvidence({ type: 'insight', ...insight })}
+                onClick={() => setSelectedEvidence(insight)}
                 style={{
-                  marginTop: '8px',
-                  background: 'none',
-                  border: 'none',
+                  marginTop: '12px',
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
                   color: '#2563eb',
                   fontSize: '0.875rem',
-                  fontWeight: 600,
+                  fontWeight: 700,
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '4px',
-                  padding: 0
+                  gap: '8px',
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  width: 'fit-content',
+                  transition: 'background 0.2s'
                 }}
               >
-                View evidence <ExternalLink size={14} />
+                View evidence <ExternalLink size={16} />
               </button>
             </div>
           ))}
@@ -257,7 +287,7 @@ function SummaryCard({ icon: Icon, label, value, color }) {
   return (
     <div style={styles.card}>
       <div style={styles.cardIcon(color)}>
-        <Icon size={20} />
+        <Icon size={24} />
       </div>
       <div>
         <div style={styles.cardLabel}>{label}</div>

@@ -1,27 +1,39 @@
 import React from 'react'
-import { Info, Shield, Scale, AlertTriangle, List } from 'lucide-react'
+import { Info, Shield, Scale, AlertTriangle, List, CheckCircle, Database, FileX } from 'lucide-react'
 
 const styles = {
   container: { display: 'flex', flexDirection: 'column', gap: '32px' },
-  section: { display: 'flex', flexDirection: 'column', gap: '16px' },
-  title: { fontSize: '1.5rem', fontWeight: 700, color: '#1e293b', borderBottom: '2px solid #e2e8f0', paddingBottom: '12px' },
-  card: { background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' },
-  grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' },
-  h3: { fontSize: '1.125rem', fontWeight: 700, color: '#1e3a8a', marginBottom: '8px' },
-  text: { fontSize: '0.9375rem', color: '#475569', lineHeight: 1.6 },
-  scoreList: { display: 'flex', flexDirection: 'column', gap: '12px' },
-  scoreItem: { display: 'flex', gap: '16px' },
+  section: { display: 'flex', flexDirection: 'column', gap: '20px' },
+  title: { fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', borderBottom: '2px solid #e2e8f0', paddingBottom: '16px', letterSpacing: '-0.025em' },
+  card: { background: '#fff', padding: '32px', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' },
+  grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '24px' },
+  h3: { fontSize: '1.25rem', fontWeight: 800, color: '#1e3a8a', marginBottom: '12px' },
+  text: { fontSize: '1rem', color: '#475569', lineHeight: 1.6 },
+  scoreList: { display: 'flex', flexDirection: 'column', gap: '16px' },
+  scoreItem: { display: 'flex', gap: '20px', alignItems: 'flex-start' },
   scoreBox: (score) => ({
-    minWidth: '24px',
-    height: '24px',
-    borderRadius: '4px',
+    minWidth: '32px',
+    height: '32px',
+    borderRadius: '8px',
     background: getScoreColor(score),
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '0.75rem',
-    fontWeight: 700,
-    color: score > 2 ? '#fff' : '#1e293b'
+    fontSize: '0.9rem',
+    fontWeight: 800,
+    color: score > 2 ? '#fff' : '#1e293b',
+    border: '1px solid rgba(0,0,0,0.05)'
+  }),
+  diagGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px', marginTop: '16px' },
+  diagItem: (success) => ({
+    padding: '12px 16px',
+    borderRadius: '12px',
+    background: success ? '#f0fdf4' : '#fff1f2',
+    border: `1px solid ${success ? '#bbf7d0' : '#fecdd3'}`,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    fontSize: '0.8rem'
   })
 }
 
@@ -30,34 +42,32 @@ function getScoreColor(score) {
   return colors[score] || '#f1f5f9'
 }
 
-export default function Methodology() {
+export default function Methodology({ data, loadStats }) {
   return (
     <div style={styles.container}>
       <section style={styles.section}>
         <h2 style={styles.title}>Core Methodological Framing</h2>
         <div style={styles.card}>
-          <div style={{ ...styles.text, fontWeight: 500, fontSize: '1rem', color: '#1e3a8a', marginBottom: '16px' }}>
-            NormTrace Political Rights maps diagnostic legal preparedness. It evaluates whether political participation mechanisms
-            are legally anchored and operationalised through actors, procedures, timelines, remedies, safeguards,
-            transparency/accountability and functional institutional relationships.
+          <div style={{ ...styles.text, fontWeight: 600, fontSize: '1.1rem', color: '#1e3a8a', marginBottom: '24px', lineHeight: 1.5 }}>
+            NormTrace Political Rights maps diagnostic legal preparedness for political participation. It evaluates whether mechanisms are legally anchored and operationalised through 7 core dimensions.
           </div>
           <div style={styles.grid}>
-            <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '8px' }}>
-              <div style={{ fontWeight: 700, marginBottom: '8px', color: '#475569' }}>What it IS</div>
-              <ul style={{ ...styles.text, paddingLeft: '20px', margin: 0 }}>
+            <div style={{ background: '#f8fafc', padding: '24px', borderRadius: '20px', border: '1px solid #e2e8f0' }}>
+              <div style={{ fontWeight: 800, marginBottom: '12px', color: '#475569', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.05em' }}>What it IS</div>
+              <ul style={{ ...styles.text, paddingLeft: '20px', margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <li>Diagnostic legal preparedness mapping</li>
-                <li>Statutory anchoring evaluation</li>
-                <li>Functional institutional network analysis</li>
-                <li>Evidence-based gap detection</li>
+                <li>Statutory and Constitutional anchoring audit</li>
+                <li>Functional institutional network mapping</li>
+                <li>Evidence-based structural gap detection</li>
               </ul>
             </div>
-            <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '8px' }}>
-              <div style={{ fontWeight: 700, marginBottom: '8px', color: '#475569' }}>What it IS NOT</div>
-              <ul style={{ ...styles.text, paddingLeft: '20px', margin: 0 }}>
-                <li>Legal advice or opinion</li>
-                <li>Compliance assessment</li>
-                <li>Country ranking or performance index</li>
-                <li>Real-world administrative behavior audit</li>
+            <div style={{ background: '#f8fafc', padding: '24px', borderRadius: '20px', border: '1px solid #e2e8f0' }}>
+              <div style={{ fontWeight: 800, marginBottom: '12px', color: '#475569', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.05em' }}>What it IS NOT</div>
+              <ul style={{ ...styles.text, paddingLeft: '20px', margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <li>Legal advice or individual opinion</li>
+                <li>Performance or compliance assessment</li>
+                <li>Political ranking of governments</li>
+                <li>Observed behavior or implementation audit</li>
               </ul>
             </div>
           </div>
@@ -69,17 +79,17 @@ export default function Methodology() {
         <div style={styles.card}>
           <div style={styles.scoreList}>
             {[
-              { s: 0, l: "Absent", d: "The mechanism is not detected in the current legal corpus with functional anchoring." },
-              { s: 1, l: "Declaratory Only", d: "Recognition of the right or mechanism exists in a non-binding or purely aspirational provision." },
+              { s: 0, l: "Absent", d: "Mechanism or right not detected in the current legal corpus." },
+              { s: 1, l: "Declaratory Only", d: "Purely aspirational or non-binding mention without specific obligations." },
               { s: 2, l: "Partial Basis", d: "Explicit mention in binding law but lacks clear operational dimensions (actors, procedures)." },
-              { s: 3, l: "Functional Basis", d: "Binding statutory basis with at least one core operational dimension (e.g. procedure or actor) defined." },
-              { s: 4, l: "Strong Basis", d: "High-rank statutory anchoring with multiple operational dimensions and remedies identified." },
-              { s: 5, l: "Integrated Basis", d: "Complete statutory and regulatory coverage across all 7 operational dimensions defined in the framework." }
+              { s: 3, l: "Functional Basis", d: "Binding statutory basis with at least one core operational dimension (e.g., procedure or actor) identified." },
+              { s: 4, l: "Strong Basis", d: "High-rank statutory anchoring with multiple operational dimensions and remedies clearly defined." },
+              { s: 5, l: "Integrated Basis", d: "Complete statutory and regulatory coverage across all operational dimensions defined in the framework." }
             ].map(item => (
               <div key={item.s} style={styles.scoreItem}>
                 <div style={styles.scoreBox(item.s)}>{item.s}</div>
                 <div>
-                  <div style={{ fontWeight: 700, color: '#1e293b' }}>{item.l}</div>
+                  <div style={{ fontWeight: 800, color: '#0f172a', fontSize: '1.05rem' }}>{item.l}</div>
                   <div style={styles.text}>{item.d}</div>
                 </div>
               </div>
@@ -89,28 +99,24 @@ export default function Methodology() {
       </section>
 
       <section style={styles.section}>
-        <h2 style={styles.title}>Key Concepts</h2>
-        <div style={styles.grid}>
-          <div style={styles.card}>
-            <h3 style={styles.h3}>Administrative Dependence</h3>
-            <div style={styles.text}>
-              Measures the extent to which a mechanism's operation depends on flexible administrative instruments (regulations, guidelines)
-              rather than primary statutes. High dependence can indicate lower legal stability.
-            </div>
+        <h2 style={styles.title}>Pilot Diagnostic Panel</h2>
+        <div style={styles.card}>
+          <div style={{ ...styles.text, marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Database size={20} color="#3b82f6" />
+            <span>Dataset loading status for the current session. All analysis is derived from these precomputed JSON layers.</span>
           </div>
-          <div style={styles.card}>
-            <h3 style={styles.h3}>Interpretive Support</h3>
-            <div style={styles.text}>
-              Jurisprudence and international standards provide the "interpretive layer."
-              They guide the application of the law but do not replace the requirement for domestic statutory anchoring.
-            </div>
-          </div>
-          <div style={styles.card}>
-            <h3 style={styles.h3}>Manual Review Flags</h3>
-            <div style={styles.text}>
-              Automated mapping identifies potential gaps or areas where the corpus might be incomplete.
-              These flags prioritize expert legal review for specific mechanisms or principles.
-            </div>
+
+          <div style={styles.diagGrid}>
+            {loadStats && [...loadStats.loaded, ...loadStats.missing].map((url, i) => {
+              const success = loadStats.loaded.includes(url)
+              const name = url.split('/').pop()
+              return (
+                <div key={i} style={styles.diagItem(success)}>
+                  <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginRight: '8px' }}>{name}</div>
+                  {success ? <CheckCircle size={16} color="#16a34a" /> : <FileX size={16} color="#dc2626" />}
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
