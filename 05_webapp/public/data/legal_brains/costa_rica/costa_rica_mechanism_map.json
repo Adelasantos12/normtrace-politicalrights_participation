@@ -1,0 +1,110 @@
+[
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-001",
+    "mechanism_name": "vote",
+    "legal_preparedness_relevance": "core",
+    "likely_anchor_strength": 5,
+    "operational_dependence": "low",
+    "notes": "Universal, direct, secret, obligatory suffrage (Art. 93 CPCR). Strong constitutional + statutory basis."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-002",
+    "mechanism_name": "right_to_stand_for_election",
+    "legal_preparedness_relevance": "core",
+    "likely_anchor_strength": 5,
+    "operational_dependence": "low",
+    "notes": "Gender parity (Art. 2 Código Electoral). Strong constitutional + statutory."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-003",
+    "mechanism_name": "political_parties",
+    "legal_preparedness_relevance": "core",
+    "likely_anchor_strength": 5,
+    "operational_dependence": "low",
+    "notes": "State financing formula: 0.19% PIB (Art. 96 CPCR). Democratic internal structure required (Art. 98)."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-004",
+    "mechanism_name": "citizen_initiative",
+    "legal_preparedness_relevance": "core",
+    "likely_anchor_strength": 5,
+    "operational_dependence": "medium",
+    "notes": "5% padrón threshold (LIP Art. 1). Dedicated statute — stronger than Mexico corpus."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-005",
+    "mechanism_name": "referendum",
+    "legal_preparedness_relevance": "core",
+    "likely_anchor_strength": 5,
+    "operational_dependence": "medium",
+    "notes": "Constitutional basis Art. 105. Dedicated statute (LIP N.° 8492) + TSE reglamento."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-006",
+    "mechanism_name": "consultative_referendum_or_preliminary_consultation",
+    "legal_preparedness_relevance": "secondary",
+    "likely_anchor_strength": 4,
+    "operational_dependence": "medium",
+    "notes": "Thin corpus — 2021 law only. Sala IV + TSE interaction not fully captured."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-007",
+    "mechanism_name": "electoral_remedies",
+    "legal_preparedness_relevance": "core",
+    "likely_anchor_strength": 5,
+    "operational_dependence": "low",
+    "notes": "TSE finality (Art. 103 CPCR). Non-reviewable except prevaricato. Stronger than most electoral tribunals."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-008",
+    "mechanism_name": "constitutional_remedies",
+    "legal_preparedness_relevance": "secondary",
+    "likely_anchor_strength": 5,
+    "operational_dependence": "low",
+    "notes": "Sala IV jurisdiction. Interface with TSE on electoral matters. Sala IV jurisprudence not in corpus."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-009",
+    "mechanism_name": "legislative_petition_or_participation",
+    "legal_preparedness_relevance": "secondary",
+    "likely_anchor_strength": 4,
+    "operational_dependence": "medium",
+    "notes": "RAL source = manual_review_required. Right of petition (Art. 27 CPCR) is clear."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-010",
+    "mechanism_name": "transparency_and_accountability",
+    "legal_preparedness_relevance": "secondary",
+    "likely_anchor_strength": 4,
+    "operational_dependence": "medium",
+    "notes": "LGAP not extractable — corpus_incomplete flag. Party financing (Art. 96 CPCR + Código Electoral)."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-011",
+    "mechanism_name": "electoral_authority_internal_governance",
+    "legal_preparedness_relevance": "secondary",
+    "likely_anchor_strength": 5,
+    "operational_dependence": "low",
+    "notes": "TSE constitutional rank (Art. 9 CPCR). Magistrados appointed by Corte Suprema (2/3 vote, Art. 100 CPCR)."
+  },
+  {
+    "country": "Costa Rica",
+    "mechanism_id": "CRC-MECH-012",
+    "mechanism_name": "civil_registry_electoral_functions",
+    "legal_preparedness_relevance": "secondary",
+    "likely_anchor_strength": 5,
+    "operational_dependence": "low",
+    "notes": "Registro Civil under exclusive TSE dependence (Art. 104 CPCR). Decisions appealable to TSE."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "country": "Mexico",
+    "source_type": "constitution",
+    "rank": 1,
+    "function": "Establishes fundamental political rights and institutional design. Directly enforceable.",
+    "legal_preparedness_value": "highest",
+    "can_create_core_right_or_mechanism": "true",
+    "can_create_restrictions": "true",
+    "can_create_remedies": "true",
+    "caution": "Check SCJN invalidation annotations in consolidated text."
+  },
+  {
+    "country": "Mexico",
+    "source_type": "general_law",
+    "rank": 2,
+    "function": "Leyes generales — binding on federal and state levels. LGIPE, LGPP, LGSMIME, LGDE.",
+    "legal_preparedness_value": "high",
+    "can_create_core_right_or_mechanism": "true",
+    "can_create_restrictions": "true",
+    "can_create_remedies": "true",
+    "caution": "Check SCJN 2023 invalidation annotations. LGSMIME restored from abrogation."
+  },
+  {
+    "country": "Mexico",
+    "source_type": "federal_law",
+    "rank": 3,
+    "function": "Leyes federales — federal scope. LFCP, LFRM, LGRA, LGTAIP, LOAPF, LFPA.",
+    "legal_preparedness_value": "high",
+    "can_create_core_right_or_mechanism": "true",
+    "can_create_restrictions": "true",
+    "can_create_remedies": "true",
+    "caution": "Federal scope only; state-level equivalents not in corpus."
+  },
+  {
+    "country": "Mexico",
+    "source_type": "parliamentary_regulation",
+    "rank": 4,
+    "function": "Internal legislative procedure. Reglamentos of Cámara, Senado, Congreso General.",
+    "legal_preparedness_value": "medium",
+    "can_create_core_right_or_mechanism": "false",
+    "can_create_restrictions": "false",
+    "can_create_remedies": "false",
+    "caution": "Procedural only. Cannot create substantive political rights or electoral mechanisms."
+  },
+  {
+    "country": "Mexico",
+    "source_type": "electoral_administrative",
+    "rank": 5,
+    "function": "INE acuerdos, lineamientos, protocolos. Reglamento Interior INE.",
+    "legal_preparedness_value": "operational_only",
+    "can_create_core_right_or_mechanism": "false",
+    "can_create_restrictions": "false",
+    "can_create_remedies": "false",
+    "caution": "CRITICAL: Cannot create rights or mechanisms. Max anchor_strength=2. Administrative_overdependence if no statute found."
+  },
+  {
+    "country": "Mexico",
+    "source_type": "jurisprudential_interpretive",
+    "rank": 6,
+    "function": "SCJN and TEPJF jurisprudence. Not in current corpus.",
+    "legal_preparedness_value": "interpretive_complement",
+    "can_create_core_right_or_mechanism": "false",
+    "can_create_restrictions": "false",
+    "can_create_remedies": "false",
+    "caution": "No jurisprudence files in corpus. All references require manual_review_required: true."
+  }
+]

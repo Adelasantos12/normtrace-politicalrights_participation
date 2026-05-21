@@ -1,0 +1,121 @@
+[
+  {
+    "country": "Mexico",
+    "field": "country_name",
+    "value": "Mexico",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "iso3",
+    "value": "MEX",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "legal_family",
+    "value": "Civil law (Romano-Germanic); federal constitutional system",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "constitutional_system",
+    "value": "Federal presidential republic",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "constitution_title",
+    "value": "Constitución Política de los Estados Unidos Mexicanos (CPEUM)",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "constitution_last_reform",
+    "value": "2026-04-23",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "electoral_authority_primary",
+    "value": "Instituto Nacional Electoral (INE)",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "electoral_tribunal_primary",
+    "value": "Tribunal Electoral del Poder Judicial de la Federación (TEPJF)",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "suffrage_type",
+    "value": "Universal, direct, secret, equal, free (Art. 35 Fr. I CPEUM)",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "voting_age",
+    "value": "18",
+    "notes": "Art. 34 CPEUM",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "treaty_reception",
+    "value": "Monist with constitutional supremacy; Art. 1 CPEUM (2011 reform) — pro persona",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "key_constitutional_articles",
+    "value": "34,35,36,38,40,41,54,99,108,116,122",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "field": "corpus_note_international_standards",
+    "value": "ICCPR Art.25, ACHR Art.23, HRC GC25, CEDAW Art.7, CRPD Art.29 not in corpus — conventionality analysis requires manual review",
+    "notes": "",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "field": "corpus_note_state_legislation",
+    "value": "Sub-national (state) electoral legislation not in corpus",
+    "notes": "",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "field": "corpus_note_jurisprudence",
+    "value": "No TEPJF/SCJN jurisprudence text files in corpus",
+    "notes": "",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "field": "corpus_note_scjn_2023",
+    "value": "2023 electoral reform (DOF 02-03-2023) substantially invalidated by SCJN (DOF 24-11-2023) — affected provisions restored to pre-reform text",
+    "notes": "",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "field": "pipeline_run_date",
+    "value": "2026-05-18",
+    "notes": "Offline deterministic pipeline",
+    "manual_review_required": "false"
+  }
+]

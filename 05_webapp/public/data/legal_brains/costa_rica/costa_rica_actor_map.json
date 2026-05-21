@@ -1,0 +1,92 @@
+[
+  {
+    "country": "Costa Rica",
+    "actor_id": "CRC-ACT-001",
+    "actor_name": "Tribunal Supremo de Elecciones (TSE)",
+    "actor_type": "constitutional_electoral_authority",
+    "legal_preparedness_role": "supreme_and_exclusive_electoral_authority",
+    "mechanisms": "vote|right_to_stand_for_election|political_parties|citizen_initiative|referendum|consultative_referendum_or_preliminary_consultation|electoral_remedies|electoral_authority_internal_governance|civil_registry_electoral_functions",
+    "notes": "CRITICAL: TSE has constitutional rank = Branches of Government (Art. 9). Exclusive, non-reviewable jurisdiction (Art. 103). NOT an administrative body.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "actor_id": "CRC-ACT-002",
+    "actor_name": "Registro Civil",
+    "actor_type": "civil_registry_electoral_body",
+    "legal_preparedness_role": "civil_registry_and_electoral_rolls",
+    "mechanisms": "civil_registry_electoral_functions|vote",
+    "notes": "Under exclusive TSE dependence (Art. 104 CPCR). Decisions appealable to TSE.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "actor_id": "CRC-ACT-003",
+    "actor_name": "Juntas Electorales",
+    "actor_type": "subordinate_electoral_body",
+    "legal_preparedness_role": "voting_day_administrator",
+    "mechanisms": "vote",
+    "notes": "Juntas Receptoras de Votos. Decisions appealable to TSE.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "actor_id": "CRC-ACT-004",
+    "actor_name": "Sala Constitucional (Sala IV)",
+    "actor_type": "constitutional_court",
+    "legal_preparedness_role": "constitutional_court",
+    "mechanisms": "constitutional_remedies|consultative_referendum_or_preliminary_consultation",
+    "notes": "Amparo, habeas corpus, unconstitutionality. Defers to TSE on strictly electoral matters. Sala IV jurisprudence not in corpus.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "actor_id": "CRC-ACT-005",
+    "actor_name": "Asamblea Legislativa",
+    "actor_type": "legislative_body",
+    "legal_preparedness_role": "legislature",
+    "mechanisms": "citizen_initiative|referendum|legislative_petition_or_participation|political_parties",
+    "notes": "Must consult TSE on electoral legislation (Art. 97 CPCR). 2/3 majority to override TSE opinion.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "actor_id": "CRC-ACT-006",
+    "actor_name": "Partidos Políticos",
+    "actor_type": "political_organization",
+    "legal_preparedness_role": "political_actor",
+    "mechanisms": "political_parties|vote|right_to_stand_for_election",
+    "notes": "Constitutional recognition (Art. 98). State financing (Art. 96). Must maintain democratic internal structure.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "actor_id": "CRC-ACT-007",
+    "actor_name": "Ciudadanos / Ciudadanas",
+    "actor_type": "rights_holder",
+    "legal_preparedness_role": "primary_rights_holder",
+    "mechanisms": "vote|right_to_stand_for_election|citizen_initiative|referendum|legislative_petition_or_participation",
+    "notes": "CR citizens 18+. Naturalized citizens: 12 months before first vote (Art. 94 CPCR). Suffrage is obligatory.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "actor_id": "CRC-ACT-008",
+    "actor_name": "Poder Ejecutivo",
+    "actor_type": "executive_power",
+    "legal_preparedness_role": "secondary_political_actor",
+    "mechanisms": "referendum",
+    "notes": "Can request referendum (Ley Referéndum). Limited electoral role.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "actor_id": "CRC-ACT-009",
+    "actor_name": "Corte Suprema de Justicia",
+    "actor_type": "supreme_court",
+    "legal_preparedness_role": "appointing_body_for_tse",
+    "mechanisms": "electoral_authority_internal_governance",
+    "notes": "Appoints TSE Magistrados by 2/3 vote (Art. 100 CPCR). Hosts Sala Constitucional.",
+    "manual_review_required": "false"
+  }
+]

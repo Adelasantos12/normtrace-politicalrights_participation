@@ -1,0 +1,180 @@
+{
+  "jurisprudence_download_plan": [
+    {
+      "jur_id": "JURI-IACtHR-01",
+      "case_or_document_title": "Castañeda Gutman vs México",
+      "court_or_body": "IACtHR / Corte IDH",
+      "priority_level": "P1",
+      "recommended_action": "IMMEDIATE: Download PDF from official URL; convert to Markdown; add to corpus/jurisprudencia/md/",
+      "proposed_md_filename": "corteidh_castaneda_gutman_vs_mexico_2008.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACtHR judgment — official PDF at corteidh.or.cr. Use pdfplumber or marker for Markdown conversion."
+    },
+    {
+      "jur_id": "JURI-IACtHR-02",
+      "case_or_document_title": "Yatama vs Nicaragua",
+      "court_or_body": "IACtHR / Corte IDH",
+      "priority_level": "P1",
+      "recommended_action": "IMMEDIATE: Download PDF from official URL; convert to Markdown; add to corpus/jurisprudencia/md/",
+      "proposed_md_filename": "corteidh_yatama_vs_nicaragua_2005.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACtHR judgment — official PDF at corteidh.or.cr. Use pdfplumber or marker for Markdown conversion."
+    },
+    {
+      "jur_id": "JURI-IACtHR-03",
+      "case_or_document_title": "López Mendoza vs Venezuela",
+      "court_or_body": "IACtHR / Corte IDH",
+      "priority_level": "P1",
+      "recommended_action": "IMMEDIATE: Download PDF from official URL; convert to Markdown; add to corpus/jurisprudencia/md/",
+      "proposed_md_filename": "corteidh_lopez_mendoza_vs_venezuela_2011.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACtHR judgment — official PDF at corteidh.or.cr. Use pdfplumber or marker for Markdown conversion."
+    },
+    {
+      "jur_id": "JURI-IACtHR-04",
+      "case_or_document_title": "Petro Urrego vs Colombia",
+      "court_or_body": "IACtHR / Corte IDH",
+      "priority_level": "P1",
+      "recommended_action": "IMMEDIATE: Download PDF from official URL; convert to Markdown; add to corpus/jurisprudencia/md/",
+      "proposed_md_filename": "corteidh_petro_urrego_vs_colombia_2020.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACtHR judgment — official PDF at corteidh.or.cr. Use pdfplumber or marker for Markdown conversion."
+    },
+    {
+      "jur_id": "JURI-IACtHR-07",
+      "case_or_document_title": "Funciones de los órganos electorales y paridad de género",
+      "court_or_body": "IACtHR / Corte IDH",
+      "priority_level": "P1",
+      "recommended_action": "IMMEDIATE: Download PDF from official URL; convert to Markdown; add to corpus/jurisprudencia/md/",
+      "proposed_md_filename": "corteidh_oc28_21_funciones_organos_electorales_paridad_genero.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACtHR advisory opinion — official PDF at corteidh.or.cr. Full text required for OC-based principle refinement."
+    },
+    {
+      "jur_id": "JURI-UN-01",
+      "case_or_document_title": "Observación General No. 25 — Artículo 25 PIDCP",
+      "court_or_body": "HRC / CCPR",
+      "priority_level": "P1",
+      "recommended_action": "IMMEDIATE: Download PDF from official URL; convert to Markdown; add to corpus/jurisprudencia/md/",
+      "proposed_md_filename": "un_ccpr_observacion_general_25_art25_pidcp_1996.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "UN treaty body general comment — official at OHCHR. Often already in HTML/PDF."
+    },
+    {
+      "jur_id": "JURI-IACHR-01",
+      "case_or_document_title": "Democracia y Derechos Humanos en Venezuela",
+      "court_or_body": "IACHR / CIDH",
+      "priority_level": "P2",
+      "recommended_action": "SCHEDULED: Download and convert in next corpus expansion cycle.",
+      "proposed_md_filename": "iachr_informe_democracia_derechos_humanos_venezuela_2009.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACHR thematic report — PDF at oas.org. Convert with column-aware PDF extractor."
+    },
+    {
+      "jur_id": "JURI-IACtHR-05",
+      "case_or_document_title": "Norín Catrimán y otros vs Chile",
+      "court_or_body": "IACtHR / Corte IDH",
+      "priority_level": "P2",
+      "recommended_action": "SCHEDULED: Download and convert in next corpus expansion cycle.",
+      "proposed_md_filename": "corteidh_norin_catriman_vs_chile_2014.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACtHR judgment — official PDF at corteidh.or.cr. Use pdfplumber or marker for Markdown conversion."
+    },
+    {
+      "jur_id": "JURI-IACtHR-06",
+      "case_or_document_title": "La expresión \"Leyes\" en el Artículo 30 de la CADH",
+      "court_or_body": "IACtHR / Corte IDH",
+      "priority_level": "P2",
+      "recommended_action": "SCHEDULED: Download and convert in next corpus expansion cycle.",
+      "proposed_md_filename": "corteidh_oc06_86_expresion_leyes_art30_cadh.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACtHR advisory opinion — official PDF at corteidh.or.cr. Full text required for OC-based principle refinement."
+    },
+    {
+      "jur_id": "JURI-IDEA-01",
+      "case_or_document_title": "Direct Democracy: The International IDEA Handbook",
+      "court_or_body": "International IDEA",
+      "priority_level": "P2",
+      "recommended_action": "SCHEDULED: Download and convert in next corpus expansion cycle.",
+      "proposed_md_filename": "idea_international_direct_democracy_handbook_2008.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "Venice Commission / IDEA — PDF at venice.coe.int or idea.int. Soft law — lower extraction priority than binding sources."
+    },
+    {
+      "jur_id": "JURI-VEN-01",
+      "case_or_document_title": "Código de Buenas Prácticas en Materia Electoral",
+      "court_or_body": "Venice Commission",
+      "priority_level": "P2",
+      "recommended_action": "SCHEDULED: Download and convert in next corpus expansion cycle.",
+      "proposed_md_filename": "venice_commission_codigo_buenas_practicas_materia_electoral_2002.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "Venice Commission / IDEA — PDF at venice.coe.int or idea.int. Soft law — lower extraction priority than binding sources."
+    },
+    {
+      "jur_id": "JURI-VEN-02",
+      "case_or_document_title": "Código de Buenas Prácticas en referéndums",
+      "court_or_body": "Venice Commission",
+      "priority_level": "P2",
+      "recommended_action": "SCHEDULED: Download and convert in next corpus expansion cycle.",
+      "proposed_md_filename": "venice_commission_codigo_buenas_practicas_referendums_2008.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "Venice Commission / IDEA — PDF at venice.coe.int or idea.int. Soft law — lower extraction priority than binding sources."
+    },
+    {
+      "jur_id": "JURI-VEN-03",
+      "case_or_document_title": "Lineamientos sobre partidos políticos",
+      "court_or_body": "Venice Commission",
+      "priority_level": "P2",
+      "recommended_action": "SCHEDULED: Download and convert in next corpus expansion cycle.",
+      "proposed_md_filename": "venice_commission_lineamientos_partidos_politicos_2011.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "Venice Commission / IDEA — PDF at venice.coe.int or idea.int. Soft law — lower extraction priority than binding sources."
+    },
+    {
+      "jur_id": "JURI-IACHR-02",
+      "case_or_document_title": "Institucionalidad Democrática | Estado de Derecho y Derechos Humanos en Venezuela",
+      "court_or_body": "IACHR / CIDH",
+      "priority_level": "P3",
+      "recommended_action": "DEFERRED: Add to acquisition backlog; review in Phase 2.",
+      "proposed_md_filename": "iachr_informe_institucionalidad_democratica_venezuela_2017.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACHR thematic report — PDF at oas.org. Convert with column-aware PDF extractor."
+    },
+    {
+      "jur_id": "JURI-IACtHR-08",
+      "case_or_document_title": "Lagos del Campo vs Perú",
+      "court_or_body": "IACtHR / Corte IDH",
+      "priority_level": "P3",
+      "recommended_action": "DEFERRED: Add to acquisition backlog; review in Phase 2.",
+      "proposed_md_filename": "corteidh_lagos_del_campo_vs_peru_2017.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "IACtHR judgment — official PDF at corteidh.or.cr. Use pdfplumber or marker for Markdown conversion."
+    },
+    {
+      "jur_id": "JURI-UN-02",
+      "case_or_document_title": "Observación General No. 37 — Artículo 21 PIDCP (Reunión pacífica)",
+      "court_or_body": "HRC / CCPR",
+      "priority_level": "P3",
+      "recommended_action": "DEFERRED: Add to acquisition backlog; review in Phase 2.",
+      "proposed_md_filename": "un_ccpr_observacion_general_37_art21_reunion_pacifica_2020.md",
+      "requires_metadata": "false",
+      "requires_full_text": "true",
+      "notes": "UN treaty body general comment — official at OHCHR. Often already in HTML/PDF."
+    }
+  ]
+}

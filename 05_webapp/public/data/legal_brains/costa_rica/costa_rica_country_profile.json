@@ -1,0 +1,65 @@
+[
+  {
+    "country": "Costa Rica",
+    "field": "country_name",
+    "value": "Costa Rica",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "field": "legal_family",
+    "value": "Civil law (Romano-Germanic)",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "field": "electoral_system",
+    "value": "Proportional representation; unicameral Asamblea Legislativa",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "field": "state_structure",
+    "value": "Unitary republic",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "field": "treaty_reception",
+    "value": "Monist (Art. 7 CPCR: treaties superior to ordinary laws; Sala IV bloque de constitucionalidad)",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "field": "tse_status",
+    "value": "Constitutional rank equal to Branches of Government (Art. 9 CPCR); exclusive jurisdiction (Art. 103)",
+    "notes": "CRITICAL: TSE ≠ INE. Non-reviewable jurisdiction.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "field": "constitution_year",
+    "value": "1949 (Constitución Política)",
+    "notes": "",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "field": "corpus_sources_total",
+    "value": "12",
+    "notes": "1 excluded (LGAP image-based)",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "field": "pipeline_generated",
+    "value": "2026-05-18",
+    "notes": "Offline deterministic pipeline; no LLM at runtime",
+    "manual_review_required": "false"
+  }
+]

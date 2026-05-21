@@ -1,0 +1,98 @@
+[
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-001",
+    "category": "jurisprudence_gap",
+    "severity": "medium",
+    "title": "Sala IV jurisprudence not in corpus",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-002",
+    "category": "tse_resolution_gap",
+    "severity": "medium",
+    "title": "TSE resolutions and instructivos not in corpus",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-003",
+    "category": "excluded_source",
+    "severity": "high",
+    "title": "LGAP excluded — image-based PDF; corpus_incomplete for transparency/petition",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-004",
+    "category": "commented_source_risk",
+    "severity": "high",
+    "title": "RAL is commented compilation — commentary contamination risk",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-005",
+    "category": "vigency_uncertainty",
+    "severity": "medium",
+    "title": "Multiple sources carry vigency uncertainty flags",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-006",
+    "category": "accessibility_gap",
+    "severity": "medium",
+    "title": "No corpus provisions on disability or language accessibility for political rights",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-007",
+    "category": "international_standards_gap",
+    "severity": "low",
+    "title": "Treaty texts not in corpus — ICCPR, ACHR, CRPD, CEDAW",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-008",
+    "category": "tse_reglamento_vigency",
+    "severity": "medium",
+    "title": "TSE reglamentos for referendum and citizen initiative — vigency requires verification",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-009",
+    "category": "parity_and_equality_coverage",
+    "severity": "low",
+    "title": "Parity provisions in Código Electoral — corpus coverage confirmed (no gap)",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-010",
+    "category": "reglamento_autonomo_scope",
+    "severity": "low",
+    "title": "Reglamento Autónomo TSE — minimal political rights relevance; anchor_strength capped at 1",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-011",
+    "category": "constitutionality_consultation_thin_coverage",
+    "severity": "medium",
+    "title": "Consulta Previa Constitucionalidad — thin statutory coverage; manual_review",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Costa Rica",
+    "note_id": "CRC-VN-012",
+    "category": "corpus_scope_note",
+    "severity": "informational",
+    "title": "CR corpus scope: 11 sources extracted, 1 excluded (LGAP image-based)",
+    "manual_review_required": "false"
+  }
+]

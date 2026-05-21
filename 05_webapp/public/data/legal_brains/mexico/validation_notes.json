@@ -1,0 +1,112 @@
+[
+  {
+    "country": "Mexico",
+    "note_id": "VN-001",
+    "note_type": "corpus_gap",
+    "severity": "high",
+    "affected_source": "All Mexico corpus",
+    "affected_mechanism": "electoral_remedies|political_parties|vote",
+    "description": "No TEPJF/SCJN jurisprudence in corpus. Interpretive anchor incomplete.",
+    "recommended_action": "Add TEPJF tesis for key mechanisms in future update.",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "note_id": "VN-002",
+    "note_type": "corpus_gap",
+    "severity": "high",
+    "affected_source": "N/A",
+    "affected_mechanism": "all",
+    "description": "ICCPR Art.25, ACHR Art.23, HRC GC25, CEDAW Art.7, CRPD Art.29 not in corpus.",
+    "recommended_action": "Manual conventionality review required.",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "note_id": "VN-003",
+    "note_type": "legal_complexity",
+    "severity": "high",
+    "affected_source": "ley_general_instituciones_procedimientos_electorales.md|ley_general_medios_impugnacion_electoral.md|ley_general_partidos_politicos.md",
+    "affected_mechanism": "vote|right_to_stand_for_election|political_parties|electoral_remedies",
+    "description": "2023 electoral reform substantially invalidated by SCJN (DOF 24-11-2023). LGSMIME temporarily abrogated and restored.",
+    "recommended_action": "Exclude invalidated text. Set manual_review_required for affected provisions.",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "note_id": "VN-004",
+    "note_type": "corpus_gap",
+    "severity": "medium",
+    "affected_source": "N/A",
+    "affected_mechanism": "vote|right_to_stand_for_election|electoral_authority_internal_governance",
+    "description": "Sub-national (state) electoral legislation not in corpus.",
+    "recommended_action": "Flag federal_or_subnational_implementation_gap for state-level provisions.",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "note_id": "VN-005",
+    "note_type": "anchoring_caution",
+    "severity": "medium",
+    "affected_source": "ine_consulta_popular_2021.md|ine_revocacion_mandato_2022.md|reglamento_interior_ine_2025.md",
+    "affected_mechanism": "popular_consultation|recall|electoral_authority_internal_governance",
+    "description": "INE lineamientos are process-specific and operational only. Max anchor_strength=2.",
+    "recommended_action": "Classify as electoral_administrative. Flag administrative_overdependence if no statute.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "note_id": "VN-006",
+    "note_type": "corpus_gap",
+    "severity": "medium",
+    "affected_source": "N/A",
+    "affected_mechanism": "citizen_initiative",
+    "description": "No dedicated citizen initiative law in corpus. Art. 35 Fr. VII refers to 'Ley del Congreso'.",
+    "recommended_action": "Verify if Ley de Iniciativa Ciudadana exists outside corpus. Flag corpus_incomplete.",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "note_id": "VN-007",
+    "note_type": "scope_note",
+    "severity": "low",
+    "affected_source": "mexico_federal_budget_and_fiscal_responsibility_law_lfprh_2026.md|mexico_planning_law_lplan_2026.md",
+    "affected_mechanism": "transparency_and_accountability",
+    "description": "LFPRH and Ley de Planeación have limited direct political rights relevance.",
+    "recommended_action": "Extract only INE/TEPJF budget and accountability provisions.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "note_id": "VN-008",
+    "note_type": "scope_note",
+    "severity": "low",
+    "affected_source": "conversion_log.md",
+    "affected_mechanism": "all",
+    "description": "conversion_log.md is an editorial log file, not a legal source.",
+    "recommended_action": "Skip entirely in pipeline.",
+    "manual_review_required": "false"
+  },
+  {
+    "country": "Mexico",
+    "note_id": "VN-009",
+    "note_type": "accessibility_gap",
+    "severity": "medium",
+    "affected_source": "all",
+    "affected_mechanism": "vote|right_to_stand_for_election|popular_consultation|recall",
+    "description": "CRPD Art. 29 requires accessible voting. No accessibility provisions in corpus.",
+    "recommended_action": "Flag accessibility_gap. Manual review for CRPD compliance.",
+    "manual_review_required": "true"
+  },
+  {
+    "country": "Mexico",
+    "note_id": "VN-010",
+    "note_type": "anchoring_caution",
+    "severity": "low",
+    "affected_source": "all",
+    "affected_mechanism": "all",
+    "description": "Conservative defaults applied throughout. If classification uncertain, manual_review_required=true.",
+    "recommended_action": "Expert legal review of all provisions with anchor_strength<=2.",
+    "manual_review_required": "false"
+  }
+]

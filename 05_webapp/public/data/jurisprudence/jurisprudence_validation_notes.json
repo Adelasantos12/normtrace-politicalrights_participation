@@ -1,0 +1,94 @@
+{
+  "jurisprudence_validation_notes": [
+    {
+      "note_id": "JVN-001",
+      "note_type": "layer_constraint",
+      "severity": "informational",
+      "affected_jur_id": "all",
+      "description": "This layer is a SECONDARY INTERPRETIVE LAYER only. No entry may increase domestic anchor_strength or convert a domestic legal gap into legal preparedness. affects_scoring=false and manual_review_required=true are hard rules for all entries.",
+      "recommended_action": "Enforce in all downstream consumers of these tables.",
+      "manual_review_required": "true"
+    },
+    {
+      "note_id": "JVN-002",
+      "note_type": "corpus_status",
+      "severity": "high",
+      "affected_jur_id": "all",
+      "description": "All 16 entries are discovery-table metadata only. No full Markdown text exists in corpus/jurisprudencia/md/ for any entry. Principle and mechanism mappings are based on holding_summary and subject_matter fields — not full-text analysis.",
+      "recommended_action": "Execute download plan (jurisprudence_download_plan.csv) before using jurisprudence to refine interpretive tests in production.",
+      "manual_review_required": "true"
+    },
+    {
+      "note_id": "JVN-003",
+      "note_type": "binding_status_caveat",
+      "severity": "medium",
+      "affected_jur_id": "all",
+      "description": "Corte IDH judgments (sentencias) are classified as binding_inter_american. This binding character applies to states parties to the CADH and to the jurisdiction of the IACtHR. Mexico and Costa Rica are both parties. However, binding character operates at the international level — it does not automatically create domestic statutory anchoring under the NormTrace scoring model.",
+      "recommended_action": "Maintain affects_scoring=false; use for interpretive test refinement only.",
+      "manual_review_required": "true"
+    },
+    {
+      "note_id": "JVN-004",
+      "note_type": "oc2821_overlap",
+      "severity": "medium",
+      "affected_jur_id": "JURI-IACtHR-06",
+      "description": "JURI-IACtHR-06 (OC-3/83 — 'Leyes' en Art. 30) overlaps thematically with INT-OC2821 already in the international corpus. The two advisory opinions address different questions: OC-3/83 defines 'laws' for restriction purposes; OC-28/21 addresses democratic continuity and term limits. No duplication risk, but downstream users should distinguish them.",
+      "recommended_action": "Maintain separate entries. Cross-reference INT-OC2821 when applying PRIN-012.",
+      "manual_review_required": "true"
+    },
+    {
+      "note_id": "JVN-005",
+      "note_type": "gc25_overlap",
+      "severity": "medium",
+      "affected_jur_id": "JURI-UN-01",
+      "description": "JURI-UN-01 (HRC GC25) is the same instrument as INT-HRC-GC25 in the international corpus. In the international corpus it is treated as a full-text provision source. In this jurisprudence layer it is treated as a metadata-only discovery entry. Do not double-count its authority.",
+      "recommended_action": "Flag JURI-UN-01 as covered_by_intl_corpus=INT-HRC-GC25 in downstream consumers.",
+      "manual_review_required": "true"
+    },
+    {
+      "note_id": "JVN-006",
+      "note_type": "discovery_table_field_mismatch",
+      "severity": "low",
+      "affected_jur_id": "all",
+      "description": "The discovery table uses 'short_name' as the document title field. The required output schema uses 'case_or_document_title'. The mapping short_name → case_or_document_title is applied in this pipeline.",
+      "recommended_action": "No action required. Documented for schema traceability.",
+      "manual_review_required": "true"
+    },
+    {
+      "note_id": "JVN-007",
+      "note_type": "soft_law_caveat",
+      "severity": "low",
+      "affected_jur_id": "JURI-VEN-01",
+      "description": "JURI-VEN-01: Classified as comparative_soft_law. Not binding for Mexico or Costa Rica. Use only as benchmarking reference, not as authoritative standard.",
+      "recommended_action": "Ensure interpretive_weight=low or medium. Do not cite as binding authority.",
+      "manual_review_required": "true"
+    },
+    {
+      "note_id": "JVN-008",
+      "note_type": "soft_law_caveat",
+      "severity": "low",
+      "affected_jur_id": "JURI-VEN-02",
+      "description": "JURI-VEN-02: Classified as comparative_soft_law. Not binding for Mexico or Costa Rica. Use only as benchmarking reference, not as authoritative standard.",
+      "recommended_action": "Ensure interpretive_weight=low or medium. Do not cite as binding authority.",
+      "manual_review_required": "true"
+    },
+    {
+      "note_id": "JVN-009",
+      "note_type": "soft_law_caveat",
+      "severity": "low",
+      "affected_jur_id": "JURI-VEN-03",
+      "description": "JURI-VEN-03: Classified as comparative_soft_law. Not binding for Mexico or Costa Rica. Use only as benchmarking reference, not as authoritative standard.",
+      "recommended_action": "Ensure interpretive_weight=low or medium. Do not cite as binding authority.",
+      "manual_review_required": "true"
+    },
+    {
+      "note_id": "JVN-010",
+      "note_type": "soft_law_caveat",
+      "severity": "low",
+      "affected_jur_id": "JURI-IDEA-01",
+      "description": "JURI-IDEA-01: Classified as comparative_soft_law. Not binding for Mexico or Costa Rica. Use only as benchmarking reference, not as authoritative standard.",
+      "recommended_action": "Ensure interpretive_weight=low or medium. Do not cite as binding authority.",
+      "manual_review_required": "true"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-CPOL",
+    "filename_stem": "constitucion_politica_costa_rica",
+    "source_type": "constitution",
+    "normative_rank": 1,
+    "legal_anchor_type": "constitutional",
+    "base_anchor_strength": 5,
+    "manual_review_required_default": "false",
+    "notes": "Constitución Política 1949 with reforms. Reform annotations stripped. Verify current text against SINALEVI."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-LOTSRC",
+    "filename_stem": "ley_organica_tse_registro_civil",
+    "source_type": "organic_law",
+    "normative_rank": 2,
+    "legal_anchor_type": "statutory",
+    "base_anchor_strength": 4,
+    "manual_review_required_default": "false",
+    "notes": "Ley Orgánica TSE y Registro Civil 1965 with reforms. Vigency: sujeto a verificación."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-CE",
+    "filename_stem": "codigo_electoral_costa_rica",
+    "source_type": "codigo_ley",
+    "normative_rank": 3,
+    "legal_anchor_type": "statutory",
+    "base_anchor_strength": 4,
+    "manual_review_required_default": "false",
+    "notes": "Código Electoral 2009 (N.° 8765). Contains parity (Art. 2) and party financing rules. Vigency: sujeto a verificación."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-LREF",
+    "filename_stem": "ley_regulacion_referendum",
+    "source_type": "statutory_law",
+    "normative_rank": 4,
+    "legal_anchor_type": "statutory",
+    "base_anchor_strength": 4,
+    "manual_review_required_default": "false",
+    "notes": "Ley de Regulación del Referéndum N.° 8492 (2006). Vigency: sujeto a verificación."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-LIP",
+    "filename_stem": "ley_iniciativa_popular",
+    "source_type": "statutory_law",
+    "normative_rank": 4,
+    "legal_anchor_type": "statutory",
+    "base_anchor_strength": 4,
+    "manual_review_required_default": "false",
+    "notes": "Ley de Iniciativa Popular N.° 8491 (2006). Vigency: sujeto a verificación."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-LJC",
+    "filename_stem": "ley_jurisdiccion_constitucional",
+    "source_type": "statutory_law",
+    "normative_rank": 4,
+    "legal_anchor_type": "statutory",
+    "base_anchor_strength": 4,
+    "manual_review_required_default": "false",
+    "notes": "Ley de la Jurisdicción Constitucional N.° 7135 (1989). Vigency: sujeto a verificación."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-LCPREF",
+    "filename_stem": "ley_consulta_previa_facultativa_referendum",
+    "source_type": "statutory_law",
+    "normative_rank": 4,
+    "legal_anchor_type": "statutory",
+    "base_anchor_strength": 4,
+    "manual_review_required_default": "true",
+    "notes": "Ley Consulta Previa y Facultativa de Constitucionalidad en Referéndum (2021). Thin coverage — 99 lines. manual_review_required."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-REGREF",
+    "filename_stem": "procesos_referendum",
+    "source_type": "tse_reglamento",
+    "normative_rank": 5,
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "base_anchor_strength": 3,
+    "manual_review_required_default": "false",
+    "notes": "Reglamento para Procesos de Referéndum (TSE). Vigency: verificar antes de uso jurídico fino."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-REGIP",
+    "filename_stem": "reglamento_aplicacion_articulo_3_ley_iniciativa_popular",
+    "source_type": "tse_reglamento",
+    "normative_rank": 5,
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "base_anchor_strength": 3,
+    "manual_review_required_default": "false",
+    "notes": "Reglamento aplicación art. 3 Ley Iniciativa Popular N.° 8491 (TSE Decreto N.° 04-2007). Operative rules for signature collection."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-RATSRE",
+    "filename_stem": "reglamento_autonomo_servicios_tse",
+    "source_type": "administrative_reglamento",
+    "normative_rank": 7,
+    "legal_anchor_type": "electoral_administrative",
+    "base_anchor_strength": 1,
+    "manual_review_required_default": "false",
+    "notes": "Reglamento Autónomo Servicios TSE — internal HR only. Max anchor_strength=1. Minimal political rights relevance."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-RAL",
+    "filename_stem": "reglamento_asamblea_legislativa_comentado",
+    "source_type": "legislative_reglamento",
+    "normative_rank": 6,
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "base_anchor_strength": 2,
+    "manual_review_required_default": "true",
+    "notes": "Reglamento Asamblea Legislativa (commented compilation 2014). Commentary contamination risk. All provisions manual_review_required."
+  },
+  {
+    "country": "Costa Rica",
+    "source_id": "CRC-LGAP",
+    "filename_stem": "ley_general_administracion_publica",
+    "source_type": "excluded_image_based",
+    "normative_rank": 99,
+    "legal_anchor_type": "no_identifiable_anchor",
+    "base_anchor_strength": 0,
+    "manual_review_required_default": "true",
+    "notes": "EXCLUDED: image-based PDF; no extractable text. Corpus gap for LGAP provisions."
+  }
+]

@@ -1,0 +1,3378 @@
+[
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "vote",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "vote",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "vote",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "vote",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "vote",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "vote",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "vote",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "vote",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "vote",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "referendum",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "referendum",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "referendum",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "referendum",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "referendum",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CE",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "vote",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "vote",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "vote",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "vote",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "vote",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "vote",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "vote",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "political_parties",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "referendum",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "referendum",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "referendum",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "referendum",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "vote",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "vote",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-CPOL",
+    "legal_anchor_type": "constitutional",
+    "anchor_strength": 5
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "vote",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "vote",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "vote",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "vote",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "referendum",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "referendum",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "referendum",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "referendum",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "vote",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "vote",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "referendum",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "referendum",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LCPREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "vote",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "vote",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "vote",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "vote",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "vote",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LIP",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "vote",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LJC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "political_parties",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "vote",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "vote",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "vote",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "vote",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "vote",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "political_parties",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "political_parties",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "vote",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "political_parties",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "political_parties",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LOTSRC",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "referendum",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "vote",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "vote",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "vote",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "vote",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "referendum",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "referendum",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "referendum",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "referendum",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "vote",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "vote",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "referendum",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-LREF",
+    "legal_anchor_type": "statutory",
+    "anchor_strength": 4
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "vote",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "vote",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "vote",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "referendum",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "referendum",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "referendum",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "vote",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "referendum",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "vote",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "referendum",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "referendum",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-REGREF",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "vote",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "vote",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "vote",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-REGIP",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 3
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "vote",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "vote",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "vote",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "vote",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "vote",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "vote",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "vote",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "referendum",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "referendum",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "referendum",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "referendum",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "referendum",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "transparency_and_accountability",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "vote",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Asamblea_Legislativa",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "vote",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Ciudadanos",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Juntas_Electorales",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "citizen_initiative",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "referendum",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "referendum",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "referendum",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "consultative_referendum_or_preliminary_consultation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "legislative_petition_or_participation",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Corte_Suprema",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "constitutional_remedies",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Sala_Constitucional",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RAL",
+    "legal_anchor_type": "regulatory_or_legislative_procedural",
+    "anchor_strength": 2
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "political_parties",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "referendum",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "referendum",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "referendum",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Partidos_Politicos",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Poder_Ejecutivo",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "Registro_Civil",
+    "mechanism": "electoral_authority_internal_governance",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "civil_registry_electoral_functions",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "electoral_remedies",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  },
+  {
+    "country": "Costa Rica",
+    "actor": "TSE",
+    "mechanism": "right_to_stand_for_election",
+    "source_id": "CRC-RATSRE",
+    "legal_anchor_type": "electoral_administrative",
+    "anchor_strength": 1
+  }
+]
