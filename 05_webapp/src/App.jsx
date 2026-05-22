@@ -1,16 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react'
-import {
-  Home,
-  BookOpen,
-  ShieldCheck,
-  FileText,
-  Users,
-  Columns,
-  Scale,
-  Info,
-  Globe,
-  Settings
-} from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { Home, BookOpen, ShieldCheck, FileText, Users, Columns, Scale, Info, Globe } from 'lucide-react'
 
 // Components
 import HomeView from './components/Home'
@@ -23,67 +12,19 @@ import JurisprudenceView from './components/Jurisprudence'
 import MethodologyView from './components/Methodology'
 import EvidenceDrawer from './components/EvidenceDrawer'
 
+import { countryMatches } from './utils'
+
 const styles = {
   app: { display: 'flex', minHeight: '100vh', background: '#f8fafc', fontFamily: 'Inter, system-ui, sans-serif' },
-  sidebar: {
-    width: '280px',
-    background: '#0f172a',
-    color: '#fff',
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'fixed',
-    height: '100vh',
-    zIndex: 50,
-    boxShadow: '4px 0 10px rgba(0,0,0,0.05)'
-  },
+  sidebar: { width: '280px', background: '#0f172a', color: '#fff', display: 'flex', flexDirection: 'column', position: 'fixed', height: '100vh', zIndex: 50 },
   sidebarHeader: { padding: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)' },
-  sidebarTitle: { fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.025em', color: '#38bdf8' },
-  sidebarSub: { fontSize: '0.75rem', opacity: 0.7, marginTop: '4px', fontWeight: 500, textTransform: 'uppercase' },
+  sidebarTitle: { fontSize: '1.25rem', fontWeight: 800, color: '#38bdf8' },
+  sidebarSub: { fontSize: '0.75rem', opacity: 0.7, marginTop: '4px' },
   nav: { flex: 1, padding: '20px 12px', overflowY: 'auto' },
-  navItem: (active) => ({
-    display: 'flex',
-    alignItems: 'center',
-    gap: '12px',
-    padding: '10px 16px',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    marginBottom: '4px',
-    transition: 'all 0.2s',
-    background: active ? '#1e293b' : 'transparent',
-    color: active ? '#38bdf8' : 'rgba(255,255,255,0.6)',
-    border: 'none',
-    width: '100%',
-    textAlign: 'left',
-    fontSize: '0.9rem',
-    fontWeight: active ? 600 : 400,
-    outline: 'none'
-  }),
-  sidebarFooter: { padding: '16px 24px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '0.7rem', opacity: 0.5 },
+  navItem: (active) => ({ display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 16px', borderRadius: '8px', cursor: 'pointer', marginBottom: '4px', background: active ? '#1e293b' : 'transparent', color: active ? '#38bdf8' : 'rgba(255,255,255,0.6)', border: 'none', width: '100%', textAlign: 'left', fontSize: '0.9rem', outline: 'none' }),
   main: { flex: 1, marginLeft: '280px', padding: '0', display: 'flex', flexDirection: 'column' },
-  topBar: {
-    height: '64px',
-    background: '#fff',
-    borderBottom: '1px solid #e2e8f0',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '0 32px',
-    position: 'sticky',
-    top: 0,
-    zIndex: 40
-  },
-  content: { padding: '32px', maxWidth: '1400px', margin: '0 auto', width: '100%' },
-  countrySelector: { display: 'flex', gap: '8px', alignItems: 'center' },
-  select: {
-    padding: '6px 12px',
-    borderRadius: '6px',
-    border: '1px solid #cbd5e1',
-    fontSize: '0.875rem',
-    outline: 'none',
-    background: '#fff',
-    cursor: 'pointer'
-  },
-  toggle: { display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.875rem', color: '#64748b', cursor: 'pointer' }
+  topBar: { height: '64px', background: '#fff', borderBottom: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 32px', position: 'sticky', top: 0, zIndex: 40 },
+  content: { padding: '32px', maxWidth: '1400px', margin: '0 auto', width: '100%' }
 }
 
 const TABS = [
@@ -97,132 +38,66 @@ const TABS = [
   { id: 'methodology', label: 'Methodology', icon: Info },
 ]
 
-const COUNTRY_CONFIG = {
-  mexico: {
-    path: 'mexico',
-    prefix: '',
-    label: 'Mexico'
-  },
-  costa_rica: {
-    path: 'costa_rica',
-    prefix: 'costa_rica_',
-    label: 'Costa Rica'
-  }
-}
-
 export default function App() {
   const [activeTab, setActiveTab] = useState('home')
   const [country, setCountry] = useState('mexico')
   const [compareMode, setCompareMode] = useState(false)
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
   const [selectedEvidence, setSelectedEvidence] = useState(null)
-  const [loadStats, setLoadStats] = useState({ loaded: [], missing: [], errors: 0 })
-
-  const fetchData = async (selectedCountry) => {
-    setLoading(true)
-    const config = COUNTRY_CONFIG[selectedCountry]
-    const countryPath = config.path
-    const prefix = config.prefix
-
-    const endpoints = {
-      // Global/Shared data
-      principle_definitions: '/data/international_standards/principle_definitions.json',
-      traceability_matrix: '/data/principle_traceability/principle_traceability_matrix.json',
-      summary_by_country: '/data/principle_traceability/principle_summary_by_country.json',
-      gap_comparison: '/data/principle_traceability/principle_gap_analysis_comparison.json',
-      traceability_explainer: '/data/principle_traceability/principle_traceability_explainer.json',
-      data_inventory: '/data/data_inventory.json',
-
-      // Jurisprudence
-      jurisprudence_index: '/data/jurisprudence/jurisprudence_index.json',
-      jurisprudence_principle_map: '/data/jurisprudence/jurisprudence_principle_map.json',
-      jurisprudence_mechanism_map: '/data/jurisprudence/jurisprudence_mechanism_map.json',
-      jurisprudence_validation: '/data/jurisprudence/jurisprudence_validation_notes.json',
-
-      // Network (v2 functional)
-      nodes: '/data/institutional_network_v2_functional/institutional_nodes_v2.json',
-      edges: '/data/institutional_network_v2_functional/institutional_edges_v2.json',
-      centrality: '/data/institutional_network_v2_functional/actor_centrality_metrics_v2.json',
-      bottlenecks: '/data/institutional_network_v2_functional/bottleneck_diagnostics_v2.json',
-      admin_dependence: '/data/institutional_network_v2_functional/administrative_dependence_metrics_v2.json',
-      process_stage: '/data/institutional_network_v2_functional/process_stage_coverage_v2.json',
-      network_validation: '/data/institutional_network_v2_functional/network_validation_notes_v2.json',
-
-      // Country specific
-      country_profile: `/data/legal_brains/${countryPath}/${prefix}country_profile.json`,
-      legal_provisions: `/data/legal_brains/${countryPath}/${prefix}legal_provisions.json`,
-      mechanism_map: `/data/legal_brains/${countryPath}/${prefix}mechanism_map.json`,
-      actor_map: `/data/legal_brains/${countryPath}/${prefix}actor_map.json`,
-      validation_notes: `/data/legal_brains/${countryPath}/${prefix}validation_notes.json`,
-      source_hierarchy: `/data/legal_brains/${countryPath}/${prefix}source_hierarchy.json`,
-      mechanism_sources: `/data/legal_brains/${countryPath}/${prefix}mechanism_sources.json`,
-      actor_mechanism_edges: `/data/legal_brains/${countryPath}/${prefix}actor_mechanism_edges.json`,
-    }
-
-    const results = {}
-    const stats = { loaded: [], missing: [], errors: 0 }
-
-    try {
-      await Promise.all(
-        Object.entries(endpoints).map(([key, url]) =>
-          fetch(url)
-            .then(res => {
-              if (res.ok) {
-                stats.loaded.push(url)
-                return res.json()
-              } else {
-                stats.missing.push(url)
-                return null
-              }
-            })
-            .then(json => { results[key] = json })
-            .catch(err => {
-              console.error(`Failed to fetch ${url}:`, err)
-              stats.missing.push(url)
-              stats.errors++
-              results[key] = null
-            })
-        )
-      )
-
-      setData(results)
-      setLoadStats(stats)
-    } catch (err) {
-      setError(err.message)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   useEffect(() => {
-    fetchData(country)
+    const fetchData = async () => {
+      setLoading(true)
+      const countryPath = country === 'mexico' ? 'mexico' : 'costa_rica'
+      const prefix = country === 'mexico' ? '' : 'costa_rica_'
+      const base = './data'
+
+      const endpoints = {
+        principle_definitions: `${base}/international_standards/principle_definitions.json`,
+        traceability_matrix: `${base}/principle_traceability/principle_traceability_matrix.json`,
+        principle_explainer: `${base}/principle_traceability/principle_traceability_explainer.json`,
+        gap_comparison: `${base}/principle_traceability/principle_gap_analysis_comparison.json`,
+        jurisprudence: `${base}/jurisprudence/jurisprudence_index.json`,
+        actor_centrality: `${base}/institutional_network_v2_functional/actor_centrality_metrics_v2.json`,
+        bottleneck_diagnostics: `${base}/institutional_network_v2_functional/bottleneck_diagnostics_v2.json`,
+        admin_dependence: `${base}/institutional_network_v2_functional/administrative_dependence_metrics_v2.json`,
+        process_coverage: `${base}/institutional_network_v2_functional/process_stage_coverage_v2.json`,
+        mechanism_metrics: `${base}/institutional_network_v2_functional/mechanism_network_metrics_v2.json`,
+        summary_by_country: `${base}/principle_traceability/principle_summary_by_country.json`,
+        nodes: `${base}/institutional_network_v2_functional/institutional_nodes_v2.json`,
+        edges: `${base}/institutional_network_v2_functional/institutional_edges_v2.json`,
+        legal_provisions: `${base}/legal_brains/${countryPath}/${prefix}legal_provisions.json`,
+        mechanism_map: `${base}/legal_brains/${countryPath}/${prefix}mechanism_map.json`,
+        source_hierarchy: `${base}/legal_brains/${countryPath}/${prefix}source_hierarchy.json`,
+        validation_notes: `${base}/legal_brains/${countryPath}/${prefix}validation_notes.json`,
+        mechanism_sources: `${base}/legal_brains/${countryPath}/${prefix}mechanism_sources.json`,
+        network_validation: `${base}/institutional_network_v2_functional/network_validation_notes_v2.json`,
+        international_standards: `${base}/international_standards/international_standard_provisions.json`,
+        instrument_insights: `${base}/instrument_system_insights/instrument_insights.json`,
+        instrument_mechanism_coverage: `${base}/instrument_system_insights/instrument_mechanism_coverage.json`,
+        instrument_principle_coverage: `${base}/instrument_system_insights/instrument_principle_coverage.json`,
+        instrument_actor_links: `${base}/instrument_system_insights/instrument_actor_links.json`,
+        instrument_gap_flags: `${base}/instrument_system_insights/instrument_gap_flags.json`,
+        system_architecture: `${base}/instrument_system_insights/system_architecture_summary.json`,
+        system_level_insights: `${base}/instrument_system_insights/system_level_insights.json`,
+        system_gap_implications: `${base}/instrument_system_insights/system_gap_implications.json`,
+      }
+
+      const results = {}
+      await Promise.all(Object.entries(endpoints).map(([key, url]) =>
+        fetch(url).then(r => r.ok ? r.json() : null).then(j => {
+           results[key] = j;
+           if (!j) console.warn("Failed to load:", url);
+        })
+      ))
+      setData(results)
+      setLoading(false)
+    }
+    fetchData()
   }, [country])
 
-  const renderContent = () => {
-    if (loading) return (
-      <div style={{ padding: '100px', textAlign: 'center', color: '#64748b' }}>
-        <div style={{ marginBottom: '20px' }}>⏳ Loading NormTrace Dashboard...</div>
-        <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>Fetching legal diagnostic datasets for {COUNTRY_CONFIG[country].label}</div>
-      </div>
-    )
-    if (error) return <div style={{ padding: '40px', color: '#ef4444' }}><strong>Error:</strong> {error}</div>
-
-    const commonProps = { data, country, compareMode, setSelectedEvidence, loadStats }
-
-    switch (activeTab) {
-      case 'home': return <HomeView {...commonProps} />
-      case 'instruments': return <InstrumentsView {...commonProps} />
-      case 'principles': return <PrinciplesView {...commonProps} />
-      case 'gap-map': return <GapMap {...commonProps} />
-      case 'network': return <NetworkView {...commonProps} />
-      case 'comparison': return <ComparisonView {...commonProps} />
-      case 'jurisprudence': return <JurisprudenceView {...commonProps} />
-      case 'methodology': return <MethodologyView {...commonProps} />
-      default: return <HomeView {...commonProps} />
-    }
-  }
+  const commonProps = { data, country, compareMode, setSelectedEvidence }
 
   return (
     <div style={styles.app}>
@@ -233,72 +108,39 @@ export default function App() {
         </div>
         <nav style={styles.nav}>
           {TABS.map(tab => (
-            <button
-              key={tab.id}
-              style={styles.navItem(activeTab === tab.id)}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              <tab.icon size={18} />
-              {tab.label}
+            <button key={tab.id} style={styles.navItem(activeTab === tab.id)} onClick={() => setActiveTab(tab.id)}>
+              <tab.icon size={18} /> {tab.label}
             </button>
           ))}
         </nav>
-        <div style={styles.sidebarFooter}>
-          Diagnostic legal preparedness mapping.<br/>v0.6.0 · © 2026
-        </div>
       </aside>
-
       <main style={styles.main}>
         <header style={styles.topBar}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a' }}>
-              {TABS.find(t => t.id === activeTab)?.label}
-            </h2>
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-            <div style={styles.countrySelector}>
-              <Globe size={16} color="#64748b" />
-              <select
-                style={styles.select}
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-              >
-                <option value="mexico">Mexico</option>
-                <option value="costa_rica">Costa Rica</option>
-              </select>
-            </div>
-
-            <div style={styles.toggle} onClick={() => setCompareMode(!compareMode)}>
-              <input
-                type="checkbox"
-                id="compare"
-                checked={compareMode}
-                readOnly
-                style={{ cursor: 'pointer' }}
-              />
-              <label htmlFor="compare" style={{ cursor: 'pointer' }}>Compare countries</label>
-            </div>
+          <h2 style={{ fontSize: '1.1rem' }}>{TABS.find(t => t.id === activeTab)?.label}</h2>
+          <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+            <Globe size={18} />
+            <select value={country} onChange={e => setCountry(e.target.value)}>
+              <option value="mexico">Mexico</option>
+              <option value="costa_rica">Costa Rica</option>
+            </select>
           </div>
         </header>
-
         <div style={styles.content}>
-          {renderContent()}
+          {loading ? <div>Loading datasets for ${country}...</div> : (
+            <>
+              {activeTab === 'home' && <HomeView {...commonProps} />}
+              {activeTab === 'gap-map' && <GapMap {...commonProps} />}
+              {activeTab === 'network' && <NetworkView {...commonProps} />}
+              {activeTab === 'instruments' && <InstrumentsView {...commonProps} />}
+              {activeTab === 'principles' && <PrinciplesView {...commonProps} />}
+              {activeTab === 'comparison' && <ComparisonView {...commonProps} />}
+              {activeTab === 'jurisprudence' && <JurisprudenceView {...commonProps} />}
+              {activeTab === 'methodology' && <MethodologyView {...commonProps} />}
+            </>
+          )}
         </div>
-
-        <footer style={{ padding: '24px 32px', borderTop: '1px solid #e2e8f0', color: '#94a3b8', fontSize: '0.75rem', textAlign: 'center' }}>
-          Diagnostic legal preparedness mapping. Not legal advice or compliance assessment.
-        </footer>
       </main>
-
-      {selectedEvidence && (
-        <EvidenceDrawer
-          evidence={selectedEvidence}
-          onClose={() => setSelectedEvidence(null)}
-          data={data}
-          country={country}
-        />
-      )}
+      {selectedEvidence && <EvidenceDrawer evidence={selectedEvidence} onClose={() => setSelectedEvidence(null)} data={data} country={country} />}
     </div>
   )
 }

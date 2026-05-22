@@ -1,0 +1,36 @@
+[
+  {
+    "country": "Mexico",
+    "gap_id": "GAP-mexico-001",
+    "gap_type": "accessibility_manual_review",
+    "title": "Accessibility Specificity Gap",
+    "description": "Generic accessibility language often lacks CRPD-level operational detail.",
+    "affected_layer": "Statutory",
+    "affected_mechanism": "All",
+    "affected_principle": "PRIN-003",
+    "affected_actor": "All",
+    "evidence_basis": "legal_provisions keyword analysis",
+    "implication": "Potential barriers to participation despite formal recognition.",
+    "severity": "High",
+    "recommended_action": "Review for reasonable accommodation specificity.",
+    "manual_review_required": "true",
+    "notes": "Mandatory caveat for disability rights."
+  },
+  {
+    "country": "Costa Rica",
+    "gap_id": "GAP-costa_rica-001",
+    "gap_type": "accessibility_manual_review",
+    "title": "Accessibility Specificity Gap",
+    "description": "Generic accessibility language often lacks CRPD-level operational detail.",
+    "affected_layer": "Statutory",
+    "affected_mechanism": "All",
+    "affected_principle": "PRIN-003",
+    "affected_actor": "All",
+    "evidence_basis": "legal_provisions keyword analysis",
+    "implication": "Potential barriers to participation despite formal recognition.",
+    "severity": "High",
+    "recommended_action": "Review for reasonable accommodation specificity.",
+    "manual_review_required": "true",
+    "notes": "Mandatory caveat for disability rights."
+  }
+]
