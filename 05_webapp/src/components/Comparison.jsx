@@ -1,112 +1,104 @@
 import React from 'react'
-import { countryMatches } from '../utils'
-import { Columns, ShieldCheck, AlertCircle, CheckCircle2 } from 'lucide-react'
+import { Scale, Target, AlertTriangle, CheckCircle2, Info, ArrowRight } from 'lucide-react'
+import { getScoreColor, getScoreLabel } from '../utils'
 
-export default function ComparisonView({ data }) {
+const styles = {
+  container: { display: 'flex', flexDirection: 'column', gap: '24px' },
+  headerCard: { background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' },
+  comparisonGrid: (isMobile) => ({
+    display: 'grid',
+    gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+    gap: '24px'
+  }),
+  countryCard: { background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '16px' },
+  principleRow: (isMobile) => ({
+    display: 'grid',
+    gridTemplateColumns: isMobile ? '1fr 60px 60px' : '1fr 100px 100px',
+    gap: '12px',
+    padding: '12px',
+    borderRadius: '8px',
+    borderBottom: '1px solid #f1f5f9',
+    alignItems: 'center'
+  }),
+  scoreBadge: (score, isMobile) => ({
+    padding: '4px 8px',
+    borderRadius: '4px',
+    fontSize: isMobile ? '0.65rem' : '0.75rem',
+    fontWeight: 700,
+    background: getScoreColor(score),
+    color: score > 3 ? '#065f46' : '#92400e',
+    textAlign: 'center'
+  })
+}
+
+export default function Comparison({ data, isMobile }) {
   if (!data) return null
+
   const {
     principle_definitions = { principles: [] },
-    traceability_matrix = { matrix: [] },
-    gap_comparison = []
+    principle_summary_by_country = []
   } = data
 
   const principles = principle_definitions.principles || []
-  const matrixArray = traceability_matrix.matrix || []
 
-  const getCountryStats = (cName) => {
-    const cData = matrixArray.filter(t => countryMatches(t.country, cName))
-    const avg = cData.reduce((acc, curr) => acc + (curr.max_anchor_strength || curr.anchor_strength || 0), 0) / (cData.length || 1)
-    const reviews = cData.filter(t => t.manual_review_required === 'true').length
-    return { avg, reviews, count: cData.length }
+  const getScore = (country, pId) => {
+    const entry = principle_summary_by_country.find(s => s.country === country && s.principle_id === pId)
+    return entry ? parseFloat(entry.avg_anchor_strength) : 0
   }
 
-  const mexStats = getCountryStats('mexico')
-  const crcStats = getCountryStats('costa_rica')
-
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1e293b', marginBottom: '8px' }}>Country Comparison</h2>
-        <p style={{ color: '#64748b' }}>Comparative diagnostic contrast by principle (Mexico vs Costa Rica).</p>
+    <div style={styles.container}>
+      <div style={styles.headerCard}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+          <Scale size={24} color="#0ea5e9" />
+          <h2 style={{ fontSize: isMobile ? '1.25rem' : '1.5rem', fontWeight: 700, color: '#1e293b', margin: 0 }}>Country Comparison</h2>
+        </div>
+        <p style={{ color: '#64748b', margin: 0, maxWidth: '800px', lineHeight: '1.5', fontSize: isMobile ? '0.85rem' : '1rem' }}>
+          Comparative diagnostic contrast by principle. Side-by-side view of Mexico and Costa Rica scores.
+        </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
-        {/* Mexico Summary */}
-        <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-          <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '1.5rem' }}>🇲🇽</span> Mexico
-          </h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-            <div style={{ background: '#f8fafc', padding: '12px', borderRadius: '8px' }}>
-              <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Avg Anchor Strength</div>
-              <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a' }}>{mexStats.avg.toFixed(2)}</div>
-            </div>
-            <div style={{ background: '#f8fafc', padding: '12px', borderRadius: '8px' }}>
-              <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Manual Review Flags</div>
-              <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#dc2626' }}>{mexStats.reviews}</div>
-            </div>
-          </div>
+      <div style={{ background: '#fff', padding: isMobile ? '12px' : '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 60px 60px' : '1fr 100px 100px', gap: '12px', padding: '0 12px 12px 12px', borderBottom: '2px solid #f1f5f9', fontSize: '0.65rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>
+          <span>Principle</span>
+          <span style={{ textAlign: 'center' }}>MEX</span>
+          <span style={{ textAlign: 'center' }}>CRC</span>
         </div>
-
-        {/* Costa Rica Summary */}
-        <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-          <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '1.5rem' }}>🇨🇷</span> Costa Rica
-          </h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-            <div style={{ background: '#f8fafc', padding: '12px', borderRadius: '8px' }}>
-              <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Avg Anchor Strength</div>
-              <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a' }}>{crcStats.avg.toFixed(2)}</div>
+        {principles.map(p => {
+          const scoreMX = getScore('Mexico', p.principle_id)
+          const scoreCR = getScore('Costa Rica', p.principle_id)
+          return (
+            <div key={p.principle_id} style={styles.principleRow(isMobile)}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0 }}>
+                <Target size={14} color="#94a3b8" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: isMobile ? '0.8rem' : '0.9rem', fontWeight: 600, color: '#334155', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: isMobile ? 'nowrap' : 'normal' }}>
+                  {p.principle_name.replace(/_/g, ' ')}
+                </span>
+              </div>
+              <div style={styles.scoreBadge(scoreMX, isMobile)}>{scoreMX.toFixed(1)}</div>
+              <div style={styles.scoreBadge(scoreCR, isMobile)}>{scoreCR.toFixed(1)}</div>
             </div>
-            <div style={{ background: '#f8fafc', padding: '12px', borderRadius: '8px' }}>
-              <div style={{ fontSize: '0.75rem', color: '#64748b' }}>Manual Review Flags</div>
-              <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#dc2626' }}>{crcStats.reviews}</div>
-            </div>
-          </div>
-        </div>
+          )
+        })}
       </div>
 
-      <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginBottom: '20px' }}>Principle-Level Contrast</h3>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>
-              <th style={{ padding: '12px' }}>Principle</th>
-              <th style={{ padding: '12px', textAlign: 'center' }}>Mexico</th>
-              <th style={{ padding: '12px', textAlign: 'center' }}>Diff</th>
-              <th style={{ padding: '12px', textAlign: 'center' }}>Costa Rica</th>
-            </tr>
-          </thead>
-          <tbody>
-            {principles.map((prin, i) => {
-              const mexData = matrixArray.filter(t => countryMatches(t.country, 'mexico') && t.principle_id === prin.principle_id)
-              const mexScore = mexData.reduce((acc, curr) => acc + (curr.max_anchor_strength || curr.anchor_strength || 0), 0) / (mexData.length || 1)
-
-              const crcData = matrixArray.filter(t => countryMatches(t.country, 'costa_rica') && t.principle_id === prin.principle_id)
-              const crcScore = crcData.reduce((acc, curr) => acc + (curr.max_anchor_strength || curr.anchor_strength || 0), 0) / (crcData.length || 1)
-
-              const diff = mexScore - crcScore
-
-              return (
-                <tr key={i} style={{ borderBottom: '1px solid #f1f5f9' }}>
-                  <td style={{ padding: '12px' }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{prin.short_label || prin.principle_name.replace(/_/g, ' ')}</div>
-                    <div style={{ fontSize: '0.75rem', color: '#64748b' }}>{prin.principle_id}</div>
-                  </td>
-                  <td style={{ padding: '12px', textAlign: 'center' }}>
-                    <span style={{ padding: '4px 8px', borderRadius: '4px', background: mexScore >= 3 ? '#dcfce7' : '#fee2e2', fontWeight: 700 }}>{mexScore.toFixed(1)}</span>
-                  </td>
-                  <td style={{ padding: '12px', textAlign: 'center', color: diff === 0 ? '#64748b' : (diff > 0 ? '#16a34a' : '#dc2626'), fontWeight: 600 }}>
-                    {diff === 0 ? '=' : (diff > 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1))}
-                  </td>
-                  <td style={{ padding: '12px', textAlign: 'center' }}>
-                    <span style={{ padding: '4px 8px', borderRadius: '4px', background: crcScore >= 3 ? '#dcfce7' : '#fee2e2', fontWeight: 700 }}>{crcScore.toFixed(1)}</span>
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
+      <div style={styles.comparisonGrid(isMobile)}>
+        <div style={styles.countryCard}>
+          <h3 style={{ fontSize: '1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px', color: '#1e293b' }}>
+            <ArrowRight size={18} color="#0ea5e9" /> Mexico
+          </h3>
+          <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: '1.5', margin: 0 }}>
+            Federal electoral focus with strong statutory anchoring.
+          </p>
+        </div>
+        <div style={styles.countryCard}>
+          <h3 style={{ fontSize: '1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px', color: '#1e293b' }}>
+            <ArrowRight size={18} color="#0ea5e9" /> Costa Rica
+          </h3>
+          <p style={{ fontSize: '0.8rem', color: '#475569', lineHeight: '1.5', margin: 0 }}>
+            High diagnostic strength in direct participatory mechanisms.
+          </p>
+        </div>
       </div>
     </div>
   )

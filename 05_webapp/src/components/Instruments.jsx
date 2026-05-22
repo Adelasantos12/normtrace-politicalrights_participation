@@ -1,171 +1,152 @@
 import React, { useState } from 'react'
-import { Search, FileText, AlertTriangle, Shield, CheckCircle, ArrowRight, Zap, Info, Users, Target, Settings } from 'lucide-react'
+import { Search, Filter, Book, FileText, AlertTriangle, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react'
 import { countryMatches } from '../utils'
 
 const styles = {
   container: { display: 'flex', flexDirection: 'column', gap: '24px' },
-  card: { background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' },
-  table: { width: '100%', borderCollapse: 'collapse', marginTop: '16px' },
-  th: { textAlign: 'left', padding: '12px', borderBottom: '2px solid #e2e8f0', fontSize: '0.8rem', color: '#64748b', textTransform: 'uppercase' },
-  td: { padding: '12px', borderBottom: '1px solid #e2e8f0', fontSize: '0.9rem' },
-  searchContainer: { position: 'relative', marginBottom: '20px' },
-  searchInput: { width: '100%', padding: '10px 16px 10px 40px', borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '0.9rem' },
-  searchIcon: { position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' },
-  badge: (rank) => ({
+  cardGrid: (isMobile) => ({
+    display: 'grid',
+    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(320px, 1fr))',
+    gap: '20px'
+  }),
+  instrumentCard: { background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', display: 'flex', flexDirection: 'column' },
+  cardHeader: { padding: '16px 20px', background: '#f8fafc', borderBottom: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' },
+  cardBody: { padding: '20px', flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' },
+  cardFooter: { padding: '12px 20px', background: '#fff', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
+  rankBadge: (rank) => ({
     padding: '2px 8px',
     borderRadius: '4px',
     fontSize: '0.7rem',
     fontWeight: 700,
-    background: rank <= 2 ? '#eff6ff' : '#f1f5f9',
-    color: rank <= 2 ? '#1e40af' : '#475569',
+    background: rank === 1 ? '#eff6ff' : rank === 2 ? '#f0fdf4' : '#fefce8',
+    color: rank === 1 ? '#1e40af' : rank === 2 ? '#166534' : '#854d0e',
+    textTransform: 'uppercase'
   }),
-  insightCard: { background: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', marginTop: '12px' },
-  detailSection: { marginTop: '24px', borderTop: '1px solid #f1f5f9', paddingTop: '16px' },
-  detailTitle: { fontSize: '0.75rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase', marginBottom: '12px' }
+  table: { width: '100%', borderCollapse: 'collapse', background: '#fff', borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0' },
+  th: { textAlign: 'left', padding: '12px 16px', background: '#f8fafc', borderBottom: '1px solid #e2e8f0', color: '#64748b', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' },
+  td: { padding: '12px 16px', borderBottom: '1px solid #f1f5f9', fontSize: '0.875rem', color: '#334155' }
 }
 
-export default function InstrumentsView({ data, country }) {
+export default function Instruments({ data, country, openEvidence, isMobile }) {
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedInstrument, setSelectedInstrument] = useState(null)
+  const [viewMode, setViewMode] = useState(isMobile ? 'cards' : 'cards')
 
-  if (!data || !data.instrument_insights) return <div>No instruments data available.</div>
+  if (!data) return null
 
-  const instruments = data.instrument_insights.filter(i => countryMatches(i.country, country))
-  const coverage = data.instrument_mechanism_coverage.filter(c => countryMatches(c.country, country))
-  const princCoverage = data.instrument_principle_coverage.filter(c => countryMatches(c.country, country))
-  const actorLinks = data.instrument_actor_links.filter(c => countryMatches(c.country, country))
+  const { source_hierarchy = [], legal_provisions = [], validation_notes = [] } = data
 
-  const filtered = instruments.filter(i =>
-    (i.source_title?.toLowerCase().includes(searchTerm.toLowerCase())) ||
-    (i.source_type?.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filteredInstruments = source_hierarchy.filter(inst =>
+    inst.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (inst.source_id || '').toLowerCase().includes(searchTerm.toLowerCase())
   )
 
-  const activeInstrument = selectedInstrument ? instruments.find(i => i.source_id === selectedInstrument) : null
-  const activeCoverage = selectedInstrument ? coverage.filter(c => c.source_id === selectedInstrument) : []
-  const activePrincCoverage = selectedInstrument ? princCoverage.filter(c => c.source_id === selectedInstrument) : []
-  const activeActorLinks = selectedInstrument ? actorLinks.filter(c => c.source_id === selectedInstrument) : []
+  const getProvisionCount = (sourceId) => legal_provisions.filter(p => p.source_id === sourceId).length
+  const getManualReview = (sourceId) => validation_notes.find(n => n.source_id === sourceId && n.manual_review_required === 'true')
 
   return (
     <div style={styles.container}>
-      <header>
-        <h1 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1e293b' }}>Instruments Reviewed</h1>
-        <p style={{ color: '#64748b', marginTop: '4px' }}>Normative sources and instrument-level analytical insights.</p>
-      </header>
-
-      <div style={{ display: 'grid', gridTemplateColumns: selectedInstrument ? '1fr 450px' : '1fr', gap: '20px' }}>
-        <div style={styles.card}>
-          <div style={styles.searchContainer}>
-            <Search style={styles.searchIcon} size={18} />
-            <input
-              type="text"
-              placeholder="Search instruments by title or type..."
-              style={styles.searchInput}
-              value={searchTerm}
-              onChange={e => setSearchTerm(e.target.value)}
-            />
+      <div style={{ background: '#fff', padding: isMobile ? '16px' : '24px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+          <div>
+            <h2 style={{ fontSize: isMobile ? '1.25rem' : '1.5rem', fontWeight: 700, color: '#1e293b', margin: 0 }}>Instruments Reviewed</h2>
+            <p style={{ color: '#64748b', margin: '4px 0 0 0', fontSize: '0.85rem' }}>Normative sources included in the diagnostic corpus.</p>
           </div>
-
-          <div style={{ overflowX: 'auto' }}>
-            <table style={styles.table}>
-              <thead>
-                <tr>
-                  <th style={styles.th}>Source Title / Type</th>
-                  <th style={styles.th}>Rank</th>
-                  <th style={styles.th}>Mechanisms</th>
-                  <th style={styles.th}>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filtered.map((inst, idx) => (
-                  <tr key={idx} style={{ background: selectedInstrument === inst.source_id ? '#f0f9ff' : 'transparent' }}>
-                    <td style={styles.td}>
-                      <div style={{ fontWeight: 600, color: '#1e293b' }}>{inst.source_title}</div>
-                      <div style={{ fontSize: '0.75rem', color: '#64748b' }}>{inst.source_type.replace(/_/g, ' ')}</div>
-                    </td>
-                    <td style={styles.td}>
-                      <span style={styles.badge(inst.normative_rank)}>Rank {inst.normative_rank}</span>
-                    </td>
-                    <td style={styles.td}>{inst.mechanism_count} detected</td>
-                    <td style={styles.td}>
-                      <button
-                        onClick={() => setSelectedInstrument(inst.source_id === selectedInstrument ? null : inst.source_id)}
-                        style={{ border: 'none', background: 'none', color: '#38bdf8', cursor: 'pointer', fontWeight: 600 }}
-                      >
-                        {selectedInstrument === inst.source_id ? 'Close' : 'View Insights'}
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {!isMobile && (
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <button
+                onClick={() => setViewMode('cards')}
+                style={{ padding: '8px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', background: viewMode === 'cards' ? '#f1f5f9' : '#fff', cursor: 'pointer', fontSize: '0.85rem' }}
+              >
+                Cards
+              </button>
+              <button
+                onClick={() => setViewMode('table')}
+                style={{ padding: '8px 12px', borderRadius: '6px', border: '1px solid #e2e8f0', background: viewMode === 'table' ? '#f1f5f9' : '#fff', cursor: 'pointer', fontSize: '0.85rem' }}
+              >
+                Table
+              </button>
+            </div>
+          )}
         </div>
 
-        {selectedInstrument && activeInstrument && (
-          <div style={{ ...styles.card, height: 'fit-content', position: 'sticky', top: '80px', maxHeight: 'calc(100vh - 120px)', overflowY: 'auto' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-               <h3 style={{ fontSize: '1.1rem', fontWeight: 700 }}>Instrument Insight</h3>
-               <div style={styles.badge(activeInstrument.normative_rank)}>{activeInstrument.operational_role.toUpperCase()}</div>
-            </div>
-
-            <div style={styles.insightCard}>
-              <div style={{ fontWeight: 700, fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Zap size={16} color="#38bdf8" /> Analytical Finding
-              </div>
-              <p style={{ fontSize: '0.85rem', marginTop: '8px', lineHeight: 1.5 }}>{activeInstrument.analytical_insight}</p>
-            </div>
-
-            <div style={styles.detailSection}>
-              <div style={styles.detailTitle}><Settings size={14} style={{ marginRight: '6px' }} /> Mechanisms Detected</div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {activeCoverage.map((c, idx) => (
-                  <div key={idx} style={{ background: '#eff6ff', color: '#1e40af', padding: '4px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
-                    {c.mechanism_id}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={styles.detailSection}>
-              <div style={styles.detailTitle}><Shield size={14} style={{ marginRight: '6px' }} /> Principles Supported</div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {activePrincCoverage.map((p, idx) => (
-                  <div key={idx} style={{ background: '#f0fdf4', color: '#166534', padding: '4px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
-                    {p.principle_id}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={styles.detailSection}>
-              <div style={styles.detailTitle}><Users size={14} style={{ marginRight: '6px' }} /> Linked Actors</div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {activeActorLinks.map((a, idx) => (
-                  <div key={idx} style={{ background: '#f8fafc', color: '#475569', padding: '4px 8px', border: '1px solid #e2e8f0', borderRadius: '4px', fontSize: '0.75rem' }}>
-                    {a.actor_name}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={styles.detailSection}>
-              <div style={styles.detailTitle}><Target size={14} style={{ marginRight: '6px' }} /> Legal Implication</div>
-              <p style={{ fontSize: '0.85rem', color: '#1e40af', fontWeight: 600, lineHeight: 1.4 }}>
-                {activeInstrument.legal_preparedness_implication}
-              </p>
-            </div>
-
-            <div style={{ marginTop: '24px', padding: '16px', background: '#fffbeb', border: '1px solid #fde68a', borderRadius: '12px' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#92400e', display: 'flex', alignItems: 'center', gap: '6px', textTransform: 'uppercase' }}>
-                <AlertTriangle size={14} /> Main Caveat
-              </div>
-              <p style={{ fontSize: '0.8rem', marginTop: '6px', color: '#92400e', lineHeight: 1.4 }}>
-                {activeInstrument.main_caveat}
-              </p>
-            </div>
-          </div>
-        )}
+        <div style={{ position: 'relative' }}>
+          <Search size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
+          <input
+            type="text"
+            placeholder="Search instruments..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{ width: '100%', padding: '12px 12px 12px 40px', borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '0.9rem' }}
+          />
+        </div>
       </div>
+
+      {viewMode === 'cards' ? (
+        <div style={styles.cardGrid(isMobile)}>
+          {filteredInstruments.map((inst, idx) => (
+            <div key={idx} style={styles.instrumentCard}>
+              <div style={styles.cardHeader}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#64748b' }}>{inst.source_id}</div>
+                  <div style={styles.rankBadge(inst.normative_rank)}>Rank {inst.normative_rank}</div>
+                </div>
+                {getManualReview(inst.source_id) && <AlertTriangle size={18} color="#f59e0b" />}
+              </div>
+              <div style={styles.cardBody}>
+                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1e293b', margin: 0 }}>{inst.title}</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', color: '#475569' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Book size={14} color="#94a3b8" /> {inst.source_type}
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <FileText size={14} color="#94a3b8" /> {getProvisionCount(inst.source_id)} Provisions
+                  </div>
+                </div>
+              </div>
+              <div style={styles.cardFooter}>
+                <button
+                  style={{ background: 'none', border: 'none', color: '#38bdf8', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
+                  onClick={() => openEvidence({ type: 'instrument', data: inst, title: inst.title })}
+                >
+                  View Evidence <ExternalLink size={14} />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div style={{ overflowX: 'auto' }}>
+          <table style={styles.table}>
+            <thead>
+              <tr>
+                <th style={styles.th}>ID</th>
+                <th style={styles.th}>Title</th>
+                <th style={styles.th}>Rank</th>
+                <th style={styles.th}>Provisions</th>
+                <th style={styles.th}>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredInstruments.map((inst, idx) => (
+                <tr key={idx}>
+                  <td style={styles.td}>{inst.source_id}</td>
+                  <td style={{ ...styles.td, fontWeight: 600 }}>{inst.title}</td>
+                  <td style={styles.td}>{inst.normative_rank}</td>
+                  <td style={styles.td}>{getProvisionCount(inst.source_id)}</td>
+                  <td style={styles.td}>
+                    <button
+                      onClick={() => openEvidence({ type: 'instrument', data: inst, title: inst.title })}
+                      style={{ background: 'none', border: 'none', color: '#38bdf8', cursor: 'pointer' }}
+                    >
+                      <ExternalLink size={16} />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   )
 }

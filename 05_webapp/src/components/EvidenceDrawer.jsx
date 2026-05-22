@@ -1,5 +1,5 @@
 import React from 'react'
-import { X } from 'lucide-react'
+import { X, FileText, Shield, AlertCircle, Bookmark, Link as LinkIcon, Info } from 'lucide-react'
 
 const styles = {
   overlay: {
@@ -11,78 +11,186 @@ const styles = {
     background: 'rgba(15, 23, 42, 0.4)',
     display: 'flex',
     justifyContent: 'flex-end',
-    zIndex: 9999, // Ensure it's above everything
+    zIndex: 9999,
     backdropFilter: 'blur(4px)'
   },
   drawer: {
     width: '100%',
-    maxWidth: '500px',
+    maxWidth: '650px',
     background: '#fff',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
     boxShadow: '-10px 0 30px rgba(0,0,0,0.1)',
+    overflow: 'hidden'
+  },
+  header: {
+    padding: '24px 32px',
+    borderBottom: '1px solid #e2e8f0',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    background: '#fff'
+  },
+  content: {
     padding: '32px',
-    overflowY: 'auto'
+    overflowY: 'auto',
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '24px'
+  },
+  provisionCard: {
+    background: '#fff',
+    border: '1px solid #e2e8f0',
+    borderRadius: '12px',
+    overflow: 'hidden',
+    boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+  },
+  provisionHeader: {
+    padding: '12px 16px',
+    background: '#f8fafc',
+    borderBottom: '1px solid #e2e8f0',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  tag: {
+    background: '#e0f2fe',
+    color: '#0369a1',
+    padding: '2px 8px',
+    borderRadius: '4px',
+    fontSize: '0.7rem',
+    fontWeight: 700,
+    textTransform: 'uppercase'
   }
 }
 
-export default function EvidenceDrawer({ evidence, onClose, data, country }) {
-  if (!evidence || !data) return null
+export default function EvidenceDrawer({ isOpen, onClose, context, country, data }) {
+  if (!isOpen || !data) return null
+
   const { legal_provisions = [] } = data
 
-  const mechanismId = evidence.mechanism_id || evidence.mechanism || evidence.node_id
-  const principleId = evidence.principle_id
+  const getFilteredProvisions = () => {
+    if (!context) return []
 
-  const provisions = legal_provisions.filter(p => {
-    if (evidence.type === 'actor') {
-      return (p.text && p.text.includes(evidence.label)) || (p.provision_text && p.provision_text.includes(evidence.label))
+    if (context.type === 'insight') {
+      const insight = context.data
+      const mechanisms = (insight.affected_mechanisms || '').split(',').map(m => m.trim().toLowerCase())
+      const principles = (insight.affected_principles || '').split(',').map(p => p.trim().toLowerCase())
+
+      return legal_provisions.filter(p => {
+        const pm = (p.mechanism || '').toLowerCase()
+        const pp = (p.principle || '').toLowerCase()
+        return mechanisms.some(m => pm.includes(m)) || principles.some(p => pp.includes(p))
+      })
     }
-    // Match against both _id, _name and the base 'mechanism'/'principle' fields found in some datasets
-    // Also handle pipe-separated mechanisms in legal_provisions.json
-    const matchMech = mechanismId ? (
-      p.mechanism_id === mechanismId ||
-      p.mechanism_name === mechanismId ||
-      p.mechanism === mechanismId ||
-      (p.mechanism && p.mechanism.split('|').includes(mechanismId))
-    ) : true
 
-    const matchPrin = principleId ? (
-      p.principle_id === principleId ||
-      p.principle_name === principleId ||
-      p.principle === principleId ||
-      (p.principle && p.principle.split('|').includes(principleId))
-    ) : true
+    if (context.type === 'instrument') {
+      return legal_provisions.filter(p => p.source_id === context.data.source_id)
+    }
 
-    return matchMech && matchPrin
-  }).slice(0, 20)
+    if (context.type === 'principle_mechanism') {
+      const { principle_id, mechanism_id } = context.data
+      return legal_provisions.filter(p =>
+        (p.principle || '').includes(principle_id) &&
+        (p.mechanism || '').includes(mechanism_id)
+      )
+    }
+
+    if (context.type === 'mechanism') {
+      return legal_provisions.filter(p => (p.mechanism || '').includes(context.data.mechanism_id))
+    }
+
+    if (context.type === 'principle') {
+      return legal_provisions.filter(p => (p.principle || '').includes(context.data.principle_id))
+    }
+
+    return []
+  }
+
+  const filtered = getFilteredProvisions().slice(0, 50)
 
   return (
     <div style={styles.overlay} onClick={onClose}>
       <div style={styles.drawer} onClick={e => e.stopPropagation()}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px' }}>
-          <h2 style={{ margin: 0 }}>Evidence Detail</h2>
-          <button onClick={onClose} style={{ border: 'none', background: 'none', cursor: 'pointer' }}><X size={24} /></button>
-        </div>
-
-        <div style={{ marginBottom: '24px' }}>
-          <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase' }}>Analytical Finding</div>
-          <p style={{ lineHeight: 1.5 }}>{evidence.finding || evidence.diagnostic_interpretation || 'Functional legal basis detected.'}</p>
-        </div>
-
-        <div>
-          <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#64748b', textTransform: 'uppercase', marginBottom: '12px' }}>Supporting Provisions</div>
-          {provisions.length > 0 ? provisions.map((p, i) => (
-            <div key={i} style={{ padding: '16px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', marginBottom: '12px' }}>
-              <div style={{ fontWeight: 800, fontSize: '0.9rem' }}>{p.source_id} - {p.article || 'N/A'}</div>
-              <p style={{ fontStyle: 'italic', fontSize: '0.9rem', color: '#334155' }}>{p.provision_text || p.text}</p>
+        <div style={styles.header}>
+          <div>
+            <h2 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 800, color: '#0f172a' }}>Evidence Drawer</h2>
+            <div style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '4px' }}>
+              {context?.title || 'Supporting legal provisions'} for {country}
             </div>
-          )) : (
-            <div style={{ padding: '20px', textAlign: 'center', background: '#fffbeb', borderRadius: '12px' }}>
-              No direct provisions linked for this view ({mechanismId || 'N/A'} x {principleId || 'N/A'}).
+          </div>
+          <button
+            onClick={onClose}
+            style={{ border: 'none', background: '#f1f5f9', padding: '10px', borderRadius: '8px', cursor: 'pointer', color: '#64748b' }}
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        <div style={styles.content}>
+          {context?.type === 'insight' && (
+            <div style={{ padding: '16px', background: '#eff6ff', borderRadius: '12px', border: '1px solid #dbeafe', marginBottom: '8px' }}>
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <Info size={20} color="#3b82f6" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <div>
+                  <h4 style={{ margin: '0 0 4px 0', fontSize: '0.9rem', fontWeight: 700, color: '#1e40af' }}>Diagnostic Finding</h4>
+                  <p style={{ margin: 0, fontSize: '0.85rem', color: '#1e40af', lineHeight: '1.5' }}>{context.data.finding}</p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {filtered.length > 0 ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Displaying {filtered.length} relevant provisions
+              </div>
+              {filtered.map((p, i) => (
+                <div key={i} style={styles.provisionCard}>
+                  <div style={styles.provisionHeader}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 700, fontSize: '0.85rem', color: '#1e293b' }}>
+                      <Bookmark size={14} color="#38bdf8" />
+                      {p.source_id} {p.article ? `Art. ${p.article}` : ''}
+                    </div>
+                    <div style={styles.tag}>{p.source_type || 'Provision'}</div>
+                  </div>
+                  <div style={{ padding: '20px' }}>
+                    <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.6, color: '#334155', fontStyle: 'italic' }}>
+                      "{p.provision_text || p.text}"
+                    </p>
+                  </div>
+                  <div style={{ padding: '12px 20px', background: '#f8fafc', borderTop: '1px solid #f1f5f9', display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+                    {p.mechanism && (
+                      <div style={{ fontSize: '0.75rem', color: '#64748b' }}>
+                        <strong style={{ color: '#475569' }}>Mechanism:</strong> {p.mechanism}
+                      </div>
+                    )}
+                    {p.principle && (
+                      <div style={{ fontSize: '0.75rem', color: '#64748b' }}>
+                        <strong style={{ color: '#475569' }}>Principle:</strong> {p.principle}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div style={{ padding: '80px 40px', textAlign: 'center', background: '#f8fafc', borderRadius: '16px', border: '2px dashed #e2e8f0' }}>
+              <AlertCircle size={48} color="#94a3b8" style={{ margin: '0 auto 20px' }} />
+              <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#475569', margin: '0 0 8px 0' }}>No explicit provisions found</h3>
+              <p style={{ fontSize: '0.9rem', color: '#64748b', margin: 0, lineHeight: '1.5' }}>
+                The current diagnostic corpus does not contain direct statutory evidence for this specific selection.
+                This may indicate a genuine legal gap or an administrative/interpretive basis not captured in the primary text.
+              </p>
             </div>
           )}
         </div>
+
+        <footer style={{ padding: '20px 32px', background: '#f8fafc', borderTop: '1px solid #e2e8f0', fontSize: '0.75rem', color: '#94a3b8', textAlign: 'center' }}>
+          Diagnostic legal preparedness mapping. Not legal advice.
+        </footer>
       </div>
     </div>
   )

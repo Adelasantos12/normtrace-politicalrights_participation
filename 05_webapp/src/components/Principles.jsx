@@ -1,86 +1,92 @@
 import React from 'react'
-import { countryMatches } from '../utils'
-import { ShieldCheck, Info, ExternalLink } from 'lucide-react'
+import { ShieldCheck, Info, ExternalLink, Target, Bookmark, Layers } from 'lucide-react'
+import { getScoreColor, getScoreLabel } from '../utils'
 
-export default function PrinciplesView({ data, country, setSelectedEvidence }) {
+const styles = {
+  container: { display: 'flex', flexDirection: 'column', gap: '24px' },
+  headerCard: { background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' },
+  grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 400px), 1fr))', gap: '20px' },
+  card: { background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '20px', transition: 'all 0.2s', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' },
+  scoreBar: { height: '8px', width: '100%', background: '#f1f5f9', borderRadius: '4px', overflow: 'hidden', marginTop: '8px' },
+  scoreFill: (score) => ({ height: '100%', width: `${(score / 5) * 100}%`, background: getScoreColor(score) }),
+  badge: { padding: '4px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' },
+  stat: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.85rem' }
+}
+
+export default function Principles({ data, country, openEvidence }) {
   if (!data) return null
+
   const {
     principle_definitions = { principles: [] },
-    principle_explainer = { explainer: [] },
+    principle_summary_by_country = [],
     traceability_matrix = { matrix: [] }
   } = data
 
-  const countryName = countryMatches(country, 'mexico') ? 'Mexico' : 'Costa Rica'
-  const matrixArray = traceability_matrix.matrix || []
-  const explainerArray = principle_explainer.explainer || principle_explainer || []
-
-  const countryTraceability = matrixArray.filter(t => countryMatches(t.country, country))
-  const countryExplainer = Array.isArray(explainerArray) ? explainerArray.filter(e => countryMatches(e.country, country)) : []
+  const countryName = country === 'Mexico' ? 'Mexico' : 'Costa Rica'
   const principles = principle_definitions.principles || []
-
-  const getScoreColor = (score) => {
-    if (score === 0) return '#f1f5f9'
-    if (score < 2) return '#fee2e2'
-    if (score < 3) return '#fef3c7'
-    if (score < 4) return '#dcfce7'
-    return '#bbf7d0'
-  }
-
-  const getScoreLabel = (score) => {
-    const labels = ['Absent', 'Declaratory', 'Partial', 'Functional', 'Strong', 'Integrated']
-    return labels[Math.floor(score)] || 'Unknown'
-  }
+  const countrySummary = principle_summary_by_country.filter(s => s.country === countryName)
+  const matrix = traceability_matrix.matrix || []
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1e293b', marginBottom: '8px' }}>Principles & Anchoring</h2>
-        <p style={{ color: '#64748b' }}>Diagnostic tracing of 12 core principles across {countryName}'s legal framework.</p>
+    <div style={styles.container}>
+      <div style={styles.headerCard}>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1e293b', margin: 0 }}>Principles & Anchoring</h2>
+        <p style={{ color: '#64748b', marginTop: '8px', maxWidth: '800px', lineHeight: '1.5' }}>
+          NormTrace Political Rights evaluates legal preparedness across 12 core principles. Each principle is traced back to specific domestic instruments to determine its anchoring strength.
+        </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: '20px' }}>
+      <div style={styles.grid}>
         {principles.map((prin, i) => {
-          const explainer = countryExplainer.find(e => e.principle_id === prin.principle_id)
-          const principleScores = countryTraceability.filter(t => t.principle_id === prin.principle_id)
-          const avgScore = principleScores.reduce((acc, curr) => acc + Number(curr.max_anchor_strength || curr.anchor_strength || 0), 0) / (principleScores.length || 1)
+          const summary = countrySummary.find(s => s.principle_id === prin.principle_id)
+          const score = summary ? parseFloat(summary.avg_anchor_strength) : 0
+          const mechanismsCount = matrix.filter(m => m.country === countryName && m.principle_id === prin.principle_id).length
 
           return (
-            <div key={i} style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div key={i} style={styles.card}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ background: '#eff6ff', padding: '8px', borderRadius: '8px' }}>
-                    <ShieldCheck size={20} color="#2563eb" />
+                <div style={{ display: 'flex', gap: '12px', flex: 1 }}>
+                  <div style={{ padding: '10px', background: '#f0f9ff', borderRadius: '10px', color: '#0ea5e9' }}>
+                    <Target size={24} />
                   </div>
                   <div>
-                    <h3 style={{ fontWeight: 700, fontSize: '1rem', color: '#1e293b' }}>{prin.short_label || prin.principle_name.replace(/_/g, ' ')}</h3>
-                    <div style={{ fontSize: '0.75rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{prin.principle_id}</div>
+                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase' }}>{prin.principle_id}</div>
+                    <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#0f172a', margin: '4px 0' }}>{prin.principle_name.replace(/_/g, ' ')}</h3>
                   </div>
                 </div>
-                <div style={{ background: getScoreColor(avgScore), padding: '4px 12px', borderRadius: '20px', fontSize: '0.85rem', fontWeight: 700, color: '#166534' }}>
-                  {avgScore.toFixed(1)} - {getScoreLabel(avgScore)}
+              </div>
+
+              <div style={{ fontSize: '0.9rem', color: '#475569', lineHeight: '1.5' }}>
+                {prin.description}
+              </div>
+
+              <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #f1f5f9' }}>
+                <div style={styles.stat}>
+                  <span style={{ fontWeight: 600, color: '#64748b' }}>Diagnostic Score</span>
+                  <span style={{ fontWeight: 800, color: '#0f172a' }}>{score.toFixed(1)} / 5.0</span>
+                </div>
+                <div style={styles.scoreBar}>
+                  <div style={styles.scoreFill(score)} />
+                </div>
+                <div style={{ marginTop: '8px', fontSize: '0.75rem', fontWeight: 700, color: getScoreColor(score), display: 'flex', justifyContent: 'space-between' }}>
+                  <span>{getScoreLabel(score)}</span>
+                  <span>{mechanismsCount} Mechanisms Mapped</span>
                 </div>
               </div>
 
-              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.5 }}>{prin.description}</p>
-
-              {explainer && (
-                <div style={{ background: '#f8fafc', padding: '12px', borderRadius: '8px', borderLeft: '4px solid #38bdf8' }}>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#0369a1', marginBottom: '4px' }}>WHY IT MATTERS</div>
-                  <div style={{ fontSize: '0.85rem', color: '#334155' }}>{explainer.plain_language_interpretation || explainer.preparedness_implication}</div>
-                </div>
-              )}
-
-              <div style={{ marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                  {explainer?.manual_review_required === 'true' ? <span style={{ color: '#d97706' }}>⚠️ Manual review flag</span> : 'Automated diagnostic'}
-                </div>
-                <button
-                  onClick={() => setSelectedEvidence({ principle_id: prin.principle_id, country, type: 'principle' })}
-                  style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'none', border: 'none', color: '#2563eb', fontWeight: 600, cursor: 'pointer', fontSize: '0.85rem' }}
-                >
-                  View Evidence <ExternalLink size={14} />
-                </button>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <h4 style={{ margin: 0, fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Why it matters</h4>
+                <p style={{ margin: 0, fontSize: '0.85rem', color: '#475569' }}>
+                  {prin.legal_preparedness_relevance || 'Crucial for ensuring the legal basis and operational functionality of political participation mechanisms.'}
+                </p>
               </div>
+
+              <button
+                style={{ ...styles.stat, width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #e2e8f0', background: '#fff', cursor: 'pointer', fontWeight: 600, color: '#334155' }}
+                onClick={() => openEvidence({ type: 'principle', data: prin, title: prin.principle_name.replace(/_/g, ' ') })}
+              >
+                View Legal Evidence <ExternalLink size={14} />
+              </button>
             </div>
           )
         })}

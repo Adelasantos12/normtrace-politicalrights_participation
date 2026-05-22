@@ -1,69 +1,74 @@
 import React from 'react'
-import { Info, HelpCircle, ShieldAlert, Layers, Network } from 'lucide-react'
+import { Info, HelpCircle, Scale, AlertTriangle, Network, ShieldCheck, Bookmark, Database } from 'lucide-react'
 
-export default function MethodologyView() {
+const styles = {
+  container: (isMobile) => ({ display: 'flex', flexDirection: 'column', gap: isMobile ? '24px' : '32px', maxWidth: '900px' }),
+  section: { display: 'flex', flexDirection: 'column', gap: '16px' },
+  h2: (isMobile) => ({ fontSize: isMobile ? '1.25rem' : '1.5rem', fontWeight: 700, color: '#1e293b', margin: 0, display: 'flex', alignItems: 'center', gap: '12px' }),
+  card: { background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '12px' },
+  p: (isMobile) => ({ fontSize: isMobile ? '0.9rem' : '1rem', color: '#475569', lineHeight: '1.6', margin: 0 }),
+  scoreBox: { display: 'grid', gridTemplateColumns: '60px 1fr', gap: '16px', padding: '16px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #f1f5f9' },
+  scoreNum: { fontSize: '1.25rem', fontWeight: 800, color: '#0ea5e9', textAlign: 'center' }
+}
+
+export default function Methodology({ isMobile }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '1000px' }}>
-      <div style={{ background: '#fff', padding: '32px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1e293b', marginBottom: '16px' }}>Methodology & Framing</h2>
-        <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.6 }}>
-          NormTrace Political Rights maps <strong>diagnostic legal preparedness</strong>. It evaluates whether political participation mechanisms are legally anchored and operationalised through formal mandates.
+    <div style={styles.container(isMobile)}>
+      <header>
+        <h1 style={{ fontSize: isMobile ? '1.75rem' : '2.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '16px' }}>Methodology</h1>
+        <p style={{ ...styles.p(isMobile), fontSize: isMobile ? '1rem' : '1.1rem', borderLeft: '4px solid #38bdf8', paddingLeft: '20px' }}>
+          NormTrace Political Rights maps <strong>diagnostic legal preparedness</strong>.
         </p>
-      </div>
+      </header>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
-        <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-            <div style={{ background: '#eff6ff', padding: '8px', borderRadius: '8px' }}>
-              <Layers size={20} color="#2563eb" />
-            </div>
-            <h3 style={{ fontWeight: 700, fontSize: '1.1rem' }}>Anchoring Scores (0–5)</h3>
+      <section style={styles.section}>
+        <h2 style={styles.h2(isMobile)}><Scale size={24} color="#0ea5e9" /> Diagnostic vs. Compliance</h2>
+        <div style={styles.card}>
+          <p style={styles.p(isMobile)}>
+            This webapp <strong>does not assess legal compliance</strong>. It evaluates whether the necessary legal architecture exists to support a given principle.
+          </p>
+          <div style={{ padding: '16px', background: '#fef2f2', border: '1px solid #fee2e2', borderRadius: '8px', display: 'flex', gap: '12px' }}>
+            <AlertTriangle size={20} color="#991b1b" style={{ flexShrink: 0 }} />
+            <p style={{ fontSize: '0.8rem', color: '#991b1b', margin: 0 }}>
+              <strong>Disclaimer:</strong> Pilot diagnostic mapping based on statutory text. Not real-world behavior.
+            </p>
           </div>
+        </div>
+      </section>
+
+      <section style={styles.section}>
+        <h2 style={styles.h2(isMobile)}><ShieldCheck size={24} color="#10b981" /> Scoring Matrix (0–5)</h2>
+        <div style={styles.card}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {[
-              { s: '0', l: 'Absent', d: 'No detected legal basis for the mechanism/principle.' },
-              { s: '1', l: 'Declaratory', d: 'High-level mention without operational detail.' },
-              { s: '2', l: 'Partial Basis', d: 'Fragmented legal basis; lacks core procedures.' },
-              { s: '3', l: 'Functional Basis', d: 'Core procedures and actors are legally defined.' },
-              { s: '4', l: 'Strong Basis', d: 'Detailed mandates with clear remedies/safeguards.' },
-              { s: '5', l: 'Integrated Basis', d: 'Seamless cross-instrument legal consistency.' }
-            ].map(item => (
-              <div key={item.s} style={{ display: 'flex', gap: '12px', fontSize: '0.9rem' }}>
-                <div style={{ width: '24px', fontWeight: 800, color: '#2563eb' }}>{item.s}</div>
-                <div><strong>{item.l}:</strong> {item.d}</div>
-              </div>
-            ))}
+            <ScoreRow num="0" label="Absent" desc="No mention detected." />
+            <ScoreRow num="1" label="Declaratory" desc="Mentioned but lacks operational procedures." />
+            <ScoreRow num="2" label="Partial Basis" desc="Lacks statutory anchoring; relies on administrative instruments." />
+            <ScoreRow num="3" label="Functional Basis" desc="Statutory basis and procedures, but lacks specific safeguards." />
+            <ScoreRow num="4" label="Strong Basis" desc="Comprehensive statutory coverage." />
+            <ScoreRow num="5" label="Integrated Basis" desc="All 5 core dimensions present." />
           </div>
         </div>
+      </section>
 
-        <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-            <div style={{ background: '#fff7ed', padding: '8px', borderRadius: '8px' }}>
-              <ShieldAlert size={20} color="#ea580c" />
-            </div>
-            <h3 style={{ fontWeight: 700, fontSize: '1.1rem' }}>Core Caveats</h3>
-          </div>
-          <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.9rem', color: '#475569', paddingLeft: '20px' }}>
-            <li><strong>Not Legal Advice:</strong> This dashboard is for analytical research and diagnostic mapping only.</li>
-            <li><strong>Statutory focus:</strong> We prioritize statutory anchoring over administrative flexibility.</li>
-            <li><strong>Interpretive Layer:</strong> Jurisprudence provides support but does not substitute for domestic law.</li>
-            <li><strong>Functional Network:</strong> Actor maps show legally-encoded relationships, not real-world implementation.</li>
-            <li><strong>Manual Review:</strong> Flags indicate where automated detection requires expert legal validation.</li>
-          </ul>
+      <section style={styles.section}>
+        <h2 style={styles.h2(isMobile)}><Network size={24} color="#8b5cf6" /> Institutional Network</h2>
+        <div style={styles.card}>
+          <p style={styles.p(isMobile)}>
+            Maps <strong>legally encoded relationships</strong>. An "edge" exists only if mandated by a legal instrument.
+          </p>
         </div>
-      </div>
+      </section>
+    </div>
+  )
+}
 
-      <div style={{ background: '#0f172a', padding: '32px', borderRadius: '12px', color: '#fff' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-          <Network size={24} color="#38bdf8" />
-          <h3 style={{ fontWeight: 700, fontSize: '1.2rem' }}>Functional Network Logic</h3>
-        </div>
-        <p style={{ fontSize: '0.95rem', lineHeight: 1.6, opacity: 0.9 }}>
-          The institutional network is built from normative "actor-mechanism" edges. We use centrality metrics
-          (Degree, Betweenness) to identify which institutions are the legal "gatekeepers" of participation.
-          Bottleneck diagnostics highlight where a mechanism's legal path is concentrated through a single
-          point of failure or requires excessive administrative discretion.
-        </p>
+function ScoreRow({ num, label, desc }) {
+  return (
+    <div style={styles.scoreBox}>
+      <div style={styles.scoreNum}>{num}</div>
+      <div>
+        <div style={{ fontWeight: 700, color: '#1e293b', fontSize: '0.9rem' }}>{label}</div>
+        <div style={{ fontSize: '0.8rem', color: '#64748b' }}>{desc}</div>
       </div>
     </div>
   )

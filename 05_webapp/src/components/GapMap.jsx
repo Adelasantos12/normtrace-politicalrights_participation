@@ -1,117 +1,134 @@
 import React, { useState } from 'react'
-import { countryMatches } from '../utils'
-import { AlertCircle, FileText, ChevronRight, Filter } from 'lucide-react'
+import { Info, AlertTriangle, ExternalLink, Filter, Target, Settings, ChevronRight, X } from 'lucide-react'
+import { getScoreColor, getScoreLabel, countryMatches } from '../utils'
 
-export default function GapMap({ data, country, setSelectedEvidence }) {
+const styles = {
+  container: { display: 'flex', flexDirection: 'column', gap: '24px' },
+  controls: { background: '#fff', padding: '20px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' },
+  heatmapContainer: { overflowX: 'auto', background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' },
+  table: { borderCollapse: 'separate', borderSpacing: '4px' },
+  cell: (score, isSelected) => ({
+    width: '40px',
+    height: '40px',
+    background: getScoreColor(score),
+    borderRadius: '4px',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '0.75rem',
+    fontWeight: 800,
+    color: score > 3 ? '#065f46' : score > 0 ? '#92400e' : '#64748b',
+    border: isSelected ? '2px solid #0ea5e9' : '1px solid rgba(0,0,0,0.05)',
+    transition: 'all 0.1s'
+  }),
+  headerCell: { writingMode: 'vertical-rl', transform: 'rotate(180deg)', padding: '12px 8px', fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textAlign: 'left', minHeight: '150px' },
+  rowLabel: { padding: '8px 16px', fontSize: '0.85rem', fontWeight: 600, color: '#1e293b', textAlign: 'right', whiteSpace: 'nowrap' },
+  implicationCard: (isMobile) => ({
+    background: '#fff',
+    padding: '24px',
+    borderRadius: '12px',
+    border: '1px solid #e2e8f0',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '20px',
+    position: isMobile ? 'fixed' : 'sticky',
+    top: isMobile ? 'auto' : '24px',
+    bottom: isMobile ? '0' : 'auto',
+    left: isMobile ? '0' : 'auto',
+    right: isMobile ? '0' : 'auto',
+    zIndex: isMobile ? '100' : 'auto',
+    maxHeight: isMobile ? '70vh' : 'auto',
+    overflowY: isMobile ? 'auto' : 'visible',
+    boxShadow: isMobile ? '0 -10px 25px rgba(0,0,0,0.1)' : 'none',
+    borderTopLeftRadius: isMobile ? '24px' : '12px',
+    borderTopRightRadius: isMobile ? '24px' : '12px',
+  }),
+  badge: (score) => ({ padding: '4px 10px', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 700, background: getScoreColor(score), color: score > 3 ? '#065f46' : '#92400e', textTransform: 'uppercase' })
+}
+
+export default function GapMap({ data, country, openEvidence, isMobile }) {
+  const [selectedCell, setSelectedCell] = useState(null)
+  const [filterPrinciple, setFilterPrinciple] = useState('all')
+
   if (!data) return null
+
   const {
-    traceability_matrix = { matrix: [] },
-    principle_explainer = { explainer: [] },
+    principle_definitions = { principles: [] },
     mechanism_map = [],
-    principle_definitions = { principles: [] }
+    traceability_matrix = { matrix: [] },
+    principle_explainer = { explainer: [] }
   } = data
 
-  const [filterScore, setFilterScore] = useState('all')
-  const [selectedCell, setSelectedCell] = useState(null)
-
-  const countryName = countryMatches(country, 'mexico') ? 'Mexico' : 'Costa Rica'
-  const matrixArray = traceability_matrix.matrix || []
-  const explainerArray = principle_explainer.explainer || principle_explainer || []
-
-  const countryTraceability = matrixArray.filter(t => countryMatches(t.country, country))
-  const countryExplainer = Array.isArray(explainerArray) ? explainerArray.filter(e => countryMatches(e.country, country)) : []
-
-  const mechanisms = Array.from(new Set(countryTraceability.map(t => t.mechanism_id || t.mechanism))).sort()
+  const countryName = country === 'Mexico' ? 'Mexico' : 'Costa Rica'
   const principles = principle_definitions.principles || []
+  const mechanisms = mechanism_map.filter(m => m.country === countryName)
+  const matrix = traceability_matrix.matrix || []
+  const explainerArray = principle_explainer.explainer || []
 
-  const getScoreColor = (score) => {
-    if (score === null || score === undefined) return '#f1f5f9'
-    if (score === 0) return '#f1f5f9'
-    if (score < 2) return '#fee2e2' // Weak
-    if (score < 3) return '#fef3c7' // Partial
-    if (score < 4) return '#dcfce7' // Functional
-    return '#bbf7d0' // Strong
+  const getScore = (pId, mId) => {
+    const entry = matrix.find(e => e.country === countryName && e.principle_id === pId && e.mechanism_id === mId)
+    return entry ? parseFloat(entry.max_anchor_strength || entry.anchor_strength || 0) : 0
   }
 
-  const getCellData = (pId, mId) => {
-    return countryTraceability.find(t => t.principle_id === pId && (t.mechanism_id === mId || t.mechanism === mId))
-  }
+  const currentExplainer = selectedCell ? explainerArray.find(e =>
+    countryMatches(e.country, countryName) &&
+    e.principle_id === selectedCell.pId &&
+    e.mechanism_id === selectedCell.mId
+  ) : null
+
+  const filteredPrinciples = filterPrinciple === 'all' ? principles : principles.filter(p => p.principle_id === filterPrinciple)
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div style={styles.container}>
       <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1e293b', marginBottom: '8px' }}>Anchoring / Gap Map</h2>
-        <p style={{ color: '#64748b' }}>Heatmap of principle anchoring strength across political participation mechanisms.</p>
+        <h2 style={{ fontSize: isMobile ? '1.25rem' : '1.5rem', fontWeight: 700, color: '#1e293b', margin: 0 }}>Anchoring / Gap Map</h2>
+        <p style={{ color: '#64748b', marginTop: '8px', fontSize: isMobile ? '0.85rem' : '1rem' }}>
+          Diagnostic heatmap crossing 12 principles against detected mechanisms. {isMobile ? 'Tap' : 'Click'} any cell to view specific implications.
+        </p>
+      </div>
 
-        <div style={{ display: 'flex', gap: '16px', marginTop: '20px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem' }}>
-            <Filter size={16} color="#64748b" />
-            <span style={{ color: '#64748b', fontWeight: 500 }}>Filter Score:</span>
-            <select
-              value={filterScore}
-              onChange={e => setFilterScore(e.target.value)}
-              style={{ padding: '4px 8px', borderRadius: '4px', border: '1px solid #e2e8f0' }}
-            >
-              <option value="all">All Scores</option>
-              <option value="0">0 - Absent</option>
-              <option value="low">1-2 Weak/Partial</option>
-              <option value="high">3-5 Functional+</option>
-            </select>
-          </div>
+      <div style={styles.controls}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', width: isMobile ? '100%' : 'auto' }}>
+          <Filter size={18} color="#64748b" />
+          <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569' }}>Filter:</span>
+          <select
+            value={filterPrinciple}
+            onChange={(e) => setFilterPrinciple(e.target.value)}
+            style={{ flex: 1, padding: '8px', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '0.85rem' }}
+          >
+            <option value="all">All Principles</option>
+            {principles.map(p => <option key={p.principle_id} value={p.principle_id}>{p.principle_name.replace(/_/g, ' ')}</option>)}
+          </select>
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 350px', gap: '24px' }}>
-        {/* Heatmap Grid */}
-        <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', border: '1px solid #e2e8f0', overflowX: 'auto' }}>
-          <table style={{ borderCollapse: 'separate', borderSpacing: '4px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 350px', gap: '24px', alignItems: 'start' }}>
+        <div style={styles.heatmapContainer}>
+          <table style={styles.table}>
             <thead>
               <tr>
-                <th style={{ width: '200px' }}></th>
-                {principles.map(p => (
-                  <th key={p.principle_id} title={p.short_label || p.principle_name} style={{ width: '40px', height: '120px', verticalAlign: 'bottom', padding: '8px' }}>
-                    <div style={{ transform: 'rotate(-45deg)', transformOrigin: 'left bottom', whiteSpace: 'nowrap', fontSize: '0.7rem', color: '#64748b', width: '30px' }}>
-                      {p.short_label || p.principle_name.replace(/_/g, ' ')}
-                    </div>
-                  </th>
+                <th></th>
+                {filteredPrinciples.map(p => (
+                  <th key={p.principle_id} style={styles.headerCell}>{p.principle_name.replace(/_/g, ' ')}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {mechanisms.map(m => (
-                <tr key={m}>
-                  <td style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569', padding: '4px 8px' }}>{m.replace(/_/g, ' ')}</td>
-                  {principles.map(p => {
-                    const cell = getCellData(p.principle_id, m)
-                    const score = Number(cell?.max_anchor_strength || cell?.anchor_strength || 0)
-
-                    // Filter logic
-                    let visible = true
-                    if (filterScore === '0') visible = score === 0
-                    if (filterScore === 'low') visible = score > 0 && score < 3
-                    if (filterScore === 'high') visible = score >= 3
-
+                <tr key={m.mechanism_id}>
+                  <td style={styles.rowLabel}>{m.mechanism_name.replace(/_/g, ' ')}</td>
+                  {filteredPrinciples.map(p => {
+                    const score = getScore(p.principle_id, m.mechanism_id)
+                    const isSelected = selectedCell?.pId === p.principle_id && selectedCell?.mId === m.mechanism_id
                     return (
-                      <td
-                        key={p.principle_id}
-                        onClick={() => setSelectedCell(cell)}
-                        style={{
-                          width: '40px',
-                          height: '40px',
-                          background: getScoreColor(score),
-                          opacity: visible ? 1 : 0.2,
-                          borderRadius: '4px',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontSize: '0.75rem',
-                          fontWeight: 700,
-                          color: score > 3 ? '#166534' : '#991b1b',
-                          border: selectedCell === cell ? '2px solid #2563eb' : 'none'
-                        }}
-                      >
-                        {score > 0 ? score.toFixed(0) : ''}
+                      <td key={p.principle_id}>
+                        <div
+                          style={styles.cell(score, isSelected)}
+                          onClick={() => setSelectedCell({ pId: p.principle_id, pName: p.principle_name, mId: m.mechanism_id, mName: m.mechanism_name, score })}
+                        >
+                          {score}
+                        </div>
                       </td>
                     )
                   })}
@@ -121,57 +138,57 @@ export default function GapMap({ data, country, setSelectedEvidence }) {
           </table>
         </div>
 
-        {/* Detail Panel */}
-        <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0', height: 'fit-content' }}>
-          {selectedCell ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div>
-                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', marginBottom: '4px' }}>Selected Matrix Cell</div>
-                <h3 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#1e293b' }}>{(selectedCell.mechanism_id || selectedCell.mechanism).replace(/_/g, ' ')}</h3>
-                <div style={{ fontSize: '0.85rem', color: '#2563eb', fontWeight: 600 }}>{selectedCell.principle_id}</div>
+        {selectedCell && (
+          <div style={styles.implicationCard(isMobile)}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <div style={styles.badge(selectedCell.score)}>{getScoreLabel(selectedCell.score)}</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ fontSize: '1.25rem', fontWeight: 800 }}>{selectedCell.score}.0</div>
+                {isMobile && <button onClick={() => setSelectedCell(null)} style={{ padding: '4px', background: '#f1f5f9', border: 'none', borderRadius: '4px' }}><X size={20} /></button>}
               </div>
+            </div>
 
-              <div style={{ background: getScoreColor(selectedCell.max_anchor_strength || selectedCell.anchor_strength), padding: '12px', borderRadius: '8px' }}>
-                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#166534', marginBottom: '4px' }}>DIAGNOSTIC SCORE: {Number(selectedCell.max_anchor_strength || selectedCell.anchor_strength || 0).toFixed(1)}</div>
-                <div style={{ fontSize: '0.9rem', color: '#14532d', fontWeight: 600 }}>{selectedCell.score_label || selectedCell.anchor_label || 'Status Mapped'}</div>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#0ea5e9', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '4px' }}>
+                <Target size={14} /> {selectedCell.pId}
               </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>{selectedCell.pName.replace(/_/g, ' ')}</h3>
+            </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <div style={{ display: 'flex', gap: '10px' }}>
-                  <AlertCircle size={18} color="#f59e0b" style={{ flexShrink: 0 }} />
-                  <div>
-                    <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#92400e' }}>Implication</div>
-                    <p style={{ fontSize: '0.85rem', color: '#78350f', marginTop: '2px' }}>
-                      {countryExplainer.find(e => e.principle_id === selectedCell.principle_id && (e.mechanism_id === selectedCell.mechanism_id || e.mechanism === selectedCell.mechanism))?.plain_language_interpretation || 'General gap detected.'}
-                    </p>
-                  </div>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '4px' }}>
+                <Settings size={14} /> Mechanism
+              </div>
+              <h4 style={{ fontSize: '1rem', fontWeight: 600, margin: 0, color: '#334155' }}>{selectedCell.mName.replace(/_/g, ' ')}</h4>
+            </div>
+
+            {currentExplainer ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ fontSize: '0.9rem', color: '#475569', lineHeight: '1.6', background: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #f1f5f9' }}>
+                  <strong>Interpretation:</strong> {currentExplainer.plain_language_interpretation}
                 </div>
-
-                <div style={{ display: 'flex', gap: '10px' }}>
-                  <FileText size={18} color="#64748b" style={{ flexShrink: 0 }} />
-                  <div>
-                    <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#475569' }}>Evidence</div>
-                    <p style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '2px' }}>
-                      Diagnostic evidence shows {Number(selectedCell.max_anchor_strength || selectedCell.anchor_strength) < 3 ? 'declaratory' : 'operational'} anchoring in {selectedCell.matched_provision_count || selectedCell.source_count || 0} provisions.
-                    </p>
-                  </div>
+                <div style={{ fontSize: '0.85rem', color: '#b45309' }}>
+                  <strong>Why not higher?</strong> {currentExplainer.why_not_higher}
                 </div>
               </div>
+            ) : (
+              <div style={{ padding: '16px', background: '#f8fafc', borderRadius: '8px', color: '#64748b', fontSize: '0.85rem' }}>
+                No specific diagnostic explainer available for this cell.
+              </div>
+            )}
 
-              <button
-                onClick={() => setSelectedEvidence({ ...selectedCell, type: 'cell' })}
-                style={{ marginTop: '12px', width: '100%', padding: '10px', borderRadius: '8px', background: '#2563eb', color: '#fff', border: 'none', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-              >
-                View Full Evidence <ChevronRight size={16} />
-              </button>
-            </div>
-          ) : (
-            <div style={{ textAlign: 'center', padding: '40px 0', color: '#94a3b8' }}>
-              <div style={{ marginBottom: '12px' }}><FileText size={48} color="#e2e8f0" style={{ margin: '0 auto' }} /></div>
-              <p>Select a cell in the heatmap to view detailed diagnostic implications.</p>
-            </div>
-          )}
-        </div>
+            <button
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px', borderRadius: '8px', border: 'none', background: '#0f172a', color: '#fff', fontWeight: 600, cursor: 'pointer' }}
+              onClick={() => openEvidence({
+                type: 'principle_mechanism',
+                data: { principle_id: selectedCell.pId, mechanism_id: selectedCell.mId },
+                title: `${selectedCell.pName.replace(/_/g, ' ')} / ${selectedCell.mName.replace(/_/g, ' ')}`
+              })}
+            >
+              View Evidence <ExternalLink size={16} />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )
