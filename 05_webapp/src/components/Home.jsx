@@ -1,201 +1,172 @@
 import React from 'react'
-import { FileText, Book, Settings, Shield, Users, AlertTriangle, Share2, Info, ArrowRight, Target, CheckCircle, Database, Layers, ExternalLink } from 'lucide-react'
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+  PieChart,
+  Pie
+} from 'recharts'
+import {
+  TrendingUp,
+  AlertTriangle,
+  Shield,
+  Activity,
+  Zap,
+  ExternalLink,
+  ChevronRight,
+  Target,
+  Users,
+  BookOpen
+} from 'lucide-react'
 import { countryMatches } from '../utils'
 
 const styles = {
   container: { display: 'flex', flexDirection: 'column', gap: '32px' },
-  header: { marginBottom: '8px' },
-  summaryText: { fontSize: '1.1rem', color: '#475569', borderLeft: '4px solid #38bdf8', paddingLeft: '16px', lineHeight: '1.6' },
+  hero: {
+    background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+    padding: '48px',
+    borderRadius: '24px',
+    color: '#fff',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px'
+  },
   statGrid: (isMobile) => ({
     display: 'grid',
-    gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(auto-fill, minmax(180px, 1fr))',
-    gap: '16px'
-  }),
-  statCard: { background: '#fff', padding: '20px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '4px' },
-  statLabel: { fontSize: '0.7rem', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.025em' },
-  statValue: { fontSize: '1.25rem', fontWeight: 800, color: '#1e293b' },
-  insightGrid: (isMobile) => ({
-    display: 'grid',
-    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(350px, 1fr))',
+    gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)',
     gap: '20px'
   }),
-  insightCard: { background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', flexDirection: 'column', gap: '12px', position: 'relative', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' },
-  priorityBadge: (p) => ({
-    position: 'absolute',
-    top: '12px',
-    right: '12px',
-    padding: '4px 10px',
-    borderRadius: '9999px',
-    fontSize: '0.65rem',
-    fontWeight: 700,
-    background: p === 'High' ? '#fee2e2' : p === 'Med' ? '#fef9c3' : '#f1f5f9',
-    color: p === 'High' ? '#991b1b' : p === 'Med' ? '#854d0e' : '#475569',
-    textTransform: 'uppercase'
-  }),
-  button: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '8px',
-    padding: '10px 16px',
-    borderRadius: '8px',
-    border: '1px solid #e2e8f0',
+  statCard: {
     background: '#fff',
-    cursor: 'pointer',
-    fontSize: '0.85rem',
-    fontWeight: 600,
-    marginTop: 'auto',
-    color: '#334155',
+    padding: '24px',
+    borderRadius: '16px',
+    border: '1px solid #e2e8f0',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px'
   },
-  archGrid: (isMobile) => ({
+  insightGrid: (isMobile) => ({
     display: 'grid',
-    gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(auto-fit, minmax(240px, 1fr))',
-    gap: '16px',
-    marginTop: '16px'
+    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(380px, 1fr))',
+    gap: '24px'
   }),
-  archItem: { padding: '16px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' },
-  implication: { fontSize: '0.85rem', borderTop: '1px solid #f1f5f9', paddingTop: '12px', color: '#334155', marginTop: '4px' }
+  insightCard: {
+    background: '#fff',
+    borderRadius: '20px',
+    border: '1px solid #e2e8f0',
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
+    transition: 'transform 0.2s, box-shadow 0.2s'
+  }
 }
 
 export default function Home({ data, country, openEvidence, isMobile }) {
   if (!data) return null
 
   const {
-    legal_provisions = [],
-    source_hierarchy = [],
-    nodes = [],
-    validation_notes = [],
-    edges = [],
-    traceability_matrix = { matrix: [] },
-    system_architecture = [],
     system_level_insights = [],
-    system_gap_implications = []
+    source_hierarchy = [],
+    mechanism_map = [],
+    nodes = [],
+    traceability_matrix = []
   } = data
 
-  const countryName = countryMatches(country, 'mexico') ? 'Mexico' : 'Costa Rica'
-  const currentMatrix = traceability_matrix.matrix?.filter(m => countryMatches(m.country, country)) || []
-  const currentArch = system_architecture.find(a => countryMatches(a.country, country))
-  const currentSystemInsights = system_level_insights.filter(i => countryMatches(i.country, country))
-  const currentSystemGaps = system_gap_implications.filter(g => countryMatches(g.country, country))
+  const countryName = country === 'Mexico' ? 'Mexico' : 'Costa Rica'
 
-  const stats = {
-    provisions: legal_provisions.length,
-    instruments: source_hierarchy.length,
-    mechanisms: [...new Set(currentMatrix.map(m => m.mechanism_id))].length,
-    principles: 12,
-    actors: nodes.filter(n => countryMatches(n.country, country)).length,
-    manualReview: validation_notes.filter(n => n.manual_review_required === "true").length,
-    edges: edges.filter(e => countryMatches(e.country, country)).length,
-    caveats: currentSystemInsights.filter(i => i.insight_type.includes('caveat')).length
-  }
+  // Calculate Stats
+  const provisionCount = (Array.isArray(data.legal_provisions) ? data.legal_provisions : []).length
+  const mechanismCount = (Array.isArray(mechanism_map) ? mechanism_map : []).filter(m => countryMatches(m.country, countryName)).length
+  const actorCount = (Array.isArray(nodes) ? nodes : []).filter(n => countryMatches(n.country, countryName)).length
+  const sourceCount = (Array.isArray(source_hierarchy) ? source_hierarchy : []).length
+
+  const filteredInsights = (Array.isArray(system_level_insights) ? system_level_insights : []).filter(i => countryMatches(i.country, countryName))
 
   return (
     <div style={styles.container}>
-      <header style={styles.header}>
-        <h1 style={{ fontSize: isMobile ? '1.75rem' : '2.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '16px', letterSpacing: '-0.025em' }}>
-          Executive Analytical Summary: {countryName}
-        </h1>
-        <p style={{ ...styles.summaryText, fontSize: isMobile ? '0.95rem' : '1.1rem' }}>
-          This pilot maps <strong>{stats.provisions}</strong> legal provisions, <strong>{stats.mechanisms}</strong> mechanisms, <strong>{stats.actors}</strong> actors and <strong>{currentMatrix.length}</strong> principle-mechanism diagnostic rows for {countryName}.
+      <section style={styles.hero}>
+        <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#38bdf8', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Diagnostic Pilot</div>
+        <h1 style={{ fontSize: isMobile ? '1.75rem' : '2.5rem', fontWeight: 800, margin: 0 }}>{country} Diagnostic Summary</h1>
+        <p style={{ fontSize: isMobile ? '1rem' : '1.15rem', color: '#94a3b8', maxWidth: '800px', lineHeight: '1.6' }}>
+          This pilot maps {provisionCount} legal provisions, {mechanismCount} mechanisms, {actorCount} actors and 12 principle-mechanism diagnostic rows for {country}.
         </p>
-      </header>
+      </section>
 
-      <div style={styles.statGrid(isMobile)}>
-        <StatCard label="Legal Provisions" value={stats.provisions} icon={FileText} />
-        <StatCard label="Instruments" value={stats.instruments} icon={Book} />
-        <StatCard label="Mechanisms" value={stats.mechanisms} icon={Settings} />
-        <StatCard label="Principles" value={stats.principles} icon={Target} />
-        <StatCard label="Actors" value={stats.actors} icon={Users} />
-        <StatCard label="Review Flags" value={stats.manualReview} icon={AlertTriangle} color="#f59e0b" />
-        {!isMobile && <StatCard label="Network Edges" value={stats.edges} icon={Share2} />}
-        {!isMobile && <StatCard label="Insights" value={stats.caveats + currentSystemInsights.length} icon={Shield} />}
-      </div>
+      <section style={styles.statGrid(isMobile)}>
+        {[
+          { label: 'Instruments', value: sourceCount, icon: BookOpen, color: '#0ea5e9' },
+          { label: 'Mechanisms', value: mechanismCount, icon: Target, color: '#8b5cf6' },
+          { label: 'Actors', value: actorCount, icon: Users, color: '#10b981' },
+          { label: 'Provisions', value: provisionCount, icon: Shield, color: '#f59e0b' }
+        ].map((stat, i) => (
+          <div key={i} style={styles.statCard}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <stat.icon size={20} color={stat.color} />
+            </div>
+            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#1e293b' }}>{stat.value}</div>
+            <div style={{ fontSize: '0.85rem', color: '#64748b', fontWeight: 600 }}>{stat.label}</div>
+          </div>
+        ))}
+      </section>
 
       <section>
-        <h2 style={{ fontSize: isMobile ? '1.25rem' : '1.5rem', fontWeight: 700, marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '12px', color: '#1e293b' }}>
-          <Layers size={24} color="#38bdf8" /> Analytical Insights
-        </h2>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+          <TrendingUp size={24} color="#0ea5e9" />
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1e293b', margin: 0 }}>Analytical Insights</h2>
+        </div>
+
         <div style={styles.insightGrid(isMobile)}>
-          {currentSystemInsights.map((insight, idx) => (
+          {filteredInsights.map((insight, idx) => (
             <div key={idx} style={styles.insightCard}>
-              <div style={styles.priorityBadge(insight.review_priority)}>
-                {insight.review_priority}
+              <div style={{ padding: '24px', borderBottom: '1px solid #f1f5f9', background: '#f8fafc', flex: 1 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+                  <div style={{ padding: '4px 10px', borderRadius: '6px', background: '#e0f2fe', color: '#0369a1', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase' }}>
+                    {insight.review_priority || 'Standard'} Review
+                  </div>
+                  <Zap size={18} color="#0ea5e9" />
+                </div>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#1e293b', margin: '0 0 12px 0', lineHeight: '1.4' }}>{insight.title}</h3>
+                <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: '1.6', margin: 0 }}>{insight.analytical_finding}</p>
               </div>
-              <div style={{ fontSize: '0.7rem', color: '#38bdf8', fontWeight: 700, textTransform: 'uppercase' }}>
-                {insight.insight_type.replace(/_/g, ' ')}
-              </div>
-              <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#0f172a', marginTop: '4px' }}>{insight.title}</h3>
-              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: '1.5' }}>{insight.finding}</p>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', background: '#f8fafc', padding: '12px', borderRadius: '8px', fontSize: '0.8rem' }}>
-                <div><strong>Mechanism/Principle:</strong> {insight.affected_mechanisms || insight.affected_principles}</div>
-              </div>
-
-              <div style={styles.implication}>
-                <strong>Implication:</strong> {insight.legal_preparedness_implication}
-              </div>
-
-              <button
-                style={styles.button}
-                onClick={() => openEvidence({
-                  title: insight.title,
-                  type: 'insight',
-                  data: insight
-                })}
-              >
-                View Evidence <ExternalLink size={14} />
-              </button>
-            </div>
-          ))}
-
-          {currentSystemGaps.map((gap, idx) => (
-            <div key={`gap-${idx}`} style={{ ...styles.insightCard, borderLeft: '4px solid #ef4444' }}>
-              <div style={styles.priorityBadge('High')}>High Priority</div>
-              <div style={{ fontSize: '0.7rem', color: '#ef4444', fontWeight: 700, textTransform: 'uppercase' }}>Critical Gap</div>
-              <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#0f172a', marginTop: '4px' }}>{gap.title}</h3>
-              <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: '1.5' }}>{gap.description}</p>
-              <div style={{ fontSize: '0.85rem', color: '#991b1b', background: '#fee2e2', padding: '12px', borderRadius: '8px' }}>
-                <strong>Recommendation:</strong> {gap.recommended_action}
+              <div style={{ padding: '20px 24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <Shield size={14} color="#64748b" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <div>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Implication</div>
+                    <div style={{ fontSize: '0.85rem', color: '#1e293b' }}>{insight.implication}</div>
+                  </div>
+                </div>
+                <div style={{ marginTop: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                   <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>Source: {insight.evidence_source || 'Core Corpus'}</div>
+                   <button
+                    onClick={() => openEvidence({ type: 'insight', data: insight, title: insight.title })}
+                    style={{ background: 'none', border: 'none', color: '#0ea5e9', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
+                   >
+                     View Evidence <ExternalLink size={14} />
+                   </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section>
-        <h2 style={{ fontSize: isMobile ? '1.25rem' : '1.5rem', fontWeight: 700, marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '12px', color: '#1e293b' }}>
-          <Database size={24} color="#38bdf8" /> Legal Architecture Summary
-        </h2>
-        {currentArch && (
-          <div style={styles.archGrid(isMobile)}>
-            <ArchItem label="Dominant Anchor" value={currentArch.dominant_anchor_type} />
-            <ArchItem label="Constitutional" value={currentArch.constitutional_sources} />
-            <ArchItem label="Statutory" value={currentArch.statutory_sources} />
-            <ArchItem label="Administrative" value={currentArch.administrative_sources} />
+      <section style={{ ...styles.statCard, padding: '32px', background: '#f0f9ff', border: '1px solid #e0f2fe' }}>
+        <div style={{ display: 'flex', gap: '16px' }}>
+          <AlertTriangle size={32} color="#0369a1" style={{ flexShrink: 0 }} />
+          <div>
+            <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0369a1', margin: '0 0 8px 0' }}>Methodological Framing</h3>
+            <p style={{ fontSize: '0.95rem', color: '#0c4a6e', lineHeight: '1.6', margin: 0 }}>
+              NormTrace Political Rights evaluates whether political participation mechanisms are legally anchored and operationalised.
+              It does not assess compliance, provide legal advice, or rank countries. This mapping reflects legally encoded functional relationships, not observed behavior.
+            </p>
           </div>
-        )}
+        </div>
       </section>
-    </div>
-  )
-}
-
-function StatCard({ label, value, icon: Icon, color = '#38bdf8' }) {
-  return (
-    <div style={styles.statCard}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <span style={styles.statLabel}>{label}</span>
-        <Icon size={18} color={color} />
-      </div>
-      <div style={styles.statValue}>{value}</div>
-    </div>
-  )
-}
-
-function ArchItem({ label, value }) {
-  return (
-    <div style={styles.archItem}>
-      <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', marginBottom: '4px' }}>{label}</div>
-      <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b' }}>{value}</div>
     </div>
   )
 }

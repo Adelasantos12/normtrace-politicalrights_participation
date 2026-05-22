@@ -1,41 +1,33 @@
-export const normalizeCountry = (c) => {
-  if (!c) return ''
-  return c.toLowerCase().replace(/_/g, ' ')
-}
-
-export const countryMatches = (c1, c2) => {
-  return normalizeCountry(c1) === normalizeCountry(c2)
-}
-
-export const getCountryDataFile = (country, filename) => {
-  const norm = normalizeCountry(country)
-  if (norm === 'costa rica') {
-    return filename.startsWith('costa_rica_') ? filename : 'costa_rica_' + filename
-  }
-  return filename
+export const countryMatches = (dataCountry, selectedCountry) => {
+  if (!dataCountry || !selectedCountry) return false
+  const d = dataCountry.toLowerCase()
+  const s = selectedCountry.toLowerCase()
+  return d === s || (s === 'mexico' && d === 'mex') || (s === 'costa rica' && d === 'crc')
 }
 
 export const getScoreColor = (score) => {
-  const s = parseFloat(score);
-  if (isNaN(s)) return '#f1f5f9';
-  if (s === 0) return '#f1f5f9';
-  if (s > 0 && s < 2) return '#fee2e2';
-  if (s >= 2 && s < 3) return '#ffedd5';
-  if (s >= 3 && s < 4) return '#fef9c3';
-  if (s >= 4 && s < 5) return '#dcfce7';
-  if (s >= 5) return '#bbf7d0';
-  return '#f1f5f9';
-};
+  if (score === 0) return '#94a3b8' // absent
+  if (score < 2) return '#f87171'   // declaratory/partial
+  if (score < 4) return '#fbbf24'   // partial/functional
+  return '#10b981'                 // strong/integrated
+}
 
 export const getScoreLabel = (score) => {
-  const s = Math.round(parseFloat(score));
-  const labels = {
-    0: 'Absent',
-    1: 'Declaratory',
-    2: 'Partial Basis',
-    3: 'Functional Basis',
-    4: 'Strong Basis',
-    5: 'Integrated Basis'
-  };
-  return labels[s] || 'Unknown';
-};
+  if (score === 0) return 'Absent'
+  if (score <= 1) return 'Declaratory Only'
+  if (score <= 2) return 'Partial Basis'
+  if (score <= 3) return 'Functional Basis'
+  if (score <= 4) return 'Strong Basis'
+  return 'Integrated Basis'
+}
+
+export const getCountryDataFile = (country, fileName) => {
+  if (country === 'Mexico') return fileName
+  // For Costa Rica, most files are prefixed with costa_rica_
+  return `costa_rica_${fileName}`
+}
+
+export const normalizeId = (id) => {
+  if (!id) return ''
+  return id.toLowerCase().replace(/[\s-]/g, '_')
+}

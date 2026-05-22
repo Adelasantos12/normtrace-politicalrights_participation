@@ -18,13 +18,13 @@ export default function Principles({ data, country, openEvidence }) {
 
   const {
     principle_definitions = { principles: [] },
-    principle_summary_by_country = [],
+    principle_summary_by_country = { principle_summary: [] },
     traceability_matrix = { matrix: [] }
   } = data
 
   const countryName = country === 'Mexico' ? 'Mexico' : 'Costa Rica'
   const principles = principle_definitions.principles || []
-  const countrySummary = principle_summary_by_country.filter(s => s.country === countryName)
+  const summaryArray = principle_summary_by_country.principle_summary || []
   const matrix = traceability_matrix.matrix || []
 
   return (
@@ -38,8 +38,8 @@ export default function Principles({ data, country, openEvidence }) {
 
       <div style={styles.grid}>
         {principles.map((prin, i) => {
-          const summary = countrySummary.find(s => s.principle_id === prin.principle_id)
-          const score = summary ? parseFloat(summary.avg_anchor_strength) : 0
+          const summary = summaryArray.find(s => s.principle_id === prin.principle_id)
+          const score = summary ? parseFloat(country === 'Mexico' ? summary.mexico_avg_score : summary.costa_rica_avg_score) : 0
           const mechanismsCount = matrix.filter(m => m.country === countryName && m.principle_id === prin.principle_id).length
 
           return (
@@ -77,7 +77,7 @@ export default function Principles({ data, country, openEvidence }) {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <h4 style={{ margin: 0, fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Why it matters</h4>
                 <p style={{ margin: 0, fontSize: '0.85rem', color: '#475569' }}>
-                  {prin.legal_preparedness_relevance || 'Crucial for ensuring the legal basis and operational functionality of political participation mechanisms.'}
+                  {prin.legal_preparedness_relevance || prin.legal_preparedness_question || 'Crucial for ensuring the legal basis and operational functionality of political participation mechanisms.'}
                 </p>
               </div>
 

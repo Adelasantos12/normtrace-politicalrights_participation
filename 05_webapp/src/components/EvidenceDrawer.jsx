@@ -87,7 +87,8 @@ export default function EvidenceDrawer({ isOpen, onClose, context, country, data
     }
 
     if (context.type === 'instrument') {
-      return legal_provisions.filter(p => p.source_id === context.data.source_id)
+      const targetId = context.data.source_id || context.data.id
+      return legal_provisions.filter(p => p.source_id === targetId)
     }
 
     if (context.type === 'principle_mechanism') {
@@ -182,7 +183,6 @@ export default function EvidenceDrawer({ isOpen, onClose, context, country, data
               <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#475569', margin: '0 0 8px 0' }}>No explicit provisions found</h3>
               <p style={{ fontSize: '0.9rem', color: '#64748b', margin: 0, lineHeight: '1.5' }}>
                 The current diagnostic corpus does not contain direct statutory evidence for this specific selection.
-                This may indicate a genuine legal gap or an administrative/interpretive basis not captured in the primary text.
               </p>
             </div>
           )}

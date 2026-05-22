@@ -36,14 +36,16 @@ export default function Comparison({ data, isMobile }) {
 
   const {
     principle_definitions = { principles: [] },
-    principle_summary_by_country = []
+    principle_summary_by_country = { principle_summary: [] }
   } = data
 
   const principles = principle_definitions.principles || []
+  const summaryArray = principle_summary_by_country.principle_summary || []
 
   const getScore = (country, pId) => {
-    const entry = principle_summary_by_country.find(s => s.country === country && s.principle_id === pId)
-    return entry ? parseFloat(entry.avg_anchor_strength) : 0
+    const summary = summaryArray.find(s => s.principle_id === pId)
+    if (!summary) return 0
+    return parseFloat(country === 'Mexico' ? summary.mexico_avg_score : summary.costa_rica_avg_score)
   }
 
   return (

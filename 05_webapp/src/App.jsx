@@ -67,11 +67,19 @@ export default function App() {
       try {
         const countryPath = country === 'Mexico' ? 'mexico' : 'costa_rica';
 
-        // Helper to fetch JSON from public/data
+        // Helper to fetch JSON from public/data with resilience
         const fetchJson = async (path) => {
-          const res = await fetch(`/data/${path}`);
-          if (!res.ok) throw new Error(`Failed to load ${path}`);
-          return res.json();
+          try {
+            const res = await fetch(`/data/${path}`);
+            if (!res.ok) {
+              console.warn(`Failed to load ${path}: ${res.statusText}`);
+              return null;
+            }
+            return await res.json();
+          } catch (e) {
+            console.error(`Error fetching ${path}:`, e);
+            return null;
+          }
         };
 
         const [
@@ -82,6 +90,7 @@ export default function App() {
           system_level_insights,
           system_architecture,
           system_gap_implications,
+          instrument_insights,
           jurisprudence_index,
           nodes,
           edges,
@@ -104,6 +113,7 @@ export default function App() {
           fetchJson('instrument_system_insights/system_level_insights.json'),
           fetchJson('instrument_system_insights/system_architecture_summary.json'),
           fetchJson('instrument_system_insights/system_gap_implications.json'),
+          fetchJson('instrument_system_insights/instrument_insights.json'),
           fetchJson('jurisprudence/jurisprudence_index.json'),
           fetchJson('institutional_network_v2_functional/institutional_nodes_v2.json'),
           fetchJson('institutional_network_v2_functional/institutional_edges_v2.json'),
@@ -128,6 +138,7 @@ export default function App() {
           system_level_insights,
           system_architecture,
           system_gap_implications,
+          instrument_insights,
           jurisprudence_index,
           nodes,
           edges,
