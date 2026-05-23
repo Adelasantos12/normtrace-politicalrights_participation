@@ -1,0 +1,424 @@
+[
+  {
+    "comparison_id": "NC-CR-001",
+    "country": "Costa Rica",
+    "mechanism": "independent_candidacies",
+    "mechanism_label": "Candidaturas Independientes",
+    "principle_id": "PRIN-005",
+    "standard_id": "ACHR-23",
+    "topic": "Derecho a ser elegido sin mediación de partido político",
+    "international": {
+      "instrument": "Convención Americana sobre Derechos Humanos (ACHR)",
+      "article": "Art. 23.1(b)",
+      "text": "Todos los ciudadanos deben gozar de los siguientes derechos y oportunidades: [...] b) de votar y ser elegidos en elecciones periódicas auténticas, realizadas por sufragio universal e igual y por voto secreto que garantice la libre expresión de la voluntad de los electores.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "Corte IDH, Castañeda Gutman v. México",
+      "citation": "Excepción Preliminar, Fondo, Reparaciones y Costas. Sentencia de 6 de agosto de 2008. Serie C No. 184.",
+      "key_holding": "Un sistema que exige exclusivamente la candidatura a través de partidos políticos puede ser compatible con la CADH si se justifica en razones objetivas y proporcionales, pero la proporcionalidad debe evaluarse en contexto. Párrs. 203–218: el Estado debe justificar que el sistema de partidos es necesario y no sólo conveniente."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de Costa Rica (1949)",
+      "article": "Arts. 96–98",
+      "text": "Art. 98: Los ciudadanos tendrán el derecho de agruparse en partidos para intervenir en la política nacional, siempre que los partidos se comprometan en sus programas a respetar el orden constitucional de la República. La ley regulará la materia. — [Código Electoral Art. 48 establece que solo los partidos políticos reconocidos por el TSE podrán postular candidatos a cargos de elección popular.]",
+      "source_type": "constitutional + statutory",
+      "authority_level": "supreme"
+    },
+    "gap_type": "structural_incompatibility",
+    "gap_severity": "significant",
+    "gap_reasoning": "Costa Rica no permite candidaturas independientes: solo los partidos políticos registrados ante el TSE pueden postular candidatos a cargos de elección popular (Arts. 96–98 CN, Art. 48 Código Electoral). El ACHR Art. 23.1(b) garantiza el derecho a ser elegido, y la Corte IDH en Castañeda indicó que un sistema que canaliza toda participación a través de partidos requiere justificación objetiva y proporcional. Costa Rica no ha sido objeto de litigio interamericano específico, pero la restricción absoluta —sin ningún mecanismo alternativo— presenta tensión significativa con el estándar interamericano. La restricción no está en la lista taxativa del Art. 23.2 CADH (que solo permite restricciones por edad, nacionalidad, residencia, idioma, instrucción, capacidad civil o mental, o condena criminal).",
+    "sufficiency_assessment": "INSUFFICIENT — La prohibición de candidaturas independientes no supera el test de proporcionalidad del Art. 23.2 CADH: la exclusividad de los partidos no aparece en la lista taxativa de restricciones permitidas.",
+    "applicable_jurisprudence": [
+      "Castañeda Gutman v. México (2008) — Corte IDH Serie C No. 184",
+      "Yatama v. Nicaragua (2005) — Corte IDH Serie C No. 127: exigencia de organización a través de partidos viola CADH cuando excluye formas indígenas de organización"
+    ],
+    "recommended_action": "Reforma constitucional para permitir candidaturas independientes o mecanismos de presentación directa de candidatos, como recomendado por la Comisión de Venecia (CDL-AD(2020)037).",
+    "country_context": "Característica estructural del sistema costarricense: el monopolio de partidos ha sido históricamente justificado como garantía de accountability. Sin embargo, el Tribunal Electoral de otros países de la región ha reconocido que el monopolio absoluto puede ser incompatible con CADH."
+  },
+  {
+    "comparison_id": "NC-CR-002",
+    "country": "Costa Rica",
+    "mechanism": "recall",
+    "mechanism_label": "Revocación de Mandato",
+    "principle_id": "PRIN-004",
+    "standard_id": "IADC-ART6",
+    "topic": "Mecanismo de participación directa — revocación de mandato",
+    "international": {
+      "instrument": "Carta Democrática Interamericana (OEA)",
+      "article": "Art. 6",
+      "text": "La participación de la ciudadanía en las decisiones relativas a su propio desarrollo es un derecho y una responsabilidad. Es también una condición necesaria para el pleno y efectivo ejercicio de la democracia. Promover y fomentar diversas formas de participación fortalece la democracia.",
+      "source_type": "soft_law_significant",
+      "authority_level": "authoritative_non_binding"
+    },
+    "interpretive_authority": {
+      "instrument": "CIDH, Informe sobre Democracia y Derechos Humanos en las Américas",
+      "citation": "OEA/Ser.L/V/II. Doc. 5 Rev. 2 (2009), Cap. IV",
+      "key_holding": "La participación ciudadana directa, incluyendo mecanismos de rendición de cuentas hacia gobernantes electos, es un componente del derecho a la participación política garantizado por el Art. 23 CADH."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de Costa Rica (1949) — ausencia normativa",
+      "article": "N/A — no existe disposición",
+      "text": "[No existe en la CN ni en el Código Electoral ningún mecanismo de revocación de mandato de funcionarios electos. La CN 1949 no contempla este instrumento.]",
+      "source_type": "constitutional_gap",
+      "authority_level": "supreme"
+    },
+    "gap_type": "total_absence",
+    "gap_severity": "moderate",
+    "gap_reasoning": "Costa Rica carece de cualquier mecanismo de revocación de mandato para funcionarios electos (presidente, diputados, alcaldes). La Carta Democrática Interamericana (no vinculante) promueve formas de participación directa. Aunque el Art. 6 IADC no crea una obligación exigible ante la Corte IDH, sí refleja un estándar regional creciente. El ACHR Art. 23 garantiza el derecho de participar en la dirección de los asuntos públicos, lo que la Corte IDH ha interpretado de manera amplia. La ausencia total de revocación limita la accountability democrática entre elecciones.",
+    "sufficiency_assessment": "GAP — Ausencia total. No existe obligación vinculante de establecer revocación de mandato bajo CADH/ICCPR, pero es una brecha democrática significativa frente a estándares regionales y la práctica comparada.",
+    "applicable_jurisprudence": [
+      "Petro Urrego v. Colombia (2020) — Corte IDH: límites a la destitución de funcionarios electos por vías no electorales"
+    ],
+    "recommended_action": "Evaluar reforma constitucional para introducir revocación de mandato a nivel municipal (primer paso viable). Contexto comparado: México (presidente, Ley 2019), Ecuador, Bolivia tienen mecanismos similares.",
+    "country_context": "La ausencia refleja la tradición constitucional de 1949, diseñada para estabilidad post-guerra civil. La evaluación política actual no ha generado consenso para esta reforma."
+  },
+  {
+    "comparison_id": "NC-CR-003",
+    "country": "Costa Rica",
+    "mechanism": "electoral_remedies",
+    "mechanism_label": "Recurso Efectivo en Materia Electoral (Finalidad TSE)",
+    "principle_id": "PRIN-006",
+    "standard_id": "ACHR-25",
+    "topic": "Acceso a recurso judicial efectivo contra decisiones electorales del TSE",
+    "international": {
+      "instrument": "Convención Americana sobre Derechos Humanos",
+      "article": "Art. 25.1",
+      "text": "Toda persona tiene derecho a un recurso sencillo y rápido o a cualquier otro recurso efectivo ante los jueces o tribunales competentes, que la ampare contra actos que violen sus derechos fundamentales reconocidos por la Constitución, la ley o la presente Convención.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "Corte IDH, Caso Castillo Petruzzi v. Perú + Claude Reyes v. Chile + jurisprudencia general Art. 25",
+      "citation": "ACHR Art. 25; Corte IDH, Opinión Consultiva OC-9/87: 'garantías judiciales en estados de emergencia'",
+      "key_holding": "El derecho a un recurso efectivo es inderogable. El recurso debe ser real y no ilusorio, ante un órgano independiente, y dentro de un plazo razonable. No puede ser excluido por disposición constitucional cuando derechos fundamentales están en juego."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de Costa Rica (1949)",
+      "article": "Art. 103",
+      "text": "Las resoluciones del Tribunal Supremo de Elecciones no tienen recurso alguno, salvo las aclaraciones y adiciones que la ley establezca. — [Las decisiones del TSE en materia electoral son definitivas e inapelables por disposición constitucional.]",
+      "source_type": "constitutional",
+      "authority_level": "supreme"
+    },
+    "gap_type": "potential_remedy_gap",
+    "gap_severity": "moderate",
+    "gap_reasoning": "El Art. 103 CN establece que las resoluciones del TSE son definitivas. Si el TSE comete una violación de derechos en una decisión electoral, el sistema interno no provee una segunda instancia clara. La Sala IV ha tenido jurisprudencia vacilante: en algunos casos admite amparo cuando hay derechos fundamentales no-electorales en juego; en otros reconoce la exclusividad del TSE. El ACHR Art. 25 exige recurso efectivo ante órgano competente independiente. La finalidad absoluta del TSE puede configurar un vacío de remediación (procedural gap) en casos específicos de violación de derechos.",
+    "sufficiency_assessment": "UNCERTAIN — Requiere análisis jurisprudencial profundo caso por caso. La finalidad constitucional del TSE puede no ser incompatible per se con ACHR Art. 25 si el TSE mismo actúa como garante efectivo, pero existe un riesgo estructural cuando el TSE es al mismo tiempo autor y juez de la violación.",
+    "applicable_jurisprudence": [
+      "Corte IDH, López Lone y otros v. Honduras (2015): independencia judicial en materia electoral",
+      "Corte IDH, Tribunal Constitucional (Camba Campos) v. Ecuador (2013): garantías del juez"
+    ],
+    "recommended_action": "Clarificación legislativa o jurisprudencial sobre el alcance del amparo ante Sala IV en casos de derechos fundamentales afectados por decisiones electorales del TSE. Alternativa: mecanismo de revisión extraordinaria limitado.",
+    "country_context": "TSE como 4° Poder es una innovación constitucional notable y generalmente positiva. La finalidad de sus resoluciones electorales es funcionalmente necesaria para garantizar certeza electoral. El problema no es el diseño sino la ausencia de válvula de alivio para violaciones graves de derechos individuales."
+  },
+  {
+    "comparison_id": "NC-CR-004",
+    "country": "Costa Rica",
+    "mechanism": "citizen_initiative",
+    "mechanism_label": "Iniciativa Ciudadana (Umbral 5%)",
+    "principle_id": "PRIN-009",
+    "standard_id": "ICCPR-25",
+    "topic": "Proporcionalidad del umbral de firmas para iniciativa ciudadana",
+    "international": {
+      "instrument": "Pacto Internacional de Derechos Civiles y Políticos (ICCPR)",
+      "article": "Art. 25 + HRC GC No. 25 (1996), párrs. 4, 19",
+      "text": "Art. 25: Todo ciudadano gozará [...] del derecho y oportunidad [...] de participar en la dirección de los asuntos públicos. — GC25 párr. 6: 'Cualquier condición que se imponga al ejercicio de los derechos del artículo 25 deberá basarse en criterios objetivos y razonables.'",
+      "source_type": "treaty + general_comment",
+      "authority_level": "binding + authoritative_interpretation"
+    },
+    "interpretive_authority": {
+      "instrument": "Comité de Derechos Humanos, Observación General No. 25",
+      "citation": "HRC General Comment No. 25 (CCPR/C/21/Rev.1/Add.7, 1996), párrs. 6, 12, 19",
+      "key_holding": "Los umbrales y condiciones para la participación política deben ser objetivos, razonables y no constituir una barrera que haga el derecho ilusorio. Un umbral excesivamente alto puede equivaler a una denegación práctica del derecho."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de Costa Rica — Art. 123 + Código Electoral",
+      "article": "Art. 123 CN",
+      "text": "Sin perjuicio de la iniciativa que corresponde a los Miembros de la Asamblea Legislativa y al Poder Ejecutivo, diez mil ciudadanos inscritos en el Registro Civil tendrán también iniciativa para presentar proyectos de ley a la Asamblea Legislativa. — [Ley reguladora exige el 5% del padrón electoral, actualmente ~175,000 firmas. Además, la Asamblea Legislativa NO está obligada a votar el proyecto.]",
+      "source_type": "constitutional + statutory",
+      "authority_level": "supreme"
+    },
+    "gap_type": "threshold_disproportionality_plus_procedural_gap",
+    "gap_severity": "moderate",
+    "gap_reasoning": "El Art. 123 CN original establecía solo 10,000 ciudadanos; la ley regulatoria elevó el requisito al 5% del padrón (~175,000 firmas). Este umbral es cuatro veces mayor que el de México (0.13%). El HRC GC25 requiere que las condiciones sean razonables y no vacíen el derecho. Además, la Asamblea Legislativa no tiene obligación de votar el proyecto ni en plazo alguno — la iniciativa puede quedar archivada sin ninguna respuesta. Esto constituye un doble problema: umbral alto + ausencia de obligación procedimental de respuesta, lo que hace el derecho potencialmente ilusorio en la práctica.",
+    "sufficiency_assessment": "INSUFFICIENT — Doble deficiencia: (1) umbral de 5% probablemente desproporcionado bajo HRC GC25 comparado con práctica regional; (2) ausencia de obligación de respuesta legislativa hace el derecho procesalmente incompleto.",
+    "applicable_jurisprudence": [
+      "HRC, Observación General No. 25, párrs. 6, 12, 19 (CCPR/C/21/Rev.1/Add.7)"
+    ],
+    "recommended_action": "Reducir umbral a 1–2% del padrón (práctica comparada). Establecer obligación constitucional de que la Asamblea vote el proyecto en plazo razonable (ej. 180 días), como existe en Suiza y algunos estados mexicanos.",
+    "country_context": "El texto original de 10,000 ciudadanos en la CN era más accesible. La ley regulatoria eleva el umbral significativamente. Esta es una situación típica de 'derecho reconocido pero vaciado por la ley ordinaria': el derecho existe a nivel constitucional pero la implementación legislativa lo hace poco practicable."
+  },
+  {
+    "comparison_id": "NC-CR-005",
+    "country": "Costa Rica",
+    "mechanism": "vote",
+    "mechanism_label": "Privación de Derechos Políticos (Personas Condenadas)",
+    "principle_id": "PRIN-012",
+    "standard_id": "ICCPR-25-HRC-GC25",
+    "topic": "Suspensión automática de derechos políticos durante cumplimiento de pena",
+    "international": {
+      "instrument": "ICCPR Art. 25 + HRC GC No. 25",
+      "article": "Art. 25 + párrs. 14, 25 GC25",
+      "text": "GC25 párr. 14: 'Si el motivo para privar a una persona del derecho de voto es la condena por un delito, el período de suspensión de tal derecho debe ser proporcional al delito y a la condena [...] No es razonable privar de este derecho a todas las personas que estén cumpliendo penas por delitos menores.'",
+      "source_type": "treaty + general_comment",
+      "authority_level": "binding + authoritative_interpretation"
+    },
+    "interpretive_authority": {
+      "instrument": "Comité de Derechos Humanos, Observación General No. 25",
+      "citation": "HRC GC No. 25 (1996), párr. 14",
+      "key_holding": "La privación del derecho al voto por condena penal debe ser proporcional al delito y a la condena. Una suspensión automática para todas las personas condenadas —sin análisis caso por caso de proporcionalidad— no cumple el estándar del Art. 25 ICCPR."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de Costa Rica (1949)",
+      "article": "Art. 91",
+      "text": "La ciudadanía se suspende: 1) Por sentencia judicial que así lo declare expresamente; 2) Por inhabilitación declarada por autoridad competente.",
+      "source_type": "constitutional",
+      "authority_level": "supreme"
+    },
+    "gap_type": "proportionality_gap",
+    "gap_severity": "moderate",
+    "gap_reasoning": "Art. 91 CN permite suspensión de ciudadanía por sentencia judicial, lo que puede incluir casos con penas menores. El HRC GC25 párr. 14 exige que la restricción sea proporcional y no automática para todos los delitos. El sistema costarricense delega a la sentencia judicial la decisión (no es suspensión automática por mandato legal), lo cual es mejor que el modelo mexicano (Art. 38 CPEUM que suspende automáticamente). Sin embargo, si los jueces aplican la suspensión de manera rutinaria sin análisis de proporcionalidad, el resultado práctico puede ser incompatible con GC25. Requiere revisión de la práctica judicial.",
+    "sufficiency_assessment": "PARTIALLY SUFFICIENT — El texto constitucional (suspensión por sentencia, no automática por ley) es más alineado con GC25 que el modelo de suspensión automática. Pero la práctica judicial debe garantizar análisis de proporcionalidad caso por caso.",
+    "applicable_jurisprudence": [
+      "HRC, Hirst v. United Kingdom (ECtHR Grand Chamber, 2005): suspensión automática incompatible con ECHR — análogamente aplicable bajo ICCPR",
+      "HRC GC No. 25 párr. 14"
+    ],
+    "recommended_action": "Establecer en el Código Electoral o legislación penitenciaria criterios explícitos de proporcionalidad para la suspensión de derechos políticos según tipo de delito y duración de condena. Implementar revisión periódica del derecho al voto de personas en reclusión preventiva.",
+    "country_context": "El sistema costarricense al requerir sentencia judicial es más garantista que México. La brecha principal es la ausencia de criterios normativos explícitos de proporcionalidad que guíen a los jueces."
+  },
+  {
+    "comparison_id": "NC-CR-006",
+    "country": "Costa Rica",
+    "mechanism": "vote",
+    "mechanism_label": "Participación Electoral de Pueblos Indígenas",
+    "principle_id": "PRIN-002",
+    "standard_id": "ILO169-6-7",
+    "topic": "Ausencia de mecanismo electoral para pueblos indígenas pese a ratificación de ILO 169",
+    "international": {
+      "instrument": "Convenio 169 OIT sobre Pueblos Indígenas y Tribales",
+      "article": "Arts. 6, 7",
+      "text": "Art. 6.1: Al aplicar las disposiciones del presente Convenio, los gobiernos deberán: a) consultar a los pueblos interesados, mediante procedimientos apropiados y en particular a través de sus instituciones representativas, cada vez que se prevean medidas legislativas o administrativas susceptibles de afectarles directamente. — Art. 7.1: Los pueblos interesados deberán tener el derecho de decidir sus propias prioridades en lo que atañe al proceso de desarrollo.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "Corte IDH, Yatama v. Nicaragua (2005)",
+      "citation": "Corte IDH, Caso Yatama vs. Nicaragua. Sentencia de 23 de junio de 2005. Serie C No. 127.",
+      "key_holding": "La exclusión de candidatos indígenas que no podían cumplir requisitos diseñados para partidos políticos convencionales violó el Art. 23 CADH. Los Estados deben adoptar medidas especiales para garantizar que pueblos indígenas puedan participar efectivamente en los procesos políticos a través de sus formas de organización propias."
+    },
+    "domestic": {
+      "instrument": "Código Electoral (Ley 8765/2009) + Ley Indígena (Ley 6172/1977)",
+      "article": "Código Electoral — sin artículo específico; Ley 6172 Art. 4",
+      "text": "[El Código Electoral no contiene ninguna disposición sobre representación o participación electoral indígena. La Ley 6172/1977 reconoce reservas indígenas y ADIIS (Asociaciones de Desarrollo Indígena), pero sin conexión con el sistema electoral nacional. CONAI existe como institución de desarrollo pero no tiene función electoral.]",
+      "source_type": "statutory_gap",
+      "authority_level": "ordinary_law"
+    },
+    "gap_type": "treaty_ratification_without_electoral_implementation",
+    "gap_severity": "significant",
+    "gap_reasoning": "ILO 169 fue ratificado por Costa Rica en 1993. Treinta años después, el Código Electoral (2009) no incluye ningún mecanismo de representación o participación política específica para los 8 pueblos indígenas del país. La Corte IDH en Yatama estableció que los Estados deben adaptar sus sistemas electorales para garantizar participación efectiva de pueblos indígenas. Costa Rica reconoce formas de gobierno indígena (ADIIS) pero estas no se articulan con el sistema electoral. Esto es un caso paradigmático de 'desacoplamiento institucional': la obligación internacional existe, hay reconocimiento administrativo de las comunidades, pero no hay tubería que conecte el reconocimiento con el sistema electoral formal.",
+    "sufficiency_assessment": "INSUFFICIENT — Desacoplamiento institucional completo entre obligación ILO 169 y sistema electoral. La ratificación no ha producido implementación electoral en 30 años.",
+    "applicable_jurisprudence": [
+      "Corte IDH, Yatama v. Nicaragua (2005) — Serie C No. 127",
+      "Corte IDH, Saramaka v. Surinam (2007) — participación en decisiones sobre recursos territoriales"
+    ],
+    "recommended_action": "Reforma al Código Electoral para incluir: (1) escaños reservados o cuotas en la Asamblea Legislativa para pueblos indígenas; (2) reconocimiento de formas de organización indígena para postulación de candidatos; (3) procedimientos de consulta previa sobre legislación electoral que afecte a comunidades indígenas.",
+    "country_context": "Costa Rica cuenta con 8 pueblos indígenas reconocidos (Bribri, Cabécar, Huetares, Malekus, Borucas, Téribes, Ngäbe y Chorotegas) en 24 territorios reconocidos. La ausencia de mecanismo electoral contrasta con la robustez del sistema de paridad de género, sugiriendo una brecha específica de voluntad política en materia indígena."
+  },
+  {
+    "comparison_id": "NC-MX-001",
+    "country": "Mexico",
+    "mechanism": "vote",
+    "mechanism_label": "Suspensión Automática de Derechos Políticos (Art. 38 CPEUM vs CRPD + ICCPR)",
+    "principle_id": "PRIN-012",
+    "standard_id": "CRPD-29-ICCPR-25",
+    "topic": "Tensión entre Art. 38 CPEUM (suspensión en prisión) y CRPD Art. 29 + ICCPR GC25",
+    "international": {
+      "instrument": "CRPD Art. 29 + ICCPR Art. 25 + HRC GC No. 25",
+      "article": "CRPD Art. 29; HRC GC25 párr. 14",
+      "text": "CRPD Art. 29: Los Estados Partes garantizarán a las personas con discapacidad los derechos políticos y la posibilidad de gozar de ellos en igualdad de condiciones [...] incluyendo el derecho y la posibilidad de votar y ser elegidas, entre otras formas mediante [...] la adopción de procedimientos, instalaciones y materiales de votación que sean adecuados, accesibles y fáciles de entender y utilizar. — [CRPD Comité GC No. 1 (2014): ninguna restricción basada en capacidad jurídica o discapacidad es compatible con CRPD.] — HRC GC25 párr. 14: restricción por condena debe ser proporcional.",
+      "source_type": "treaty + general_comment",
+      "authority_level": "binding + authoritative_interpretation"
+    },
+    "interpretive_authority": {
+      "instrument": "Comité CRPD, Observación General No. 1 (2014) sobre capacidad jurídica",
+      "citation": "CRPD/C/GC/1 (2014), párrs. 46–48",
+      "key_holding": "Párr. 48: 'El derecho al voto es un derecho garantizado a todas las personas. El artículo 29 no autoriza ninguna excepción al derecho de voto de las personas con discapacidad.' Ninguna ley puede restringir el voto basándose en la capacidad jurídica o la discapacidad."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de los Estados Unidos Mexicanos (CPEUM)",
+      "article": "Art. 38 fracc. II y III",
+      "text": "Art. 38: Los derechos o prerrogativas de los ciudadanos se suspenden: [...] II. Por estar sujeto a un proceso criminal por delito que merezca pena corporal, a contar desde la fecha del auto de formal prisión; III. Durante la extinción de una pena corporal.",
+      "source_type": "constitutional",
+      "authority_level": "supreme"
+    },
+    "gap_type": "internal_constitutional_tension",
+    "gap_severity": "significant",
+    "gap_reasoning": "Art. 38 CPEUM suspende automáticamente los derechos políticos desde el auto de formal prisión (prisión preventiva incluida), sin distinción por tipo de delito ni análisis de proporcionalidad. El ICCPR GC25 párr. 14 exige que la restricción sea proporcional al delito. La SCJN en Contradicción de Tesis 293/2011 estableció que las 'restricciones expresas' en la CPEUM prevalecen sobre los tratados, lo que crea una tensión irresuelta: Art. 38 es una restricción expresa constitucional, pero su aplicación automática (incluida prisión preventiva) es incompatible con GC25 y potencialmente con CRPD. Además, si la suspensión aplica a personas en detención preventiva que aún no han sido condenadas, viola el principio de presunción de inocencia. México tiene obligaciones CRPD/ICCPR que no pueden ser disueltas por la cláusula de restricciones expresas de CT 293/2011 sin generar responsabilidad internacional.",
+    "sufficiency_assessment": "INSUFFICIENT — Art. 38 crea suspensión automática sin proporcionalidad, incluyendo presos preventivos. Incompatible con HRC GC25 párr. 14 y con CRPD Art. 29 en lo relativo a discapacidad. La cláusula de restricciones expresas (CT 293/2011) no elimina la obligación internacional.",
+    "applicable_jurisprudence": [
+      "SCJN, Contradicción de Tesis 293/2011 — bloque constitucional y restricciones expresas",
+      "HRC GC No. 25 párr. 14 — proporcionalidad de restricciones electorales",
+      "CRPD Comité GC No. 1 (2014) — capacidad jurídica y voto"
+    ],
+    "recommended_action": "Reforma constitucional al Art. 38 para: (1) excluir la suspensión automática en prisión preventiva; (2) exigir análisis judicial de proporcionalidad según el delito; (3) eliminar cualquier restricción basada en discapacidad o incapacidad legal. TEPJF debe adoptar jurisprudencia garantista mientras se procesa la reforma.",
+    "country_context": "México fue el primer país en ratificar la CRPD en LatAm (2007) y la CT 293/2011 tiene un alcance ambiguo respecto a las obligaciones convencionales. La brecha entre la postura progresista en materia de DDHH a nivel internacional y el texto constitucional de 1917 no reformado en este aspecto es notable."
+  },
+  {
+    "comparison_id": "NC-MX-002",
+    "country": "Mexico",
+    "mechanism": "electoral_authority_internal_governance",
+    "mechanism_label": "Independencia Estructural del INE (Reforma 2023)",
+    "principle_id": "PRIN-008",
+    "standard_id": "OC2821-IACHR",
+    "topic": "Elección popular de consejeros del INE y compatibilidad con OC-28/21",
+    "international": {
+      "instrument": "Corte IDH, Opinión Consultiva OC-28/21",
+      "article": "OC-28/21 (2021)",
+      "text": "Párr. 108: 'Los órganos electorales deben ser imparciales e independientes, libres de influencias políticas partidistas. El proceso de selección de sus miembros debe estar diseñado para garantizar esa independencia estructural. Un mecanismo de selección que exponga a los miembros del órgano electoral a presiones político-partidistas comprometería su independencia.' — Párr. 115: 'La elección directa de los miembros de los órganos electorales puede comprometer su independencia si el proceso no está diseñado con salvaguardas estructurales adecuadas.'",
+      "source_type": "advisory_opinion",
+      "authority_level": "highly_authoritative"
+    },
+    "interpretive_authority": {
+      "instrument": "Corte IDH, OC-28/21",
+      "citation": "Opinión Consultiva OC-28/21, 7 de junio de 2021. Solicitada por Colombia.",
+      "key_holding": "Los órganos electorales deben diseñarse con independencia estructural. El proceso de selección de sus integrantes no puede quedar expuesto a presiones político-partidistas. La legitimidad democrática de un órgano electoral proviene de su imparcialidad, no necesariamente de su elección popular directa."
+    },
+    "domestic": {
+      "instrument": "CPEUM Art. 41 (reforma constitucional en debate/aprobada 2023)",
+      "article": "Art. 41, Párrafo sobre INE",
+      "text": "Art. 41 CPEUM: El Instituto Nacional Electoral es un organismo público autónomo dotado de personalidad jurídica y patrimonio propios [...] — [Reforma 2023 (Plan B/C): introduce elección de consejeros electorales del INE por voto popular directo. Modifica el mecanismo de designación previo, que era por voto calificado del Congreso de una lista propuesta por comité técnico.]",
+      "source_type": "constitutional",
+      "authority_level": "supreme"
+    },
+    "gap_type": "implementation_structural_risk",
+    "gap_severity": "significant",
+    "gap_reasoning": "La OC-28/21 establece que la independencia estructural de los órganos electorales es un componente esencial de la democracia garantizada por la CADH y el ICCPR. La elección popular de consejeros del INE expone al órgano a presiones político-partidistas desde el proceso de campaña: los candidatos a consejeros deben hacer campaña, afiliarse a apoyos políticos, y quedar sujetos a expectativas de sus bases electorales. Esto compromete la imparcialidad estructural que la OC-28/21 exige. La SCJN parcialmente anuló la 'Plan B' electoral, pero aspectos de la reforma constitucional (que la SCJN no puede anular) pueden mantenerse vigentes. El TEPJF no puede revisar la CPEUM directamente.",
+    "sufficiency_assessment": "RISK OF INCOMPATIBILITY — La elección popular de consejeros del INE, sin salvaguardas estructurales suficientes que garanticen imparcialidad post-electoral, presenta riesgo de incompatibilidad con OC-28/21. Requiere seguimiento a implementación concreta.",
+    "applicable_jurisprudence": [
+      "Corte IDH, OC-28/21 (2021) — independencia de órganos electorales",
+      "SCJN, Acción de Inconstitucionalidad 'Plan B' (2023) — parcialmente invalidada por SCJN"
+    ],
+    "recommended_action": "Si se mantiene la elección popular de consejeros, establecer: (1) prohibición de afiliación político-partidista de candidatos; (2) periodos escalonados para evitar capturas; (3) causales estrictas de remoción por causa independiente de la votación que los eligió; (4) prohibición de reelección. Evaluar compatibilidad con OC-28/21 en implementación concreta.",
+    "country_context": "La reforma al INE es un tema políticamente central en México desde 2022-2023. El debate entre quienes argumentan legitimidad democrática de la elección popular y quienes invocan OC-28/21 sobre independencia estructural es la tensión principal. Este es un caso donde la reforma política interna puede crear incompatibilidad con el estándar interamericano."
+  },
+  {
+    "comparison_id": "NC-MX-003",
+    "country": "Mexico",
+    "mechanism": "independent_candidacies",
+    "mechanism_label": "Candidaturas Independientes — Umbrales de Firma",
+    "principle_id": "PRIN-005",
+    "standard_id": "ACHR-23",
+    "topic": "Proporcionalidad de los umbrales de firma para candidaturas independientes",
+    "international": {
+      "instrument": "ACHR Art. 23 + Corte IDH Castañeda Gutman",
+      "article": "Art. 23.1(b) ACHR; párrs. 195–218 Castañeda",
+      "text": "Art. 23.1(b): derecho a ser elegido. — Castañeda párr. 218: 'Si un Estado tiene un sistema de candidatos independientes, las condiciones de elegibilidad que se impongan a esos candidatos, incluyendo los requisitos de patrocinio, deben ser razonables y proporcionales.' — párr. 195: El Estado debe justificar que las restricciones son necesarias en una sociedad democrática.",
+      "source_type": "treaty + court_ruling",
+      "authority_level": "binding + precedent"
+    },
+    "interpretive_authority": {
+      "instrument": "Corte IDH, Castañeda Gutman v. México (2008)",
+      "citation": "Serie C No. 184, párrs. 195–218",
+      "key_holding": "Una vez establecido el sistema de candidaturas independientes, las condiciones (incluidos umbrales de firma) deben ser proporcionales y no vaciar el derecho. México fue condenado en Castañeda por no tener candidaturas independientes; al crear el sistema en 2012, asumió la obligación de diseñarlo con umbrales proporcionales."
+    },
+    "domestic": {
+      "instrument": "CPEUM Art. 35 fracc. II + LGIPE Arts. 357–389",
+      "article": "LGIPE Art. 371",
+      "text": "Art. 35 CPEUM: son prerrogativas del ciudadano [...] II. Poder ser votado para todos los cargos de elección popular, teniendo las calidades que establezca la ley. — LGIPE Art. 371: Para Presidente: firmas del 1% de la lista nominal. Para Senador: 2% de la lista nominal en la entidad. Para Diputado: 2% de la lista nominal en el distrito. [Adicionalmente, deben recolectarse de al menos 17 estados o el 40% del territorio del distrito.]",
+      "source_type": "constitutional + statutory",
+      "authority_level": "constitutional + ordinary"
+    },
+    "gap_type": "threshold_proportionality_questionable",
+    "gap_severity": "moderate",
+    "gap_reasoning": "México reconoció en Castañeda que no tenía candidaturas independientes y creó el sistema en 2012 (Art. 35 CPEUM + LGIPE). Sin embargo, los umbrales (1–2% de lista nominal nacional o distrital con requisitos geográficos adicionales) son altos para candidatos sin estructura partidista. En la primera aplicación (2015–2018), el número de candidatos que logró cumplir los requisitos fue marginal. Castañeda párr. 218 estableció que las condiciones deben ser razonables y proporcionales. El umbral del 1% nacional para presidente equivale a ~930,000 firmas (lista nominal 2021). Si bien no existe un estándar internacional fijo sobre qué porcentaje es proporcional, la combinación de umbral + distribución geográfica + plazo acotado puede crear una barrera práctica significativa.",
+    "sufficiency_assessment": "QUESTIONABLE — Sistema existe (compliant con el requisito de creación), pero los umbrales combinados pueden ser desproporcionados en práctica. Requiere evaluación empírica de efectividad real del mecanismo.",
+    "applicable_jurisprudence": [
+      "Corte IDH, Castañeda Gutman v. México (2008) — Serie C No. 184"
+    ],
+    "recommended_action": "Revisión periódica de umbrales en cada reforma electoral. Establecer mecanismo de evaluación de efectividad práctica de candidaturas independientes. Reducir requisito geográfico o establecer umbral diferenciado por nivel de la elección.",
+    "country_context": "La reforma 2012 que creó candidaturas independientes fue directamente resultado del litigio en Castañeda. México cumplió la sentencia formal pero el diseño del mecanismo merece evaluación crítica de proporcionalidad."
+  },
+  {
+    "comparison_id": "NC-MX-004",
+    "country": "Mexico",
+    "mechanism": "vote",
+    "mechanism_label": "Participación Electoral de Pueblos Indígenas — Acciones Afirmativas vs. Representación",
+    "principle_id": "PRIN-002",
+    "standard_id": "ILO169-6-7",
+    "topic": "Acciones afirmativas indígenas en candidaturas vs. ausencia de escaños reservados",
+    "international": {
+      "instrument": "Convenio 169 OIT + UNDRIP Arts. 18–19",
+      "article": "ILO 169 Arts. 6–7; UNDRIP Art. 18",
+      "text": "ILO 169 Art. 6.1(b): 'Establecer los medios a través de los cuales los pueblos interesados puedan participar libremente, por lo menos en la misma medida que otros sectores de la población, en la adopción de decisiones en instituciones electivas y organismos administrativos y de otra índole responsables de políticas y programas que les conciernan.' — UNDRIP Art. 18: 'Los pueblos indígenas tienen derecho a participar en la adopción de decisiones en las cuestiones que afecten a sus derechos, por conducto de representantes elegidos por ellos de conformidad con sus propios procedimientos.'",
+      "source_type": "treaty + soft_law",
+      "authority_level": "binding (ILO 169) + highly_authoritative (UNDRIP)"
+    },
+    "interpretive_authority": {
+      "instrument": "Corte IDH, Yatama v. Nicaragua (2005)",
+      "citation": "Serie C No. 127, párrs. 218–227",
+      "key_holding": "Los Estados deben adoptar medidas positivas para garantizar la participación efectiva de pueblos indígenas en procesos electorales, adaptando los mecanismos a sus formas de organización. Las medidas deben ser efectivas, no meramente formales."
+    },
+    "domestic": {
+      "instrument": "LGIPE Art. 329 + Acuerdo INE/CG572/2020 + TEPJF jurisprudencia",
+      "article": "LGIPE Art. 329; INE/CG572/2020",
+      "text": "LGIPE Art. 329: Los partidos políticos deberán postular candidatos indígenas en los distritos con mayor proporción de población indígena, como parte de sus acciones afirmativas obligatorias. — INE/CG572/2020: Acuerdo de acciones afirmativas para 21 distritos electorales federales con mayoría de población indígena. [No existen escaños reservados constitucionales para pueblos indígenas en Cámara o Senado.]",
+      "source_type": "statutory + administrative_agreement",
+      "authority_level": "ordinary_law + administrative"
+    },
+    "gap_type": "recognition_without_structural_guarantee",
+    "gap_severity": "moderate",
+    "gap_reasoning": "México tiene un sistema de acciones afirmativas para candidaturas indígenas (obligación de postular candidatos en 21 distritos, INE/CG572/2020) y el TEPJF ha ampliado estas acciones por jurisprudencia. Sin embargo, las acciones afirmativas son medidas administrativas que pueden ser modificadas o eliminadas sin reforma constitucional. No existen escaños reservados constitucionales para representación indígena, a diferencia de Nueva Zelanda, Colombia o Bolivia. ILO 169 exige participación 'en la misma medida que otros sectores', lo que puede requerir representación estructuralmente garantizada. La brecha es entre la existencia del mecanismo (acciones afirmativas implementadas) y la robustez constitucional del derecho (sujeto a decisiones administrativas del INE, revocables).",
+    "sufficiency_assessment": "PARTIALLY SUFFICIENT — Las acciones afirmativas abordan parcialmente la obligación de ILO 169, pero la ausencia de garantías constitucionales estructurales las hace vulnerables a reversión política. La representación indígena depende de voluntad política del INE, no de derecho constitucional.",
+    "applicable_jurisprudence": [
+      "Corte IDH, Yatama v. Nicaragua (2005) — Serie C No. 127",
+      "TEPJF, SUP-REC-0036/2021 — ampliación de acciones afirmativas indígenas"
+    ],
+    "recommended_action": "Constitucionalizar las acciones afirmativas para candidaturas indígenas. Evaluar incorporación de escaños reservados en Cámara de Diputados y Senado (siguiendo modelo colombiano o boliviano). Fortalecer mecanismos de consulta previa sobre legislación electoral.",
+    "country_context": "México tiene una de las poblaciones indígenas más grandes de LatAm (~7.1 millones según Censo 2020 hablantes de lengua indígena; ~25 millones de auto-identificados). Las acciones afirmativas implementadas desde 2020 son un avance significativo, pero su base administrativa (acuerdo INE, no CPEUM) las hace estructuralmente frágiles."
+  },
+  {
+    "comparison_id": "NC-BOTH-001",
+    "country": "Both",
+    "mechanism": "vote",
+    "mechanism_label": "Accesibilidad Electoral para Personas con Discapacidad",
+    "principle_id": "PRIN-003",
+    "standard_id": "CRPD-29",
+    "topic": "CRPD Art. 29 — voto accesible: reconocimiento genérico vs. obligaciones operativas",
+    "international": {
+      "instrument": "Convención sobre los Derechos de las Personas con Discapacidad (CRPD)",
+      "article": "Art. 29(a)(i) y (iii)",
+      "text": "Art. 29(a): Los Estados Partes garantizarán a las personas con discapacidad los derechos políticos y la posibilidad de gozar de ellos en igualdad de condiciones con las demás, y se comprometerán a: a) Asegurar que las personas con discapacidad puedan participar plena y efectivamente en la vida política y pública en igualdad de condiciones con las demás, directamente o a través de representantes libremente elegidos, incluidos el derecho y la posibilidad de votar y ser elegidas, entre otras formas mediante: i) La garantía de que los procedimientos, instalaciones y materiales electorales sean adecuados, accesibles y fáciles de entender y utilizar; [...] iii) La garantía de la libre expresión de la voluntad de las personas con discapacidad como electoras y, a este fin, cuando sea necesario y a petición de ellas, permitir que una persona de su elección les preste asistencia para votar.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "Comité CRPD, Directrices para la participación política (2013) + OG No. 1 (2014)",
+      "citation": "CRPD/C/GC/1 (2014); CRPD Committee, Guidelines on participation in political and public life (2011)",
+      "key_holding": "Los procedimientos electorales deben ser accesibles no solo físicamente sino también cognitivamente (materiales en formatos alternativos, asistencia en voto, lengua de señas). No basta con una disposición genérica de accesibilidad: se requieren obligaciones operativas específicas."
+    },
+    "domestic_mexico": {
+      "instrument": "LGIPE + Acuerdos INE",
+      "article": "LGIPE Art. 267 + INE acuerdos de accesibilidad",
+      "text": "LGIPE Art. 267: El INE tomará las medidas necesarias para que los electores con discapacidad o adultos mayores puedan ejercer su derecho al voto en condiciones adecuadas. [Las casillas deben ubicarse en lugares accesibles; existen formatos en Braille para visually impaired; pero no existe obligación legal explícita de lengua de señas, ni estándar operativo de acomodación razonable por tipo de discapacidad.]",
+      "source_type": "statutory"
+    },
+    "domestic_costa_rica": {
+      "instrument": "Código Electoral Art. 9",
+      "article": "Art. 9",
+      "text": "Código Electoral Art. 9: El TSE dispondrá de los medios necesarios para que todas las personas puedan ejercer el derecho al sufragio, incluyendo a las personas con discapacidad. [Lenguaje genérico sin especificación operativa de mecanismos por tipo de discapacidad, estándares de materiales accesibles, o protocolo de asistencia personal al votante.]",
+      "source_type": "statutory"
+    },
+    "gap_type": "recognition_without_operational_guarantee",
+    "gap_severity": "moderate",
+    "gap_reasoning": "Ambos países reconocen formalmente el voto accesible en su legislación electoral, pero con lenguaje genérico ('medidas necesarias', 'medios necesarios') sin especificar: (1) formatos de votación para personas con discapacidad cognitiva o intelectual; (2) protocolo de asistencia personal al votante elegida por el propio votante (no solo funcionarios de casilla); (3) materiales en lengua de señas o fácil lectura; (4) estándares de accesibilidad física con métricas verificables. CRPD Art. 29(a)(i) exige que los materiales sean 'adecuados, accesibles y fáciles de entender', lo que implica obligaciones específicas. El lenguaje genérico deja la implementación a la discrecionalidad administrativa.",
+    "sufficiency_assessment": "INSUFFICIENT IN BOTH — El reconocimiento existe, pero sin obligaciones operativas específicas. CRPD Art. 29 requiere más que una cláusula general de accesibilidad.",
+    "applicable_jurisprudence": [
+      "CRPD Committee GC No. 1 (2014) — capacidad jurídica y derechos políticos",
+      "CRPD/C/MEX/CO/1 (2014) — Observaciones finales México: accesibilidad electoral",
+      "CRPD/C/CRI/CO/1 (2014) — Observaciones finales Costa Rica: materiales en Braille y lengua de señas"
+    ],
+    "recommended_action": "Para ambos países: (1) Establecer en la ley electoral el catálogo específico de adaptaciones por tipo de discapacidad; (2) crear protocolo de asistencia personal al votante; (3) garantizar capacitación de funcionarios electorales en discapacidad; (4) establecer estándares verificables de casillas accesibles. Los Comités CRPD ya lo señalaron en sus Observaciones Finales a ambos países.",
+    "country_context": "Las Observaciones Finales CRPD ya identificaron estas brechas en ambos países. La diferencia es que México tiene más acuerdos operativos del INE (aunque no legalmente vinculantes), mientras Costa Rica tiene el texto más escueto del Código Electoral."
+  }
+]

@@ -1,0 +1,180 @@
+{
+  "countries": {
+    "Mexico": {
+      "iso": "MX",
+      "name": "Mexico",
+      "name_es": "México",
+      "system_type": "Federal Presidential Republic",
+      "system_type_es": "República Federal Presidencial",
+      "territory": "federal_three_level",
+      "territory_label": "Federal (3 niveles: federación, 32 estados, municipios)",
+      "legal_tradition": "Civil law romanista",
+      "government_form": "Presidential (art. 40 CPEUM)",
+      "constitution_year": 1917,
+      "constitution_current": "Constitución Política de los Estados Unidos Mexicanos (CPEUM), reformada hasta 2023",
+      "intl_law_incorporation": "Bloque de constitucionalidad vía principio pro persona",
+      "intl_law_article": "Art. 1 CPEUM (reforma 2011): todas las personas gozan de los derechos humanos reconocidos en esta Constitución y en los tratados internacionales; las normas se interpretarán favoreciendo la protección más amplia.",
+      "intl_law_note": "Reforma constitucional 2011 elevó tratados de DDHH a nivel constitucional via bloque. SCJN Contradicción de Tesis 293/2011: tratados no pueden contradecir restricciones expresas del texto constitucional, pero aplica pro persona en zonas de silencio.",
+      "treaty_hierarchy": "Treaties on human rights at constitutional level; other treaties above federal laws but below Constitution (Art. 133 CPEUM)",
+      "constitutional_review": "Amparo (individual) + Acción de Inconstitucionalidad (abstract) + Controversia Constitucional",
+      "review_body": "SCJN + TEPJF (electoral matter)",
+      "federal_complication": "32 states each enact their own electoral codes for local elections. Federal electoral law (LGIPE, LGPP) covers federal offices only. Rights may be unevenly guaranteed at state/municipal level.",
+      "key_structural_features": [
+        "Pro-persona principle obligates broadest rights interpretation (Art. 1 CPEUM)",
+        "SCJN Control de Convencionalidad: judges must apply ACHR directly",
+        "TEPJF has binding jurisprudence on electoral rights",
+        "INE (Art. 41 CPEUM): autonomous electoral authority organizing federal elections",
+        "OPLEs: state-level electoral organs for local elections, coordinated by INE",
+        "Amparo electoral: limited; TEPJF jurisdiction over most electoral rights challenges"
+      ],
+      "constitutional_pyramid": [
+        {
+          "layer": 1,
+          "label": "Bloque Constitucional",
+          "instruments": ["CPEUM + Tratados DDHH (art. 1 CPEUM, reforma 2011)"],
+          "note": "Tratados de DDHH elevados a rango constitucional. Restricciones expresas de la CPEUM prevalecen (CT 293/2011)."
+        },
+        {
+          "layer": 2,
+          "label": "Leyes Orgánicas / Generales Electorales",
+          "instruments": ["LGIPE", "LGPP", "Ley General de Consulta Popular", "Ley Federal de Revocación de Mandato"],
+          "note": "Leyes reglamentarias de artículos constitucionales electorales (arts. 35, 41, 99 CPEUM)."
+        },
+        {
+          "layer": 3,
+          "label": "Leyes Ordinarias Federales",
+          "instruments": ["Ley General de Acceso de las Mujeres a una Vida Libre de Violencia", "Ley General para la Inclusión de Personas con Discapacidad"],
+          "note": "Leyes ordinarias que tocan derechos políticos de manera transversal."
+        },
+        {
+          "layer": 4,
+          "label": "Reglamentos y Acuerdos INE",
+          "instruments": ["Reglamento INE sobre Candidaturas Independientes", "Acuerdo INE/CG572/2020 (acciones afirmativas indígenas)"],
+          "note": "Reglamentación operativa; debe ser conforme a LGIPE y CPEUM."
+        },
+        {
+          "layer": 5,
+          "label": "Leyes Estatales Electorales",
+          "instruments": ["32 Códigos o Leyes Electorales estatales"],
+          "note": "Regulan elecciones locales. Deben respetar bases constitucionales y LGIPE en lo que corresponde."
+        }
+      ],
+      "treaty_ratification": [
+        {"treaty": "ICCPR", "ratified": true, "date": "1981-03-23", "optional_protocol_1": true, "notes": ""},
+        {"treaty": "ACHR", "ratified": true, "date": "1981-03-24", "iachr_jurisdiction": true, "notes": ""},
+        {"treaty": "CEDAW", "ratified": true, "date": "1981-03-23", "optional_protocol": true, "notes": ""},
+        {"treaty": "CRPD", "ratified": true, "date": "2007-12-17", "optional_protocol": true, "notes": "Primer país en ratificar CRPD en LatAm. CRPD/C/MEX/CO/1 (2014)."},
+        {"treaty": "ILO 169", "ratified": true, "date": "1990-09-05", "notes": "Segundo país en ratificar ILO 169."},
+        {"treaty": "UNDRIP", "endorsed": true, "binding": false, "date": "2007-09-13", "notes": "No vinculante; soft law."}
+      ],
+      "key_tensions": [
+        {
+          "tension_id": "MX-T001",
+          "label": "Bloque constitucional vs. restricciones expresas (CPEUM Art. 38)",
+          "description": "Art. 1 CPEUM incorpora CRPD al bloque constitucional, pero Art. 38 contiene restricciones expresas a derechos políticos. SCJN CT 293/2011 establece que restricciones expresas del texto constitucional prevalecen sobre tratados. Esto crea una zona de tensión: ¿puede Art. 38 suspender derechos políticos aunque CRPD Art. 29 prohíba restricciones por capacidad jurídica?",
+          "severity": "significant"
+        },
+        {
+          "tension_id": "MX-T002",
+          "label": "Autonomía INE (Art. 41) vs. elección popular de consejeros (reforma 2023)",
+          "description": "Art. 41 CPEUM establece autonomía constitucional de INE. Reforma 2023 (en debate) introduciría elección popular de consejeros. OC-28/21 CIDH establece que mecanismos de selección de autoridades electorales deben garantizar independencia estructural. Elección popular puede comprometer esa independencia.",
+          "severity": "significant"
+        },
+        {
+          "tension_id": "MX-T003",
+          "label": "Federalismo y cobertura desigual de derechos",
+          "description": "Derechos de participación política se garantizan de manera diferenciada en 32 estados. Revocación de mandato solo existe para el presidente federal (Art. 35 IX CPEUM). Candidaturas independientes existen a nivel federal pero su regulación varía en estados. ILO 169 ratificado a nivel federal pero implementación varía por estado.",
+          "severity": "moderate"
+        }
+      ]
+    },
+    "Costa Rica": {
+      "iso": "CR",
+      "name": "Costa Rica",
+      "name_es": "Costa Rica",
+      "system_type": "Unitary Presidential Republic",
+      "system_type_es": "República Presidencial Unitaria",
+      "territory": "unitary_centralised",
+      "territory_label": "Unitario centralizado (7 provincias, cantons, distritos — sin autonomía legislativa subnacional)",
+      "legal_tradition": "Civil law romanista",
+      "government_form": "Presidential (art. 1 CN 1949)",
+      "constitution_year": 1949,
+      "constitution_current": "Constitución Política de Costa Rica (1949), reformada",
+      "intl_law_incorporation": "Bloque de constitucionalidad ampliado vía Sala IV",
+      "intl_law_article": "Art. 7 CN: los tratados internacionales tienen autoridad superior a las leyes. Sala IV (Voto 9469-2007 y jurisprudencia): tratados de DDHH pueden tener rango igual o superior a la CN si otorgan mayor protección.",
+      "intl_law_note": "Sala IV es el órgano que determina jerarquía en concreto. Enfoque más favorable al individuo: si tratado otorga mayor protección que la CN, prevalece el tratado. Esto es más amplio que el modelo mexicano post-CT 293/2011.",
+      "treaty_hierarchy": "DDHH treaties at supra-constitutional level when more protective; other treaties above ordinary laws (Art. 7 CN)",
+      "constitutional_review": "Recurso de amparo + Acción de inconstitucionalidad ante Sala IV (Sala Constitucional)",
+      "review_body": "Sala IV (Sala Constitucional de la Corte Suprema)",
+      "federal_complication": "No aplica — sistema unitario centralizado. Menor fragmentación normativa que México. Brecha no es entre niveles de gobierno sino entre derechos reconocidos y mecanismos operativos.",
+      "key_structural_features": [
+        "TSE es el 4° Poder del Estado (arts. 9, 99–104 CN): única autoridad electoral suprema",
+        "Decisiones electorales del TSE son definitivas e inapelables (Art. 103 CN) — tensión con ACHR Art. 25",
+        "Sala IV: amparo electoral posible en teoría, pero TSE tiene jurisdicción exclusiva en materia electoral",
+        "Voto voluntario desde 1959 (no obligatorio)",
+        "Sin candidaturas independientes: solo partidos políticos registrados (Art. 98 CN)",
+        "Paridad de género obligatoria en candidaturas (Art. 2 Código Electoral)"
+      ],
+      "constitutional_pyramid": [
+        {
+          "layer": 1,
+          "label": "Bloque de Constitucionalidad (Sala IV)",
+          "instruments": ["CN 1949 + Tratados DDHH (cuando más favorables al individuo)"],
+          "note": "Sala IV puede elevar tratados por encima de CN si otorgan mayor protección. Marco más dinámico que modelo mexicano."
+        },
+        {
+          "layer": 2,
+          "label": "Leyes Orgánicas (mayoría calificada)",
+          "instruments": ["Ley Orgánica del Tribunal Supremo de Elecciones (TSE)", "Ley Orgánica del Registro Civil"],
+          "note": "Requieren 38 votos de la Asamblea Legislativa para aprobación o reforma."
+        },
+        {
+          "layer": 3,
+          "label": "Código Electoral y Leyes Electorales",
+          "instruments": ["Código Electoral (Ley 8765/2009)", "Ley de Regulación del Referéndum (8492/2006)"],
+          "note": "Marco electoral primario. Aprobado por mayoría simple en la Asamblea."
+        },
+        {
+          "layer": 4,
+          "label": "Leyes Ordinarias",
+          "instruments": ["Ley CONAI (Comunidades Indígenas)", "Ley 7600 (accesibilidad)", "Ley contra la Discriminación"],
+          "note": "Leyes transversales que afectan participación política de grupos específicos."
+        },
+        {
+          "layer": 5,
+          "label": "Reglamentos y Resoluciones TSE",
+          "instruments": ["Reglamentos TSE", "Resoluciones del Registro Electoral"],
+          "note": "Reglamentación operativa. TSE tiene poder reglamentario exclusivo en materia electoral."
+        }
+      ],
+      "treaty_ratification": [
+        {"treaty": "ICCPR", "ratified": true, "date": "1968-11-29", "optional_protocol_1": true, "notes": "Uno de los primeros países en ratificar."},
+        {"treaty": "ACHR", "ratified": true, "date": "1970-04-08", "iachr_jurisdiction": true, "notes": "Sede de la Corte IDH en San José."},
+        {"treaty": "CEDAW", "ratified": true, "date": "1986-04-04", "optional_protocol": true, "notes": ""},
+        {"treaty": "CRPD", "ratified": true, "date": "2008-10-01", "optional_protocol": true, "notes": "CRPD/C/CRI/CO/1 (2014): accesibilidad electoral observada."},
+        {"treaty": "ILO 169", "ratified": true, "date": "1993-04-02", "notes": "Ratificado en 1993, pero sin implementación electoral específica."},
+        {"treaty": "UNDRIP", "endorsed": true, "binding": false, "date": "2007-09-13", "notes": "Respaldo político; sin mecanismo de implementación electoral."}
+      ],
+      "key_tensions": [
+        {
+          "tension_id": "CR-T001",
+          "label": "TSE Art. 103 (finalidad) vs. ACHR Art. 25 (recurso efectivo)",
+          "description": "Art. 103 CN establece que las resoluciones del TSE en materia electoral son definitivas e inapelables. ACHR Art. 25 garantiza recurso judicial efectivo ante violaciones de derechos fundamentales. Si el TSE viola derechos en una decisión electoral, ¿existe recurso efectivo? La Sala IV ha tenido posiciones variables. Corte IDH no ha resuelto directamente para Costa Rica, pero el principio de acceso a la justicia requiere al menos una instancia de revisión independiente.",
+          "severity": "significant"
+        },
+        {
+          "tension_id": "CR-T002",
+          "label": "ACHR Art. 23 (participación) vs. CN Arts. 96–98 (monopolio de partidos)",
+          "description": "ACHR Art. 23.1(b) garantiza el derecho a ser elegido en elecciones auténticas. Corte IDH en Castañeda Gutman v. México (2008) estableció que si un sistema de partidos es el único camino para acceder a cargos electivos, puede constituir una restricción desproporcionada. CN Arts. 96–98 de Costa Rica prohíben candidaturas independientes: solo partidos políticos reconocidos pueden postular candidatos. Costa Rica aún no ha sido objeto de litigio interamericano específico en este punto.",
+          "severity": "significant"
+        },
+        {
+          "tension_id": "CR-T003",
+          "label": "ILO 169 Art. 6–7 (consulta y participación indígena) vs. ausencia de mecanismo electoral",
+          "description": "ILO 169 (ratificado 1993) obliga a Costa Rica a establecer mecanismos de consulta y participación política de pueblos indígenas en asuntos que los afecten. El Código Electoral no incluye mecanismos de representación o participación electoral específica para pueblos indígenas. La Ley Indígena (CONAI) reconoce estructuras de gobierno indígena pero sin conexión con el sistema electoral formal.",
+          "severity": "significant"
+        }
+      ]
+    }
+  }
+}

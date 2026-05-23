@@ -13,7 +13,8 @@ import {
   ChevronRight,
   Menu,
   X,
-  Loader2
+  Loader2,
+  GitMerge
 } from 'lucide-react';
 
 import Home from './components/Home';
@@ -25,10 +26,12 @@ import Comparison from './components/Comparison';
 import Jurisprudence from './components/Jurisprudence';
 import Methodology from './components/Methodology';
 import EvidenceDrawer from './components/EvidenceDrawer';
+import NormDiagnostic from './components/NormDiagnostic';
 import { getCountryDataFile } from './utils';
 
 const views = [
   { id: 'home', label: 'Home', icon: LayoutDashboard },
+  { id: 'normdiagnostic', label: 'Norm Diagnostic', icon: Layers, highlight: true },
   { id: 'instruments', label: 'Instruments Reviewed', icon: BookOpen },
   { id: 'principles', label: 'Principles & Anchoring', icon: Target },
   { id: 'gapmap', label: 'Anchoring / Gap Map', icon: Map },
@@ -189,6 +192,7 @@ export default function App() {
 
     switch (activeView) {
       case 'home': return <Home data={data} country={country} openEvidence={openEvidence} isMobile={isMobile} />;
+      case 'normdiagnostic': return <NormDiagnostic country={country} isMobile={isMobile} />;
       case 'instruments': return <Instruments data={data} country={country} openEvidence={openEvidence} isMobile={isMobile} />;
       case 'principles': return <Principles data={data} country={country} openEvidence={openEvidence} isMobile={isMobile} />;
       case 'gapmap': return <GapMap data={data} country={country} openEvidence={openEvidence} isMobile={isMobile} />;
@@ -231,6 +235,7 @@ export default function App() {
         {views.map(view => {
           const Icon = view.icon;
           const isActive = activeView === view.id;
+          const isHighlight = view.highlight && !isActive;
           return (
             <button
               key={view.id}
@@ -244,16 +249,17 @@ export default function App() {
                 gap: '12px',
                 padding: '12px 16px',
                 borderRadius: '8px',
-                border: 'none',
-                backgroundColor: isActive ? '#1e293b' : 'transparent',
-                color: isActive ? '#38bdf8' : '#94a3b8',
+                border: isHighlight ? '1px solid #0ea5e920' : 'none',
+                backgroundColor: isActive ? '#1e293b' : isHighlight ? '#0c4a6e20' : 'transparent',
+                color: isActive ? '#38bdf8' : isHighlight ? '#7dd3fc' : '#94a3b8',
                 cursor: 'pointer',
                 textAlign: 'left',
                 transition: 'all 0.2s'
               }}
             >
               <Icon size={20} />
-              <span style={{ fontWeight: isActive ? 600 : 400 }}>{view.label}</span>
+              <span style={{ fontWeight: isActive ? 600 : isHighlight ? 600 : 400 }}>{view.label}</span>
+              {isHighlight && <span style={{ marginLeft: 'auto', fontSize: '0.6rem', padding: '1px 6px', background: '#0ea5e9', color: '#fff', borderRadius: '4px', fontWeight: 700 }}>NEW</span>}
               {isActive && <ChevronRight size={16} style={{ marginLeft: 'auto' }} />}
             </button>
           );
