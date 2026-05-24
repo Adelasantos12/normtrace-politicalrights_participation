@@ -92,19 +92,25 @@ export default function EvidenceDrawer({ isOpen, onClose, context, country, data
     }
 
     if (context.type === 'principle_mechanism') {
-      const { principle_id, mechanism_id } = context.data
+      const { mechanism_id } = context.data
+      // provisions don't have a principle field — filter only by mechanism
       return legal_provisions.filter(p =>
-        (p.principle || '').includes(principle_id) &&
-        (p.mechanism || '').includes(mechanism_id)
+        (p.mechanism || '').toLowerCase().includes((mechanism_id || '').toLowerCase())
       )
     }
 
     if (context.type === 'mechanism') {
-      return legal_provisions.filter(p => (p.mechanism || '').includes(context.data.mechanism_id))
+      return legal_provisions.filter(p =>
+        (p.mechanism || '').toLowerCase().includes((context.data.mechanism_id || '').toLowerCase())
+      )
     }
 
     if (context.type === 'principle') {
-      return legal_provisions.filter(p => (p.principle || '').includes(context.data.principle_id))
+      // context.data is the whole principle object with .principle_id and .related_mechanisms
+      const relatedMechs = (context.data.related_mechanisms || '').split('|').map(m => m.trim().toLowerCase())
+      return legal_provisions.filter(p =>
+        relatedMechs.some(m => m && (p.mechanism || '').toLowerCase().includes(m))
+      )
     }
 
     return []

@@ -119,13 +119,13 @@ export default function GapMap({ data, country, openEvidence, isMobile }) {
                 <tr key={m.mechanism_id}>
                   <td style={styles.rowLabel}>{m.mechanism_name.replace(/_/g, ' ')}</td>
                   {filteredPrinciples.map(p => {
-                    const score = getScore(p.principle_id, m.mechanism_id)
-                    const isSelected = selectedCell?.pId === p.principle_id && selectedCell?.mId === m.mechanism_id
+                    const score = getScore(p.principle_id, m.mechanism_name)
+                    const isSelected = selectedCell?.pId === p.principle_id && selectedCell?.mId === m.mechanism_name
                     return (
                       <td key={p.principle_id}>
                         <div
                           style={styles.cell(score, isSelected)}
-                          onClick={() => setSelectedCell({ pId: p.principle_id, pName: p.principle_name, mId: m.mechanism_id, mName: m.mechanism_name, score })}
+                          onClick={() => setSelectedCell({ pId: p.principle_id, pName: p.principle_name, mId: m.mechanism_name, mName: m.mechanism_name, score })}
                         >
                           {score}
                         </div>
@@ -171,11 +171,42 @@ export default function GapMap({ data, country, openEvidence, isMobile }) {
                   <strong>Why not higher?</strong> {currentExplainer.why_not_higher}
                 </div>
               </div>
-            ) : (
-              <div style={{ padding: '16px', background: '#f8fafc', borderRadius: '8px', color: '#64748b', fontSize: '0.85rem' }}>
-                No specific diagnostic explainer available for this cell.
-              </div>
-            )}
+            ) : (() => {
+              const matrixEntry = matrix.find(e => e.country === countryName && e.principle_id === selectedCell.pId && e.mechanism_id === selectedCell.mId)
+              return matrixEntry ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  {matrixEntry.gap_type && matrixEntry.gap_type !== 'none' && (
+                    <div style={{ padding: '10px 14px', background: '#fef2f2', borderRadius: '8px', border: '1px solid #fee2e2', fontSize: '0.82rem', color: '#991b1b' }}>
+                      <strong>Gap Type:</strong> {matrixEntry.gap_type.replace(/_/g, ' ')}
+                    </div>
+                  )}
+                  {matrixEntry.corpus_coverage_note && (
+                    <div style={{ padding: '10px 14px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #f1f5f9', fontSize: '0.82rem', color: '#475569' }}>
+                      <strong>Corpus Coverage:</strong> {matrixEntry.corpus_coverage_note.replace(/_/g, ' ')}
+                    </div>
+                  )}
+                  {matrixEntry.implementation_readiness_score !== undefined && (
+                    <div style={{ padding: '10px 14px', background: '#f0f9ff', borderRadius: '8px', border: '1px solid #e0f2fe', fontSize: '0.82rem', color: '#0369a1' }}>
+                      <strong>Implementation Readiness:</strong> {matrixEntry.implementation_readiness_score} / 5
+                    </div>
+                  )}
+                  {matrixEntry.notes && (
+                    <div style={{ padding: '10px 14px', background: '#fffbeb', borderRadius: '8px', border: '1px solid #fde68a', fontSize: '0.82rem', color: '#78350f' }}>
+                      <strong>Notes:</strong> {matrixEntry.notes}
+                    </div>
+                  )}
+                  {!matrixEntry.gap_type && !matrixEntry.corpus_coverage_note && !matrixEntry.notes && (
+                    <div style={{ padding: '16px', background: '#f8fafc', borderRadius: '8px', color: '#64748b', fontSize: '0.85rem' }}>
+                      No specific diagnostic explainer available for this cell.
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div style={{ padding: '16px', background: '#f8fafc', borderRadius: '8px', color: '#64748b', fontSize: '0.85rem' }}>
+                  No specific diagnostic explainer available for this cell.
+                </div>
+              )
+            })()}
 
             <button
               style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px', borderRadius: '8px', border: 'none', background: '#0f172a', color: '#fff', fontWeight: 600, cursor: 'pointer' }}
