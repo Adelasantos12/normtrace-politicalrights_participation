@@ -130,13 +130,14 @@ export default function NetworkView({ data, country, openEvidence, isMobile }) {
 
   const findNode = (id) => mapNodes.find(n => n.actor_id === id)
 
-  const nodeTypeColor = (type) => {
-    switch ((type || '').toLowerCase()) {
+  const nodeTypeColor = (role) => {
+    switch ((role || '').toLowerCase()) {
       case 'orchestrator': return '#1e40af'
-      case 'rights_holder': return '#0891b2'
-      case 'court': return '#7c3aed'
-      case 'legislature': return '#065f46'
-      default: return '#475569'
+      case 'adjudicator':  return '#7c3aed'
+      case 'supervisor':   return '#7c3aed'
+      case 'legislator':   return '#065f46'
+      case 'rights_holder':return '#0891b2'
+      default:             return '#64748b'
     }
   }
 
@@ -192,7 +193,7 @@ export default function NetworkView({ data, country, openEvidence, isMobile }) {
       {activeTab === 'map' && (
         <div style={styles.section}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '0.85rem' }}>
-            <Info size={16} /> This map visualizes legally encoded links. Circular layout used for clarity.
+            <Info size={16} /> Legally encoded functional relationships. Node size proportional to degree centrality; ring position reflects centrality rank.
           </div>
           <div style={{ ...styles.mapContainer, height: '660px' }}>
             <svg viewBox="0 0 800 660" style={{ width: '100%', height: '100%' }}>
@@ -230,7 +231,7 @@ export default function NetworkView({ data, country, openEvidence, isMobile }) {
                   <g key={i}>
                     <circle
                       cx={node.x} cy={node.y} r={r}
-                      fill={nodeTypeColor(node.actor_type || node.network_role)}
+                      fill={nodeTypeColor(node.network_role || node.actor_type)}
                       stroke="#fff"
                       strokeWidth="2"
                     />
@@ -257,6 +258,108 @@ export default function NetworkView({ data, country, openEvidence, isMobile }) {
               })}
             </svg>
           </div>
+
+          {/* ── Legend ── */}
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: '16px', paddingTop: '8px', borderTop: '1px solid #f1f5f9' }}>
+
+            {/* Node types */}
+            <div>
+              <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>Node Type</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                {[
+                  { color: '#1e40af', label: 'Orchestrator', sub: 'Electoral authority with active coordination mandate' },
+                  { color: '#7c3aed', label: 'Adjudicator / Supervisor', sub: 'Court, tribunal, or constitutional oversight body' },
+                  { color: '#065f46', label: 'Legislature', sub: 'Statutory authority' },
+                  { color: '#0891b2', label: 'Rights Holder', sub: 'Citizens as beneficiaries' },
+                  { color: '#64748b', label: 'Other actor', sub: 'Enforcer, subordinate, executive, political organisation' },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: item.color, flexShrink: 0, marginTop: '3px' }} />
+                    <div>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#1e293b' }}>{item.label}</span>
+                      <span style={{ fontSize: '0.68rem', color: '#94a3b8', marginLeft: '4px' }}>— {item.sub}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Node size */}
+            <div>
+              <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>Node Size</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  {[18, 13, 9].map((r, i) => (
+                    <svg key={i} width={r * 2 + 4} height={r * 2 + 4} style={{ flexShrink: 0 }}>
+                      <circle cx={r + 2} cy={r + 2} r={r} fill='#94a3b8' />
+                    </svg>
+                  ))}
+                  <span style={{ fontSize: '0.72rem', color: '#475569' }}>High → Low</span>
+                </div>
+                <p style={{ fontSize: '0.72rem', color: '#64748b', margin: 0, lineHeight: '1.5' }}>
+                  Radius is proportional to <strong>degree centrality</strong> — the total count of legally mandated functional relationships in the corpus. Larger nodes appear in more relationships across mechanisms.
+                </p>
+                <p style={{ fontSize: '0.72rem', color: '#64748b', margin: 0, lineHeight: '1.5' }}>
+                  <strong>Ring position</strong>: inner ring = top-3 by centrality; middle = next 4; outer = remaining actors.
+                </p>
+              </div>
+            </div>
+
+            {/* Edge strength */}
+            <div>
+              <div style={{ fontSize: '0.65rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>Link / Normative Anchor Strength</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
+                {[
+                  { color: '#22c55e', label: 'Strong anchor (score ≥ 4)', sub: 'Relationship mandated by constitutional or organic statute with an enforcement mechanism.' },
+                  { color: '#f59e0b', label: 'Moderate anchor (score 2–3)', sub: 'Statutory relationship, legally recognised but without mandatory enforcement timeline.' },
+                  { color: '#94a3b8', label: 'Weak / inferred link (score < 2)', sub: 'Discretionary or inferred relationship; not directly mandated by a specific provision.' },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                    <svg width='20' height='12' style={{ flexShrink: 0, marginTop: '3px' }}>
+                      <line x1='0' y1='6' x2='20' y2='6' stroke={item.color} strokeWidth='2.5' />
+                    </svg>
+                    <div>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#1e293b' }}>{item.label}</span>
+                      <div style={{ fontSize: '0.68rem', color: '#94a3b8', marginTop: '1px', lineHeight: '1.4' }}>{item.sub}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Interpretation caption ── */}
+          <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '20px 24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Network Topology — Analytical Interpretation</div>
+
+            {countryName === 'Mexico' ? (
+              <>
+                <p style={{ margin: 0, fontSize: '0.82rem', color: '#334155', lineHeight: '1.65' }}>
+                  The network displays a <strong>polycentric institutional architecture</strong> (Ostrom, 1990) in which electoral governance is distributed across three structural hubs: the <em>Cámara de Diputados</em> (degree centrality 18.4), the INE (17.1), and the SCJN (15.2). This tripartite configuration — legislature as statutory creator, INE as administrative orchestrator, SCJN as constitutional supervisor — reflects an institutional logic of distributed veto: normative change in the electoral domain requires the simultaneous alignment of all three hubs, a pattern consistent with Tsebelis's (2002) theory of institutional veto players. The INE's central position embodies a constitutional mandate of autonomous electoral management (CPEUM Art. 41) structurally insulated from partisan control — the principal design rationale for an independent electoral management body (North, 1990).
+                </p>
+                <p style={{ margin: 0, fontSize: '0.82rem', color: '#334155', lineHeight: '1.65' }}>
+                  <em>Ciudadanos/as</em> present a structurally asymmetric profile: high in-degree (145 incoming normative mandates) but very low out-degree (31). The system is architecturally oriented to <em>deliver</em> political rights rather than to activate citizen-led institutional processes — a structural feature that limits bottom-up accountability channels. The <em>Senado de la República</em>'s anomalously low centrality (0.167) reveals a formal–functional mismatch: despite its constitutional status as co-legislator, it holds minimal operational role in federal electoral administration under LGIPE. Strong-anchor edges (green) between orchestration hubs confirm constitutionally robust inter-institutional relationships; moderate-anchor edges (amber) connecting oversight bodies and citizen-facing actors identify relationships that are legally recognised but lack mandatory enforcement timelines, tracing the implementation gaps visible in the Anchoring / Gap Map.
+                </p>
+              </>
+            ) : (
+              <>
+                <p style={{ margin: 0, fontSize: '0.82rem', color: '#334155', lineHeight: '1.65' }}>
+                  The Costa Rican network exhibits a <strong>hub-and-spoke topology</strong> centred on the <em>Tribunal Supremo de Elecciones</em> (TSE; degree centrality 8.8), consistent with its constitutional designation as the Fourth Branch of State (CN Arts. 99–103). This monocentric concentration — in contrast to Mexico's distributed polycentric model — provides decisional clarity and insulates electoral governance from executive and legislative interference. It simultaneously creates a single structural point of failure: if the TSE's independence is compromised, no backstop institution exists with clear jurisdiction within the electoral domain (Tsebelis, 2002).
+                </p>
+                <p style={{ margin: 0, fontSize: '0.82rem', color: '#334155', lineHeight: '1.65' }}>
+                  The <em>Poder Ejecutivo</em> registers high in-degree (59) but zero out-degree — it receives normative flows but does not formally produce them within the electoral domain — operationalising the intentional insulation of electoral administration from executive power (North, 1990). <em>Ciudadanos/as</em> similarly show zero out-degree: the system channels rights <em>towards</em> citizens without formal mechanisms for citizen-initiated institutional challenge. The <em>Sala IV</em>'s intermediate position (degree 3.4) maps the structural tension identified in CPL-CR-003: it holds residual jurisdiction over fundamental rights adjacent to electoral decisions, yet Art. 103 CN insulates TSE resolutions from appellate review. The near-total dominance of strong-anchor edges (green) reflects Costa Rica's constitutionally dense electoral framework; moderate-anchor edges (amber) cluster around indigenous participation and citizen initiative mechanisms, tracing the implementation gaps in CPL-CR-002 and CPL-CR-004.
+                </p>
+              </>
+            )}
+
+            <div style={{ fontSize: '0.68rem', color: '#94a3b8', borderTop: '1px solid #e2e8f0', paddingTop: '10px', lineHeight: '1.5' }}>
+              <strong style={{ color: '#64748b' }}>References:</strong>{' '}
+              North, D.C. (1990). <em>Institutions, Institutional Change and Economic Performance</em>. Cambridge University Press.{' '}
+              Ostrom, E. (1990). <em>Governing the Commons: The Evolution of Institutions for Collective Action</em>. Cambridge University Press.{' '}
+              Tsebelis, G. (2002). <em>Veto Players: How Political Institutions Work</em>. Princeton University Press.
+            </div>
+          </div>
+
         </div>
       )}
 
