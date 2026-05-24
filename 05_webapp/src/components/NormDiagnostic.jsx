@@ -72,8 +72,8 @@ function SystemArchitecture({ systemCtx, country }) {
             <h2 style={{ fontSize: '1.4rem', fontWeight: 800, margin: '0 0 6px 0', color: '#38bdf8' }}>
               {profile.name_es || profile.name}
             </h2>
-            <p style={{ margin: '0 0 4px 0', color: '#94a3b8', fontSize: '0.85rem' }}>{profile.system_type_es}</p>
-            <p style={{ margin: 0, color: '#64748b', fontSize: '0.8rem' }}>{profile.territory_label}</p>
+            <p style={{ margin: '0 0 4px 0', color: '#94a3b8', fontSize: '0.85rem' }}>{profile.system_type}</p>
+            <p style={{ margin: 0, color: '#64748b', fontSize: '0.8rem' }}>{profile.territory_label_en || profile.territory_label}</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-end' }}>
             <Badge text={profile.legal_tradition} color="#38bdf8" bg="#0c4a6e" />
@@ -479,7 +479,7 @@ function InstrumentCoupling({ couplings, country }) {
           {[
             { status: 'coupled', desc: 'Full pipe — the right flows through' },
             { status: 'partial', desc: 'Partial pipe — flow is restricted' },
-            { status: 'decoupled', desc: 'TUBERÍA ROTA (Broken Pipe) — blocked or missing' },
+            { status: 'decoupled', desc: 'Broken pipe — the normative cascade is broken here' },
             { status: 'tension', desc: 'Pipe under internal pressure — conflicting norms' },
             { status: 'potential_gap', desc: 'Questionable valve — uncertain connection' },
           ].map(({ status, desc }) => {
@@ -662,9 +662,9 @@ export default function NormDiagnostic({ country, isMobile }) {
   }, [])
 
   const tabs = [
-    { id: 'system', label: 'Sistema Normativo', icon: Layers, desc: 'Normative system architecture' },
-    { id: 'comparison', label: 'Comparación de Normas', icon: Scale, desc: 'International standard vs. domestic law' },
-    { id: 'coupling', label: 'Acoplamiento Jurídico', icon: GitMerge, desc: 'Flow map and decoupling points' },
+    { id: 'system', label: 'Normative System', icon: Layers, desc: 'Constitutional architecture and treaty status' },
+    { id: 'comparison', label: 'Norm Comparison', icon: Scale, desc: 'International standard vs. domestic law' },
+    { id: 'coupling', label: 'Norm Coupling', icon: GitMerge, desc: 'Hierarchical flow map and decoupling points' },
   ]
 
   const countryComparisons = (comparisons || []).filter(c => c.country === country || c.country === 'Both')

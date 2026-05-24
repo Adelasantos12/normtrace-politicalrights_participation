@@ -157,9 +157,11 @@ export default function EvidenceDrawer({ isOpen, onClose, context, country, data
               {filtered.map((p, i) => (
                 <div key={i} style={styles.provisionCard}>
                   <div style={styles.provisionHeader}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 700, fontSize: '0.85rem', color: '#1e293b' }}>
-                      <Bookmark size={14} color="#38bdf8" />
-                      {p.source_id} {p.article ? `Art. ${p.article}` : ''}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600, fontSize: '0.78rem', color: '#1e293b', flex: 1, minWidth: 0 }}>
+                      <Bookmark size={14} color="#38bdf8" style={{ flexShrink: 0 }} />
+                      <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                        {p.source_title || p.source_id}{p.article ? ` — Art. ${p.article}${p.subdivision ? ` Fr. ${p.subdivision}` : ''}` : ''}
+                      </span>
                     </div>
                     <div style={styles.tag}>{p.source_type || 'Provision'}</div>
                   </div>

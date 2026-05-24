@@ -84,7 +84,7 @@ export default function NetworkView({ data, country, openEvidence, isMobile }) {
   // Concentric ring layout sorted by centrality
   const mapNodes = useMemo(() => {
     const centerX = 400
-    const centerY = 300
+    const centerY = 320
 
     // Sort by degree_centrality descending
     const sorted = [...countryNodes].sort((a, b) => {
@@ -96,11 +96,11 @@ export default function NetworkView({ data, country, openEvidence, isMobile }) {
     return sorted.map((node, i) => {
       const centralityData = countryCentrality.find(c => c.actor_id === node.actor_id)
       const centrality = centralityData?.degree_centrality || 0
-      // Ring assignment: top 3 → inner (120), next 4 → middle (230), rest → outer (330)
+      // Ring assignment: top 3 → inner (100), next 4 → middle (195), rest → outer (275)
       let ringRadius, ringGroup
-      if (i < 3) { ringRadius = 120; ringGroup = sorted.filter((_, idx) => idx < 3) }
-      else if (i < 7) { ringRadius = 230; ringGroup = sorted.filter((_, idx) => idx >= 3 && idx < 7) }
-      else { ringRadius = 330; ringGroup = sorted.filter((_, idx) => idx >= 7) }
+      if (i < 3) { ringRadius = 100; ringGroup = sorted.filter((_, idx) => idx < 3) }
+      else if (i < 7) { ringRadius = 195; ringGroup = sorted.filter((_, idx) => idx >= 3 && idx < 7) }
+      else { ringRadius = 275; ringGroup = sorted.filter((_, idx) => idx >= 7) }
 
       const groupIndex = ringGroup.indexOf(node)
       const angle = (groupIndex / ringGroup.length) * 2 * Math.PI - Math.PI / 2
@@ -194,8 +194,8 @@ export default function NetworkView({ data, country, openEvidence, isMobile }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '0.85rem' }}>
             <Info size={16} /> This map visualizes legally encoded links. Circular layout used for clarity.
           </div>
-          <div style={{ ...styles.mapContainer, height: '600px' }}>
-            <svg viewBox="0 0 800 600" style={{ width: '100%', height: '100%' }}>
+          <div style={{ ...styles.mapContainer, height: '660px' }}>
+            <svg viewBox="0 0 800 660" style={{ width: '100%', height: '100%' }}>
               <defs>
                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="15" refY="3.5" orient="auto">
                   <polygon points="0 0, 10 3.5, 0 7" fill="#cbd5e1" />
