@@ -8,24 +8,24 @@ import {
 
 // ── Coupling status config ──────────────────────────────────────────────────
 const COUPLING_CONFIG = {
-  coupled:       { color: '#10b981', bg: '#d1fae5', border: '#6ee7b7', label: 'Acoplado',            icon: CheckCircle },
-  partial:       { color: '#f59e0b', bg: '#fef3c7', border: '#fcd34d', label: 'Parcial',              icon: MinusCircle },
-  decoupled:     { color: '#ef4444', bg: '#fee2e2', border: '#fca5a5', label: 'Desacoplado',          icon: XCircle },
-  tension:       { color: '#8b5cf6', bg: '#ede9fe', border: '#c4b5fd', label: 'Tensión',              icon: AlertTriangle },
-  potential_gap: { color: '#6366f1', bg: '#e0e7ff', border: '#a5b4fc', label: 'Posible brecha',       icon: AlertCircle },
+  coupled:       { color: '#10b981', bg: '#d1fae5', border: '#6ee7b7', label: 'Coupled',            icon: CheckCircle },
+  partial:       { color: '#f59e0b', bg: '#fef3c7', border: '#fcd34d', label: 'Partial',             icon: MinusCircle },
+  decoupled:     { color: '#ef4444', bg: '#fee2e2', border: '#fca5a5', label: 'Decoupled',           icon: XCircle },
+  tension:       { color: '#8b5cf6', bg: '#ede9fe', border: '#c4b5fd', label: 'Tension',             icon: AlertTriangle },
+  potential_gap: { color: '#6366f1', bg: '#e0e7ff', border: '#a5b4fc', label: 'Potential Gap',       icon: AlertCircle },
 }
 
 const GAP_SEVERITY = {
-  critical:      { color: '#ef4444', bg: '#fee2e2', label: 'Crítico' },
-  significant:   { color: '#f97316', bg: '#ffedd5', label: 'Significativo' },
-  moderate:      { color: '#f59e0b', bg: '#fef3c7', label: 'Moderado' },
-  low:           { color: '#10b981', bg: '#d1fae5', label: 'Bajo' },
+  critical:      { color: '#ef4444', bg: '#fee2e2', label: 'Critical' },
+  significant:   { color: '#f97316', bg: '#ffedd5', label: 'Significant' },
+  moderate:      { color: '#f59e0b', bg: '#fef3c7', label: 'Moderate' },
+  low:           { color: '#10b981', bg: '#d1fae5', label: 'Low' },
 }
 
 const REFORM_URGENCY = {
-  high:     { color: '#ef4444', label: 'Urgente' },
-  moderate: { color: '#f59e0b', label: 'Moderada' },
-  low:      { color: '#10b981', label: 'Baja' },
+  high:     { color: '#ef4444', label: 'Urgent' },
+  moderate: { color: '#f59e0b', label: 'Moderate' },
+  low:      { color: '#10b981', label: 'Low' },
 }
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -60,7 +60,7 @@ function SectionTitle({ icon: Icon, children }) {
 // ── TAB 1: Normative System Architecture ────────────────────────────────────
 function SystemArchitecture({ systemCtx, country }) {
   const profile = systemCtx?.countries?.[country]
-  if (!profile) return <p style={{ color: '#64748b' }}>No hay datos de sistema para {country}.</p>
+  if (!profile) return <p style={{ color: '#64748b' }}>No system data available for {country}.</p>
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
@@ -82,7 +82,7 @@ function SystemArchitecture({ systemCtx, country }) {
         </div>
         <div style={{ marginTop: '20px', padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '10px', borderLeft: '3px solid #38bdf8' }}>
           <p style={{ margin: '0 0 6px 0', fontSize: '0.75rem', color: '#7dd3fc', fontWeight: 700, textTransform: 'uppercase' }}>
-            Incorporación del derecho internacional
+            International Law Incorporation
           </p>
           <p style={{ margin: '0 0 4px 0', fontSize: '0.85rem', color: '#e2e8f0', fontWeight: 600 }}>{profile.intl_law_incorporation}</p>
           <p style={{ margin: 0, fontSize: '0.78rem', color: '#94a3b8' }}>{profile.intl_law_article}</p>
@@ -91,7 +91,7 @@ function SystemArchitecture({ systemCtx, country }) {
 
       {/* Constitutional pyramid */}
       <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <SectionTitle icon={Layers}>Jerarquía Normativa</SectionTitle>
+        <SectionTitle icon={Layers}>Normative Hierarchy</SectionTitle>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {(profile.constitutional_pyramid || []).map((tier, idx) => {
             const width = Math.max(40, 100 - (idx * 12))
@@ -129,12 +129,12 @@ function SystemArchitecture({ systemCtx, country }) {
 
       {/* Treaty ratification table */}
       <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <SectionTitle icon={Globe}>Estado de Tratados Relevantes</SectionTitle>
+        <SectionTitle icon={Globe}>Relevant Treaty Status</SectionTitle>
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
             <thead>
               <tr style={{ background: '#f8fafc' }}>
-                {['Tratado', 'Ratificado', 'Fecha', 'Protocolo Facultativo', 'Notas'].map(h => (
+                {['Treaty', 'Ratified', 'Date', 'Optional Protocol', 'Notes'].map(h => (
                   <th key={h} style={{ padding: '10px 14px', textAlign: 'left', fontWeight: 700, color: '#64748b', borderBottom: '2px solid #e2e8f0', whiteSpace: 'nowrap' }}>{h}</th>
                 ))}
               </tr>
@@ -145,9 +145,9 @@ function SystemArchitecture({ systemCtx, country }) {
                   <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1e293b' }}>{t.treaty}</td>
                   <td style={{ padding: '10px 14px' }}>
                     {t.ratified ? (
-                      <span style={{ color: '#10b981', fontWeight: 700 }}>✓ Sí</span>
+                      <span style={{ color: '#10b981', fontWeight: 700 }}>✓ Yes</span>
                     ) : t.endorsed ? (
-                      <span style={{ color: '#f59e0b', fontWeight: 700 }}>~ Respaldado</span>
+                      <span style={{ color: '#f59e0b', fontWeight: 700 }}>~ Endorsed</span>
                     ) : (
                       <span style={{ color: '#ef4444', fontWeight: 700 }}>✗ No</span>
                     )}
@@ -172,7 +172,7 @@ function SystemArchitecture({ systemCtx, country }) {
 
       {/* Key structural tensions */}
       <div style={{ background: '#fff', padding: '24px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <SectionTitle icon={AlertTriangle}>Tensiones Estructurales del Sistema</SectionTitle>
+        <SectionTitle icon={AlertTriangle}>Key Structural Tensions</SectionTitle>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
           {(profile.key_tensions || []).map((t, i) => {
             const cfg = GAP_SEVERITY[t.severity] || GAP_SEVERITY.moderate
@@ -194,7 +194,7 @@ function SystemArchitecture({ systemCtx, country }) {
         <div style={{ background: '#fefce8', padding: '16px 20px', borderRadius: '10px', border: '1px solid #fde047', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
           <Info size={16} color="#ca8a04" style={{ flexShrink: 0, marginTop: '2px' }} />
           <div>
-            <p style={{ margin: '0 0 4px 0', fontWeight: 700, fontSize: '0.8rem', color: '#713f12' }}>Implicación del tipo de Estado</p>
+            <p style={{ margin: '0 0 4px 0', fontWeight: 700, fontSize: '0.8rem', color: '#713f12' }}>State Structure Implication</p>
             <p style={{ margin: 0, fontSize: '0.78rem', color: '#854d0e' }}>{profile.federal_complication}</p>
           </div>
         </div>
@@ -237,7 +237,7 @@ function NormComparisonPanel({ comparisons, country }) {
 
       {/* Filter bar */}
       <div style={{ background: '#fff', padding: '16px 20px', borderRadius: '10px', border: '1px solid #e2e8f0', display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
-        <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>Filtrar por brecha:</span>
+        <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>Filter by gap type:</span>
         {gapTypes.map(g => (
           <button key={g} onClick={() => setFilter(g)} style={{
             padding: '4px 12px', borderRadius: '6px', border: '1px solid',
@@ -246,7 +246,7 @@ function NormComparisonPanel({ comparisons, country }) {
             color: filter === g ? '#0369a1' : '#64748b',
             cursor: 'pointer', fontSize: '0.72rem', fontWeight: filter === g ? 700 : 400
           }}>
-            {g === 'all' ? 'Todas' : g.replace(/_/g, ' ')}
+            {g === 'all' ? 'All' : g.replace(/_/g, ' ')}
           </button>
         ))}
       </div>
@@ -275,7 +275,7 @@ function NormComparisonPanel({ comparisons, country }) {
                   <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#1e293b' }}>{c.mechanism_label}</span>
                   <div style={{ display: 'flex', gap: '6px' }}>
                     <Badge text={cfg.label} color={cfg.color} bg={cfg.bg} small />
-                    {c.country === 'Both' && <Badge text="Ambos países" color="#6366f1" bg="#e0e7ff" small />}
+                    {c.country === 'Both' && <Badge text="Both countries" color="#6366f1" bg="#e0e7ff" small />}
                   </div>
                 </div>
                 <p style={{ margin: 0, fontSize: '0.75rem', color: '#64748b' }}>{c.topic}</p>
@@ -305,7 +305,7 @@ function NormComparisonPanel({ comparisons, country }) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
                   <Globe size={14} color="#0ea5e9" />
                   <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#0ea5e9', textTransform: 'uppercase' }}>
-                    Estándar Internacional
+                    International Standard
                   </span>
                   <Badge text={sel.international.authority_level.replace(/_/g, ' ')} color="#0ea5e9" bg="#e0f2fe" small />
                 </div>
@@ -323,7 +323,7 @@ function NormComparisonPanel({ comparisons, country }) {
               {sel.interpretive_authority && (
                 <div style={{ marginBottom: '14px', padding: '10px 14px', background: '#f8fafc', borderRadius: '8px', borderLeft: '3px solid #6366f1' }}>
                   <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: '#6366f1', textTransform: 'uppercase' }}>
-                    Autoridad interpretativa
+                    Interpretive Authority
                   </p>
                   <p style={{ margin: '0 0 4px 0', fontSize: '0.75rem', fontWeight: 700, color: '#312e81' }}>
                     {sel.interpretive_authority.instrument}
@@ -339,7 +339,7 @@ function NormComparisonPanel({ comparisons, country }) {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
                     <BookOpen size={14} color="#64748b" />
                     <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>
-                      Derecho Doméstico — {sel.country === 'Both' ? 'Ver detalle por país' : sel.country}
+                      Domestic Law — {sel.country === 'Both' ? 'See per-country detail below' : sel.country}
                     </span>
                   </div>
                   <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', borderLeft: '3px solid #94a3b8' }}>
@@ -353,7 +353,7 @@ function NormComparisonPanel({ comparisons, country }) {
                   {/* Both-country domestics */}
                   {sel.domestic_mexico && (
                     <div style={{ marginTop: '10px', background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', borderLeft: '3px solid #16a34a' }}>
-                      <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: '#15803d', textTransform: 'uppercase' }}>México</p>
+                      <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: '#15803d', textTransform: 'uppercase' }}>Mexico</p>
                       <p style={{ margin: '0 0 4px 0', fontSize: '0.75rem', fontWeight: 600, color: '#475569' }}>{sel.domestic_mexico.instrument} — {sel.domestic_mexico.article}</p>
                       <p style={{ margin: 0, fontSize: '0.75rem', color: '#334155', fontStyle: 'italic', lineHeight: 1.5 }}>"{sel.domestic_mexico.text}"</p>
                     </div>
@@ -370,14 +370,14 @@ function NormComparisonPanel({ comparisons, country }) {
 
               {/* Gap reasoning */}
               <div style={{ marginBottom: '14px', padding: '14px', background: '#fffbeb', borderRadius: '8px', borderLeft: '3px solid #f59e0b' }}>
-                <p style={{ margin: '0 0 6px 0', fontSize: '0.72rem', fontWeight: 700, color: '#b45309', textTransform: 'uppercase' }}>Razonamiento de la brecha</p>
+                <p style={{ margin: '0 0 6px 0', fontSize: '0.72rem', fontWeight: 700, color: '#b45309', textTransform: 'uppercase' }}>Gap Reasoning</p>
                 <p style={{ margin: 0, fontSize: '0.78rem', color: '#78350f', lineHeight: 1.65 }}>{sel.gap_reasoning}</p>
               </div>
 
               {/* Sufficiency */}
               <div style={{ marginBottom: '14px', padding: '12px 14px', background: '#f8fafc', borderRadius: '8px', borderLeft: `4px solid ${sufficiencyColor(sel.sufficiency_assessment)}` }}>
                 <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: sufficiencyColor(sel.sufficiency_assessment), textTransform: 'uppercase' }}>
-                  Evaluación de suficiencia
+                  Sufficiency Assessment
                 </p>
                 <p style={{ margin: 0, fontSize: '0.8rem', color: '#1e293b', fontWeight: 600, lineHeight: 1.5 }}>{sel.sufficiency_assessment}</p>
               </div>
@@ -385,7 +385,7 @@ function NormComparisonPanel({ comparisons, country }) {
               {/* Jurisprudence */}
               {sel.applicable_jurisprudence?.length > 0 && (
                 <div style={{ marginBottom: '14px' }}>
-                  <p style={{ margin: '0 0 8px 0', fontSize: '0.72rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Jurisprudencia aplicable</p>
+                  <p style={{ margin: '0 0 8px 0', fontSize: '0.72rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Applicable Jurisprudence</p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                     {sel.applicable_jurisprudence.map((j, i) => (
                       <div key={i} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
@@ -400,7 +400,7 @@ function NormComparisonPanel({ comparisons, country }) {
               {/* Recommended action */}
               {sel.recommended_action && (
                 <div style={{ padding: '12px 14px', background: '#f0fdf4', borderRadius: '8px', borderLeft: '3px solid #10b981' }}>
-                  <p style={{ margin: '0 0 4px 0', fontSize: '0.72rem', fontWeight: 700, color: '#065f46', textTransform: 'uppercase' }}>Acción recomendada</p>
+                  <p style={{ margin: '0 0 4px 0', fontSize: '0.72rem', fontWeight: 700, color: '#065f46', textTransform: 'uppercase' }}>Recommended Action</p>
                   <p style={{ margin: 0, fontSize: '0.78rem', color: '#064e3b', lineHeight: 1.6 }}>{sel.recommended_action}</p>
                 </div>
               )}
@@ -473,15 +473,15 @@ function InstrumentCoupling({ couplings, country }) {
       {/* Legend */}
       <div style={{ background: '#fff', padding: '14px 18px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
         <p style={{ margin: '0 0 8px 0', fontSize: '0.72rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>
-          Lectura del diagnóstico: analogía "sistema de tuberías"
+          Diagnostic reading: "pipe system" analogy
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
           {[
-            { status: 'coupled', desc: 'Tubería completa — el derecho fluye' },
-            { status: 'partial', desc: 'Tubería parcial — el flujo es limitado' },
-            { status: 'decoupled', desc: 'Tubería rota o bloqueada' },
-            { status: 'tension', desc: 'Tubería bajo presión interna' },
-            { status: 'potential_gap', desc: 'Válvula cuestionable' },
+            { status: 'coupled', desc: 'Full pipe — the right flows through' },
+            { status: 'partial', desc: 'Partial pipe — flow is restricted' },
+            { status: 'decoupled', desc: 'TUBERÍA ROTA (Broken Pipe) — blocked or missing' },
+            { status: 'tension', desc: 'Pipe under internal pressure — conflicting norms' },
+            { status: 'potential_gap', desc: 'Questionable valve — uncertain connection' },
           ].map(({ status, desc }) => {
             const cfg = getCfg(status)
             const Icon = cfg.icon
@@ -520,7 +520,7 @@ function InstrumentCoupling({ couplings, country }) {
                     <Icon size={16} color={cfg.color} />
                     <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#1e293b' }}>{c.coupling_label}</span>
                   </div>
-                  <Badge text={`Reforma: ${urgCfg.label}`} color={urgCfg.color} bg="#f8fafc" small />
+                  <Badge text={`Reform: ${urgCfg.label}`} color={urgCfg.color} bg="#f8fafc" small />
                 </div>
 
                 {/* Pipe visualization */}
@@ -582,7 +582,7 @@ function InstrumentCoupling({ couplings, country }) {
 
               {/* Instrument A */}
               <div style={{ marginBottom: '12px' }}>
-                <p style={{ margin: '0 0 6px 0', fontSize: '0.7rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Instrumento A — Creador de derechos</p>
+                <p style={{ margin: '0 0 6px 0', fontSize: '0.7rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Instrument A — Rights Creator</p>
                 <div style={{ padding: '12px', background: '#f0f9ff', borderRadius: '8px', borderLeft: `3px solid ${getLayerColor(sel.layer_a?.layer)}` }}>
                   <p style={{ margin: '0 0 4px 0', fontSize: '0.72rem', fontWeight: 700, color: '#1e40af' }}>[{sel.layer_a?.layer_label}] {sel.layer_a?.label}</p>
                   <p style={{ margin: 0, fontSize: '0.75rem', color: '#1e3a8a', lineHeight: 1.5 }}>{sel.layer_a?.key_provision}</p>
@@ -591,7 +591,7 @@ function InstrumentCoupling({ couplings, country }) {
 
               {/* Instrument B */}
               <div style={{ marginBottom: '16px' }}>
-                <p style={{ margin: '0 0 6px 0', fontSize: '0.7rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Instrumento B — Implementador</p>
+                <p style={{ margin: '0 0 6px 0', fontSize: '0.7rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Instrument B — Implementor</p>
                 <div style={{ padding: '12px', background: '#f8fafc', borderRadius: '8px', borderLeft: `3px solid ${getLayerColor(sel.layer_b?.layer)}` }}>
                   <p style={{ margin: '0 0 4px 0', fontSize: '0.72rem', fontWeight: 700, color: '#334155' }}>[{sel.layer_b?.layer_label}] {sel.layer_b?.label}</p>
                   <p style={{ margin: 0, fontSize: '0.75rem', color: '#475569', lineHeight: 1.5 }}>{sel.layer_b?.key_provision}</p>
@@ -601,27 +601,27 @@ function InstrumentCoupling({ couplings, country }) {
               {/* Expected vs actual */}
               <div style={{ marginBottom: '14px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                 <div style={{ padding: '12px', background: '#f0fdf4', borderRadius: '8px' }}>
-                  <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: '#065f46', textTransform: 'uppercase' }}>Conexión esperada</p>
+                  <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: '#065f46', textTransform: 'uppercase' }}>Expected Connection</p>
                   <p style={{ margin: 0, fontSize: '0.75rem', color: '#064e3b', lineHeight: 1.5 }}>{sel.connection_expected}</p>
                 </div>
                 <div style={{ padding: '12px', background: '#fef2f2', borderRadius: '8px' }}>
-                  <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: '#991b1b', textTransform: 'uppercase' }}>Conexión real</p>
+                  <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: '#991b1b', textTransform: 'uppercase' }}>Actual Connection</p>
                   <p style={{ margin: 0, fontSize: '0.75rem', color: '#7f1d1d', lineHeight: 1.5 }}>{sel.connection_actual}</p>
                 </div>
               </div>
 
               {/* Practical consequence */}
               <div style={{ marginBottom: '14px', padding: '12px', background: '#fffbeb', borderRadius: '8px', borderLeft: '3px solid #f59e0b' }}>
-                <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: '#b45309', textTransform: 'uppercase' }}>Consecuencia práctica</p>
+                <p style={{ margin: '0 0 4px 0', fontSize: '0.7rem', fontWeight: 700, color: '#b45309', textTransform: 'uppercase' }}>Practical Consequence</p>
                 <p style={{ margin: 0, fontSize: '0.78rem', color: '#78350f', lineHeight: 1.6 }}>{sel.practical_consequence}</p>
               </div>
 
               {/* Reform */}
               <div style={{ padding: '12px', background: '#f8fafc', borderRadius: '8px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                  <p style={{ margin: 0, fontSize: '0.7rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Reforma requerida</p>
+                  <p style={{ margin: 0, fontSize: '0.7rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Required Reform</p>
                   <Badge
-                    text={`Urgencia: ${REFORM_URGENCY[sel.reform_urgency]?.label || sel.reform_urgency}`}
+                    text={`Urgency: ${REFORM_URGENCY[sel.reform_urgency]?.label || sel.reform_urgency}`}
                     color={REFORM_URGENCY[sel.reform_urgency]?.color || '#64748b'}
                     bg="#f8fafc"
                     small
@@ -662,9 +662,9 @@ export default function NormDiagnostic({ country, isMobile }) {
   }, [])
 
   const tabs = [
-    { id: 'system', label: 'Sistema Normativo', icon: Layers, desc: 'Arquitectura jurídica del país' },
-    { id: 'comparison', label: 'Comparación de Normas', icon: Scale, desc: 'Estándar internacional vs. ley doméstica' },
-    { id: 'coupling', label: 'Acoplamiento Jurídico', icon: GitMerge, desc: 'Mapa de flujos y desconexiones' },
+    { id: 'system', label: 'Sistema Normativo', icon: Layers, desc: 'Normative system architecture' },
+    { id: 'comparison', label: 'Comparación de Normas', icon: Scale, desc: 'International standard vs. domestic law' },
+    { id: 'coupling', label: 'Acoplamiento Jurídico', icon: GitMerge, desc: 'Flow map and decoupling points' },
   ]
 
   const countryComparisons = (comparisons || []).filter(c => c.country === country || c.country === 'Both')
@@ -687,29 +687,29 @@ export default function NormDiagnostic({ country, isMobile }) {
       <div style={{ background: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
         <div style={{ padding: '20px 24px', borderBottom: '1px solid #f1f5f9', background: 'linear-gradient(to right, #f8fafc, #fff)' }}>
           <h2 style={{ margin: '0 0 6px 0', fontSize: '1.1rem', fontWeight: 800, color: '#1e293b' }}>
-            Diagnóstico Normativo — {country}
+            Norm Diagnostic — {country}
           </h2>
           <p style={{ margin: 0, fontSize: '0.8rem', color: '#64748b' }}>
-            Sistema político, razonamiento jurídico comparado, y mapa de acoplamiento institucional
+            Political system architecture, comparative legal reasoning, and institutional coupling map
           </p>
           {/* Quick stats */}
           <div style={{ display: 'flex', gap: '16px', marginTop: '14px', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 12px', background: '#fee2e2', borderRadius: '8px' }}>
               <XCircle size={13} color="#ef4444" />
               <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#991b1b' }}>
-                {decoupledCount} desacopl./tensiones
+                {decoupledCount} decoupled / tensions
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 12px', background: '#ffedd5', borderRadius: '8px' }}>
               <AlertTriangle size={13} color="#f97316" />
               <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#9a3412' }}>
-                {criticalComparisons} brechas significativas/críticas
+                {criticalComparisons} significant/critical gaps
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 12px', background: '#e0f2fe', borderRadius: '8px' }}>
               <Scale size={13} color="#0369a1" />
               <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#075985' }}>
-                {countryComparisons.length} comparaciones normas
+                {countryComparisons.length} norm comparisons
               </span>
             </div>
           </div>

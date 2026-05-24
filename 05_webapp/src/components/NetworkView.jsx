@@ -81,25 +81,71 @@ export default function NetworkView({ data, country, openEvidence, isMobile }) {
       }))
   }, [countryCentrality])
 
-  // Simple Force-Directed-like layout for SVG Map
+  // Concentric ring layout sorted by centrality
   const mapNodes = useMemo(() => {
-    const width = 800
-    const height = 500
-    const centerX = width / 2
-    const centerY = height / 2
-    const radius = Math.min(centerX, centerY) * 0.7
+    const centerX = 400
+    const centerY = 300
 
-    return countryNodes.map((node, i) => {
-      const angle = (i / countryNodes.length) * 2 * Math.PI
+    // Sort by degree_centrality descending
+    const sorted = [...countryNodes].sort((a, b) => {
+      const ca = countryCentrality.find(c => c.actor_id === a.actor_id)
+      const cb = countryCentrality.find(c => c.actor_id === b.actor_id)
+      return (cb?.degree_centrality || 0) - (ca?.degree_centrality || 0)
+    })
+
+    return sorted.map((node, i) => {
+      const centralityData = countryCentrality.find(c => c.actor_id === node.actor_id)
+      const centrality = centralityData?.degree_centrality || 0
+      // Ring assignment: top 3 → inner (120), next 4 → middle (230), rest → outer (330)
+      let ringRadius, ringGroup
+      if (i < 3) { ringRadius = 120; ringGroup = sorted.filter((_, idx) => idx < 3) }
+      else if (i < 7) { ringRadius = 230; ringGroup = sorted.filter((_, idx) => idx >= 3 && idx < 7) }
+      else { ringRadius = 330; ringGroup = sorted.filter((_, idx) => idx >= 7) }
+
+      const groupIndex = ringGroup.indexOf(node)
+      const angle = (groupIndex / ringGroup.length) * 2 * Math.PI - Math.PI / 2
+
+      const nodeRadius = Math.min(20, 8 + centrality * 30)
+
       return {
         ...node,
-        x: centerX + radius * Math.cos(angle),
-        y: centerY + radius * Math.sin(angle)
+        x: centerX + ringRadius * Math.cos(angle),
+        y: centerY + ringRadius * Math.sin(angle),
+        nodeRadius,
+        centrality,
       }
     })
-  }, [countryNodes])
+  }, [countryNodes, countryCentrality])
+
+  // Deduplicate edges by actor pair
+  const deduplicatedEdges = useMemo(() => {
+    const seen = new Set()
+    return countryEdges.filter(e => {
+      const key = [e.source_actor_id, e.target_actor_id].sort().join('|')
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+  }, [countryEdges])
 
   const findNode = (id) => mapNodes.find(n => n.actor_id === id)
+
+  const nodeTypeColor = (type) => {
+    switch ((type || '').toLowerCase()) {
+      case 'orchestrator': return '#1e40af'
+      case 'rights_holder': return '#0891b2'
+      case 'court': return '#7c3aed'
+      case 'legislature': return '#065f46'
+      default: return '#475569'
+    }
+  }
+
+  const edgeColor = (edge) => {
+    const str = edge.anchor_strength || 0
+    if (str >= 4) return { color: '#22c55e', opacity: 0.6 }
+    if (str >= 2) return { color: '#f59e0b', opacity: 0.4 }
+    return { color: '#94a3b8', opacity: 0.3 }
+  }
 
   return (
     <div style={styles.container}>
@@ -148,47 +194,67 @@ export default function NetworkView({ data, country, openEvidence, isMobile }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '0.85rem' }}>
             <Info size={16} /> This map visualizes legally encoded links. Circular layout used for clarity.
           </div>
-          <div style={styles.mapContainer}>
-            <svg viewBox="0 0 800 500" style={{ width: '100%', height: '100%' }}>
+          <div style={{ ...styles.mapContainer, height: '600px' }}>
+            <svg viewBox="0 0 800 600" style={{ width: '100%', height: '100%' }}>
               <defs>
                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="15" refY="3.5" orient="auto">
                   <polygon points="0 0, 10 3.5, 0 7" fill="#cbd5e1" />
                 </marker>
               </defs>
               {/* Edges */}
-              {countryEdges.map((edge, i) => {
-                const source = findNode(edge.source)
-                const target = findNode(edge.target)
+              {deduplicatedEdges.map((edge, i) => {
+                const source = findNode(edge.source_actor_id)
+                const target = findNode(edge.target_actor_id)
                 if (!source || !target) return null
+                const ec = edgeColor(edge)
                 return (
                   <line
                     key={i}
                     x1={source.x} y1={source.y}
                     x2={target.x} y2={target.y}
-                    stroke="#cbd5e1"
-                    strokeWidth="1"
+                    stroke={ec.color}
+                    strokeOpacity={ec.opacity}
+                    strokeWidth="1.5"
                     markerEnd="url(#arrowhead)"
                   />
                 )
               })}
               {/* Nodes */}
-              {mapNodes.map((node, i) => (
-                <g key={i}>
-                  <circle
-                    cx={node.x} cy={node.y} r="8"
-                    fill={node.actor_type === 'Citizen' ? '#0ea5e9' : '#1e293b'}
-                  />
-                  <text
-                    x={node.x} y={node.y + 20}
-                    textAnchor="middle"
-                    fontSize="10"
-                    fontWeight="600"
-                    fill="#475569"
-                  >
-                    {node.actor_name}
-                  </text>
-                </g>
-              ))}
+              {mapNodes.map((node, i) => {
+                const r = node.nodeRadius || 10
+                const label = (node.actor_name || '').length > 18
+                  ? (node.actor_name || '').slice(0, 16) + '…'
+                  : (node.actor_name || '')
+                const textWidth = label.length * 6 + 10
+                return (
+                  <g key={i}>
+                    <circle
+                      cx={node.x} cy={node.y} r={r}
+                      fill={nodeTypeColor(node.actor_type || node.network_role)}
+                      stroke="#fff"
+                      strokeWidth="2"
+                    />
+                    {/* Label background */}
+                    <rect
+                      x={node.x - textWidth / 2}
+                      y={node.y + r + 3}
+                      width={textWidth}
+                      height="16"
+                      rx="3"
+                      fill="rgba(255,255,255,0.85)"
+                    />
+                    <text
+                      x={node.x} y={node.y + r + 14}
+                      textAnchor="middle"
+                      fontSize="9"
+                      fontWeight="600"
+                      fill="#1e293b"
+                    >
+                      {label}
+                    </text>
+                  </g>
+                )
+              })}
             </svg>
           </div>
         </div>
