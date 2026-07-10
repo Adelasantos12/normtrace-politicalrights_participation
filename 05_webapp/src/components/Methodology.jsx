@@ -395,6 +395,25 @@ export default function Methodology({ isMobile }) {
         </div>
       </section>
 
+      {/* Section 9: Citation */}
+      <section>
+        <div style={styles.sectionHeader}>
+          <BookOpen size={24} color="#0369a1" />
+          <h2 style={styles.h2(isMobile)}>How to Cite</h2>
+        </div>
+        <div style={styles.card}>
+          <p style={styles.p(isMobile)}>
+            If you use this platform or its outputs in research, policy or advocacy work, please cite it as:
+          </p>
+          <p style={{ ...styles.p(isMobile), padding: '14px 18px', background: '#f0f9ff', border: '1px solid #e0f2fe', borderRadius: '10px', fontStyle: 'italic' }}>
+            Santos Domínguez, A. B. (2026). NormTrace-Political Rights: Legal-Institutional Activation Mapping of Political Participation Rights in Mexico and Costa Rica (Version v0.1.2) [Computer software]. Zenodo.{' '}
+            <a href="https://doi.org/10.5281/zenodo.21296393" target="_blank" rel="noopener noreferrer" style={{ color: '#0369a1', fontStyle: 'normal' }}>
+              https://doi.org/10.5281/zenodo.21296393
+            </a>
+          </p>
+        </div>
+      </section>
+
     </div>
   )
 }
