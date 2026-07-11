@@ -1,0 +1,42 @@
+[
+  {
+    "country": "Mexico",
+    "total_sources": 6,
+    "constitutional_sources": 1,
+    "statutory_sources": 2,
+    "regulatory_sources": 1,
+    "administrative_sources": 2,
+    "total_provisions": 7502,
+    "total_mechanisms": 13,
+    "total_principles": 12,
+    "total_actors": 0,
+    "functional_edges": 0,
+    "high_medium_confidence_edges": 0,
+    "manual_review_flags": 1341,
+    "dominant_anchor_type": "Administrative",
+    "dominant_operational_layer": "National",
+    "system_profile": "Integrated Mexico legal system mapping.",
+    "system_caveat": "Administrative dependence noted in several mechanisms.",
+    "notes": ""
+  },
+  {
+    "country": "Costa Rica",
+    "total_sources": 12,
+    "constitutional_sources": 0,
+    "statutory_sources": 0,
+    "regulatory_sources": 0,
+    "administrative_sources": 12,
+    "total_provisions": 1884,
+    "total_mechanisms": 12,
+    "total_principles": 12,
+    "total_actors": 0,
+    "functional_edges": 0,
+    "high_medium_confidence_edges": 0,
+    "manual_review_flags": 814,
+    "dominant_anchor_type": "Administrative",
+    "dominant_operational_layer": "National",
+    "system_profile": "Integrated Costa Rica legal system mapping.",
+    "system_caveat": "Administrative dependence noted in several mechanisms.",
+    "notes": ""
+  }
+]

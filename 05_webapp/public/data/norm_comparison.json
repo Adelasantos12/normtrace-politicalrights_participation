@@ -1,0 +1,404 @@
+[
+  {
+    "comparison_id": "NC-CR-001",
+    "country": "Costa Rica",
+    "mechanism": "independent_candidacies",
+    "mechanism_label": "Independent Candidacies",
+    "principle_id": "PRIN-005",
+    "standard_id": "ACHR-23",
+    "topic": "Right to stand for election without party intermediation",
+    "international": {
+      "instrument": "American Convention on Human Rights (ACHR)",
+      "article": "Art. 23.1(b)",
+      "text": "Every citizen shall enjoy the following rights and opportunities: [...] (b) to vote and to be elected in genuine periodic elections, which shall be by universal and equal suffrage and by secret ballot that guarantees the free expression of the will of the voters.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "IACHR — Castañeda Gutman v. Mexico (2008)",
+      "citation": "IACHR, Castañeda Gutman v. Mexico, Series C No. 184 (2008)",
+      "key_holding": "Where a party system is the sole route to elective office, this may constitute a disproportionate restriction on the right to be elected. States must demonstrate the restriction is reasonable, objective, and proportionate."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de Costa Rica",
+      "article": "Arts. 96–98",
+      "text": "Art. 98 CN: Los ciudadanos tendrán el derecho de agruparse en partidos para intervenir en la política nacional, siempre que los partidos se comprometan en sus programas a respetar el orden constitucional de la República.",
+      "anchor_type": "constitutional",
+      "anchor_strength": 5
+    },
+    "gap_type": "structural_restriction",
+    "gap_severity": "significant",
+    "gap_reasoning": "CN Arts. 96–98 establish an exclusive party monopoly on candidacies. There is no constitutional or statutory pathway for independent candidates. IACHR jurisprudence (Castañeda Gutman) identifies this type of restriction as a potential violation of ACHR Art. 23.1(b) where it is not demonstrated to be proportionate and objectively justified.",
+    "sufficiency_assessment": "INSUFFICIENT — the domestic framework structurally excludes independent candidacies with no available remedy within the current constitutional text.",
+    "applicable_jurisprudence": [
+      "IACHR, Castañeda Gutman v. Mexico, Series C No. 184 (2008)",
+      "IACHR, Advisory Opinion OC-28/21 (2021)"
+    ],
+    "recommended_action": "Constitutional reform to Art. 98 CN permitting independent candidacies, or a legislative framework allowing independent participation at least at the sub-presidential level."
+  },
+  {
+    "comparison_id": "NC-CR-002",
+    "country": "Costa Rica",
+    "mechanism": "recall",
+    "mechanism_label": "Recall of Mandate",
+    "principle_id": "PRIN-001",
+    "standard_id": "ICCPR-25",
+    "topic": "Absence of recall mechanism for elected officials",
+    "international": {
+      "instrument": "International Covenant on Civil and Political Rights (ICCPR)",
+      "article": "Art. 25",
+      "text": "Every citizen shall have the right and the opportunity, without any of the distinctions mentioned in article 2 and without unreasonable restrictions: (a) To take part in the conduct of public affairs, directly or through freely chosen representatives; (b) To vote and to be elected at genuine periodic elections...",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "HRC General Comment No. 25 (1996)",
+      "citation": "CCPR/C/21/Rev.1/Add.7",
+      "key_holding": "The right to participate in the conduct of public affairs is broad; the Covenant does not require recall mechanisms, but where states introduce them they must comply with Art. 25 non-discrimination and procedural standards."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de Costa Rica",
+      "article": "Arts. 9, 99–105",
+      "text": "No constitutional provision for recall of elected officials. Art. 105 CN regulates the referendum but does not include recall of persons.",
+      "anchor_type": "constitutional",
+      "anchor_strength": 0
+    },
+    "gap_type": "mechanism_absent",
+    "gap_severity": "moderate",
+    "gap_reasoning": "The ICCPR does not affirmatively require recall mechanisms. The gap is therefore not a treaty violation per se, but a gap in direct democratic participation instruments. Unlike Mexico (Art. 35 IX CPEUM), Costa Rica has no recall mechanism at any level of government.",
+    "sufficiency_assessment": "GAP — no recall mechanism exists. This is not a treaty violation but represents a participation gap relative to international standards on direct democracy.",
+    "applicable_jurisprudence": [],
+    "recommended_action": "Constitutional reform to introduce a recall mechanism with adequate procedural safeguards, or maintain current position with a documented policy rationale."
+  },
+  {
+    "comparison_id": "NC-CR-003",
+    "country": "Costa Rica",
+    "mechanism": "electoral_remedies",
+    "mechanism_label": "Effective Electoral Remedy (TSE Finality Doctrine)",
+    "principle_id": "PRIN-009",
+    "standard_id": "ACHR-25",
+    "topic": "TSE finality doctrine (Art. 103 CN) versus right to an effective remedy",
+    "international": {
+      "instrument": "American Convention on Human Rights (ACHR)",
+      "article": "Art. 25",
+      "text": "Everyone has the right to simple and prompt recourse, or any other effective recourse, to a competent court or tribunal for protection against acts that violate his fundamental rights recognised by the constitution or laws of the state concerned or by this Convention.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "IACHR — Advisory Opinion OC-28/21 (2021)",
+      "citation": "IACHR OC-28/21, 7 June 2021",
+      "key_holding": "Mechanisms for selecting and removing electoral authority members must guarantee structural independence. Where an electoral body makes a final decision affecting fundamental rights, the absence of any review mechanism may violate ACHR Art. 25."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de Costa Rica",
+      "article": "Art. 103",
+      "text": "Las resoluciones del Tribunal Supremo de Elecciones no tienen recurso alguno, salvo la acción por prevaricato.",
+      "anchor_type": "constitutional",
+      "anchor_strength": 5
+    },
+    "gap_type": "rights_safeguard_gap",
+    "gap_severity": "significant",
+    "gap_reasoning": "Art. 103 CN makes TSE resolutions final and unappealable, with no judicial review. ACHR Art. 25 requires effective judicial recourse against violations of fundamental rights. The tension arises where TSE decisions violate rights: there is no independent review pathway. Sala IV has occasionally accepted amparo petitions in electoral matters, but the constitutional text is unambiguous about finality.",
+    "sufficiency_assessment": "PARTIALLY COMPLIANT — structural remedy gap exists. Sala IV amparo provides a limited and inconsistent avenue but does not substitute for a clear review mechanism.",
+    "applicable_jurisprudence": [
+      "Sala IV, Voto 2771-2003",
+      "IACHR, Advisory Opinion OC-28/21 (2021)"
+    ],
+    "recommended_action": "Legislative or constitutional clarification establishing a limited-review mechanism for TSE decisions that affect individual fundamental rights, distinct from ordinary electoral disputes."
+  },
+  {
+    "comparison_id": "NC-CR-004",
+    "country": "Costa Rica",
+    "mechanism": "citizen_initiative",
+    "mechanism_label": "Citizens' Initiative (5% Threshold)",
+    "principle_id": "PRIN-001",
+    "standard_id": "ICCPR-25",
+    "topic": "Citizens' initiative 5% signature threshold and proportionality",
+    "international": {
+      "instrument": "International Covenant on Civil and Political Rights (ICCPR)",
+      "article": "Art. 25(a)",
+      "text": "Every citizen shall have the right and the opportunity, without any of the distinctions mentioned in article 2 and without unreasonable restrictions: (a) To take part in the conduct of public affairs, directly or through freely chosen representatives.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "Venice Commission — Code of Good Practice on Referendums (2007)",
+      "citation": "CDL-AD(2007)008",
+      "key_holding": "Signature thresholds for citizens' initiatives should be proportionate and not constitute a de facto barrier to participation. Thresholds above 5% of the electorate warrant scrutiny for proportionality."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de Costa Rica",
+      "article": "Art. 123",
+      "text": "Diez mil ciudadanos, como mínimo, podrán ejercer la iniciativa popular para proponer proyectos de ley.",
+      "anchor_type": "constitutional",
+      "anchor_strength": 4
+    },
+    "gap_type": "proportionality_question",
+    "gap_severity": "moderate",
+    "gap_reasoning": "Art. 123 CN requires 10,000 signatures — approximately 0.4% of the electorate — a low absolute threshold but subject to operational barriers. The Ley de Iniciativa Popular (Law 8491) operationalises the mechanism. The substantive gap is not the threshold but the scope limitation: only legislative proposals, not constitutional amendments, are covered. No recall or policy referendum pathway exists.",
+    "sufficiency_assessment": "PARTIALLY SUFFICIENT — mechanism exists and threshold is proportionate; operational and scope gaps remain.",
+    "applicable_jurisprudence": [],
+    "recommended_action": "Review operational procedures for citizens' initiative to reduce administrative barriers; consider expanding scope to include other participatory instruments."
+  },
+  {
+    "comparison_id": "NC-CR-005",
+    "country": "Costa Rica",
+    "mechanism": "vote",
+    "mechanism_label": "Deprivation of Political Rights (Convicted Persons)",
+    "principle_id": "PRIN-002",
+    "standard_id": "ICCPR-25",
+    "topic": "Proportionality of restrictions on political rights for persons serving custodial sentences",
+    "international": {
+      "instrument": "International Covenant on Civil and Political Rights (ICCPR)",
+      "article": "Art. 25",
+      "text": "Every citizen shall have the right and the opportunity, without any of the distinctions mentioned in article 2 and without unreasonable restrictions: (b) To vote and to be elected at genuine periodic elections.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "HRC General Comment No. 25 (1996)",
+      "citation": "CCPR/C/21/Rev.1/Add.7, para. 14",
+      "key_holding": "Grounds for suspension of political rights must be objective and reasonable. Deprivation of liberty should not automatically entail loss of political rights. Restrictions must be proportionate and specifically linked to the offence."
+    },
+    "domestic": {
+      "instrument": "Código Electoral (Law 8765/2009)",
+      "article": "Art. 92 et seq.",
+      "text": "Persons sentenced to a criminal penalty may lose their political rights as a consequence of the penalty. The Electoral Code does not provide for automatic suspension but the Criminal Code may impose suspension as an accessory penalty.",
+      "anchor_type": "statutory",
+      "anchor_strength": 3
+    },
+    "gap_type": "proportionality_question",
+    "gap_severity": "moderate",
+    "gap_reasoning": "Unlike Mexico (Art. 38 CPEUM, which contains express and automatic suspensions), Costa Rica's framework is less absolute. However, the accessory penalty of suspension of political rights in the Criminal Code may not meet the proportionality test of HRC GC-25 para. 14, which requires restrictions to be specifically linked to the offence.",
+    "sufficiency_assessment": "PARTIALLY COMPLIANT — no automatic suspension, but accessory penalty rules may not meet proportionality standards.",
+    "applicable_jurisprudence": [],
+    "recommended_action": "Review Criminal Code provisions on suspension of political rights as accessory penalties to ensure conformity with ICCPR Art. 25 and HRC GC-25 para. 14 proportionality standards."
+  },
+  {
+    "comparison_id": "NC-CR-006",
+    "country": "Costa Rica",
+    "mechanism": "vote",
+    "mechanism_label": "Electoral Participation of Indigenous Peoples",
+    "principle_id": "PRIN-003",
+    "standard_id": "ILO169-6",
+    "topic": "Absence of specific electoral mechanism for indigenous peoples under ILO 169",
+    "international": {
+      "instrument": "ILO Convention No. 169 (1989)",
+      "article": "Arts. 6–7",
+      "text": "Governments shall consult the peoples concerned, through appropriate procedures and in particular through their representative institutions, whenever consideration is being given to legislative or administrative measures which may affect them directly. [...] The peoples concerned shall have the right to decide their own priorities for the process of development.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "ILO Committee of Experts — General Observation on ILO 169",
+      "citation": "ILO CEACR, General Report 2010",
+      "key_holding": "ILO 169 requires states to establish appropriate consultation mechanisms; these must be prior, free, and informed, and include electoral or representative participation mechanisms where relevant."
+    },
+    "domestic": {
+      "instrument": "Código Electoral (Law 8765/2009)",
+      "article": "Arts. 2, 52 et seq.",
+      "text": "The Electoral Code establishes parity and non-discrimination in candidacies but does not include specific mechanisms for indigenous electoral representation or participation.",
+      "anchor_type": "statutory",
+      "anchor_strength": 1
+    },
+    "gap_type": "mechanism_absent",
+    "gap_severity": "significant",
+    "gap_reasoning": "ILO 169 (ratified 1993) obliges Costa Rica to establish consultation and participation mechanisms for indigenous peoples. The Electoral Code contains no specific electoral representation or participation mechanism for indigenous peoples. The CONAI Law recognises indigenous governance structures but without connection to the formal electoral system.",
+    "sufficiency_assessment": "INSUFFICIENT — no electoral mechanism exists for indigenous peoples despite 30 years of ILO 169 ratification.",
+    "applicable_jurisprudence": [],
+    "recommended_action": "Enact specific electoral legislation or amend the Electoral Code to include indigenous electoral participation mechanisms consistent with ILO 169 Arts. 6–7."
+  },
+  {
+    "comparison_id": "NC-MX-001",
+    "country": "Mexico",
+    "mechanism": "vote",
+    "mechanism_label": "Automatic Suspension of Political Rights (Art. 38 CPEUM v. CRPD + ICCPR)",
+    "principle_id": "PRIN-002",
+    "standard_id": "CRPD-29",
+    "topic": "Constitutionally mandated automatic suspension of political rights and its compatibility with CRPD Art. 29",
+    "international": {
+      "instrument": "UN Convention on the Rights of Persons with Disabilities (CRPD)",
+      "article": "Art. 29",
+      "text": "States Parties shall guarantee to persons with disabilities political rights and the opportunity to enjoy them on an equal basis with others, as follows: (a) Ensure that persons with disabilities can effectively and fully participate in political and public life on an equal basis with others, directly or through freely chosen representatives, including the right and opportunity for persons with disabilities to vote and be elected.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "CRPD Committee — General Comment No. 1 (2014)",
+      "citation": "CRPD/C/GC/1",
+      "key_holding": "Legal capacity and political rights must not be restricted on the basis of disability or legal guardianship status. Any legislation permitting automatic or blanket restrictions on voting rights based on disability or legal incapacity is incompatible with CRPD Art. 29."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de los Estados Unidos Mexicanos",
+      "article": "Art. 38",
+      "text": "Los derechos o prerrogativas de los ciudadanos se suspenden: [...] II. Por estar sujeto a un proceso criminal por delito que merezca pena corporal, a contar desde la fecha del auto de formal prisión; III. Durante la extinción de una pena corporal.",
+      "anchor_type": "constitutional",
+      "anchor_strength": 5
+    },
+    "gap_type": "constitutional_treaty_conflict",
+    "gap_severity": "significant",
+    "gap_reasoning": "Art. 38 CPEUM imposes automatic suspension of political rights upon formal imprisonment. SCJN CT 293/2011 holds that express constitutional restrictions prevail over treaties, meaning CRPD Art. 29 cannot override Art. 38. However, CRPD Committee GC-1 classifies blanket suspension of political rights on grounds of legal incapacity as incompatible with CRPD. The tension is structural and cannot be resolved through statutory reform alone — it requires constitutional amendment.",
+    "sufficiency_assessment": "INSUFFICIENT — Art. 38 CPEUM creates a direct and unresolvable conflict with CRPD Art. 29 for persons whose political rights are suspended on grounds linked to legal capacity. Structural reform required.",
+    "applicable_jurisprudence": [
+      "SCJN, Contradicción de Tesis 293/2011",
+      "CRPD Committee, General Comment No. 1 (2014), CRPD/C/GC/1"
+    ],
+    "recommended_action": "Constitutional amendment to Art. 38 CPEUM to remove automatic suspension of political rights, replacing it with a proportionate, individualised judicial assessment consistent with CRPD Art. 29 and ICCPR Art. 25."
+  },
+  {
+    "comparison_id": "NC-MX-002",
+    "country": "Mexico",
+    "mechanism": "electoral_authority_internal_governance",
+    "mechanism_label": "Structural Independence of the INE (2023 Reform)",
+    "principle_id": "PRIN-005",
+    "standard_id": "IACHR-OC28",
+    "topic": "Popular election of INE councillors versus the guarantee of structural independence of the electoral authority",
+    "international": {
+      "instrument": "IACHR Advisory Opinion OC-28/21 (2021)",
+      "article": "OC-28/21, paras. 93–118",
+      "text": "The selection mechanism for members of electoral authorities must guarantee their independence and impartiality. Popular election of electoral authority members may create structural conflicts of interest incompatible with the independence required by ACHR Art. 23.",
+      "source_type": "advisory_opinion",
+      "authority_level": "authoritative_interpretation"
+    },
+    "interpretive_authority": {
+      "instrument": "IACHR Advisory Opinion OC-28/21 (2021)",
+      "citation": "IACHR OC-28/21, 7 June 2021",
+      "key_holding": "The independence of electoral authorities is a structural requirement of genuine elections. Selection mechanisms must insulate members from political pressures, including those arising from electoral popularity contests."
+    },
+    "domestic": {
+      "instrument": "Constitución Política de los Estados Unidos Mexicanos",
+      "article": "Art. 41",
+      "text": "El Instituto Nacional Electoral es un organismo público autónomo dotado de personalidad jurídica y patrimonio propios [...] El Consejo General es el órgano superior de dirección del Instituto Nacional Electoral.",
+      "anchor_type": "constitutional",
+      "anchor_strength": 4
+    },
+    "gap_type": "potential_incompatibility",
+    "gap_severity": "significant",
+    "gap_reasoning": "Art. 41 CPEUM establishes INE as an autonomous constitutional body. The 2023 reform package (partially invalidated by SCJN) proposed popular election of INE councillors. OC-28/21 establishes that selection mechanisms must guarantee structural independence; popular election creates dependency on partisan electoral dynamics incompatible with this requirement.",
+    "sufficiency_assessment": "RISK — current Art. 41 text is sufficient, but pending reform proposals create incompatibility risk with OC-28/21. Final legal status depends on SCJN review of applicable reform decrees.",
+    "applicable_jurisprudence": [
+      "IACHR Advisory Opinion OC-28/21 (2021)",
+      "SCJN, Acción de Inconstitucionalidad 110/2022 et al. (2023 reform review)"
+    ],
+    "recommended_action": "Maintain or restore a merit-based, non-partisan selection mechanism for INE councillors consistent with OC-28/21 standards. Ensure any reform maintains structural insulation from partisan political processes."
+  },
+  {
+    "comparison_id": "NC-MX-003",
+    "country": "Mexico",
+    "mechanism": "independent_candidacies",
+    "mechanism_label": "Independent Candidacies — Signature Thresholds",
+    "principle_id": "PRIN-004",
+    "standard_id": "ACHR-23",
+    "topic": "Proportionality of the 1% signature requirement for independent presidential candidacies",
+    "international": {
+      "instrument": "American Convention on Human Rights (ACHR)",
+      "article": "Art. 23.2",
+      "text": "The law may regulate the exercise of the rights and opportunities referred to in the preceding paragraph only on the basis of age, nationality, residence, language, education, civil and mental capacity, or sentencing by a competent court in criminal proceedings.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "IACHR — Castañeda Gutman v. Mexico (2008)",
+      "citation": "IACHR, Series C No. 184 (2008)",
+      "key_holding": "Mexico's party monopoly was found compatible with ACHR after legislative reform. After independent candidacies were introduced, signature requirements must still be proportionate and not constitute a de facto exclusion."
+    },
+    "domestic": {
+      "instrument": "Ley General de Instituciones y Procedimientos Electorales (LGIPE)",
+      "article": "Arts. 368–384",
+      "text": "Para obtener el registro como candidato independiente a Presidente de la República se deberán obtener firmas de apoyo ciudadano de cuando menos el uno por ciento de la lista nominal de electores distribuido en por lo menos diecisiete entidades federativas.",
+      "anchor_type": "statutory",
+      "anchor_strength": 4
+    },
+    "gap_type": "proportionality_question",
+    "gap_severity": "moderate",
+    "gap_reasoning": "LGIPE Arts. 368–384 establish a 1% national threshold distributed across 17 states for independent presidential candidacies. This is a high operational bar. Venice Commission standards suggest thresholds above 1% of the electorate may be disproportionate. The geographic distribution requirement adds an additional barrier. The mechanism exists but its activation threshold warrants proportionality review.",
+    "sufficiency_assessment": "PARTIALLY SUFFICIENT — mechanism exists and has constitutional basis, but 1% nationally distributed threshold may not meet proportionality standards under ACHR Art. 23 and IACHR jurisprudence.",
+    "applicable_jurisprudence": [
+      "IACHR, Castañeda Gutman v. Mexico (2008)",
+      "TEPJF, SUP-JDC-12624/2011 (independent candidacy precursor)"
+    ],
+    "recommended_action": "Review signature threshold proportionality for independent candidacies, particularly the geographic distribution requirement, in light of IACHR jurisprudence and Venice Commission standards."
+  },
+  {
+    "comparison_id": "NC-MX-004",
+    "country": "Mexico",
+    "mechanism": "vote",
+    "mechanism_label": "Electoral Participation of Indigenous Peoples — Affirmative Action v. Substantive Representation",
+    "principle_id": "PRIN-003",
+    "standard_id": "ILO169-6",
+    "topic": "Adequacy of affirmative action measures versus the structural absence of indigenous representation mechanisms",
+    "international": {
+      "instrument": "ILO Convention No. 169 (1989)",
+      "article": "Arts. 6–7",
+      "text": "Governments shall consult the peoples concerned, through appropriate procedures and in particular through their representative institutions, whenever consideration is being given to legislative or administrative measures which may affect them directly.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "IACHR — Saramaka People v. Suriname (2007) (by analogy)",
+      "citation": "IACHR Series C No. 172 (2007)",
+      "key_holding": "States must guarantee effective participation of indigenous peoples in decisions affecting their rights and territories. Mere consultation is insufficient if it does not translate into effective political representation."
+    },
+    "domestic": {
+      "instrument": "Ley General de Instituciones y Procedimientos Electorales (LGIPE)",
+      "article": "Art. 3, Art. 329 et seq. (indigenous candidacies)",
+      "text": "Acciones afirmativas para candidaturas de personas indígenas en los distritos de mayoría indígena, conforme a los lineamientos que establezca el INE.",
+      "anchor_type": "statutory",
+      "anchor_strength": 3
+    },
+    "gap_type": "implementation_gap",
+    "gap_severity": "significant",
+    "gap_reasoning": "LGIPE establishes affirmative action for indigenous candidacies in majority-indigenous districts but this is implemented through INE administrative instruments rather than a structural electoral mechanism. There is no guaranteed indigenous seat or proportional representation mechanism. The gap is the difference between administrative affirmative action (which can be modified or not applied) and structural representation rights required by ILO 169.",
+    "sufficiency_assessment": "PARTIALLY SUFFICIENT — affirmative action mechanism exists but depends on INE administrative implementation rather than statutory guarantee of representation.",
+    "applicable_jurisprudence": [
+      "TEPJF, SUP-REC-91/2019 (indigenous candidacies)",
+      "TEPJF, SUP-JDC-1865/2020"
+    ],
+    "recommended_action": "Statutory reform to consolidate indigenous electoral participation rights in LGIPE with statutory (not merely administrative) guarantees of representation in majority-indigenous districts."
+  },
+  {
+    "comparison_id": "NC-BOTH-001",
+    "country": "Both",
+    "mechanism": "vote",
+    "mechanism_label": "Electoral Accessibility for Persons with Disabilities",
+    "principle_id": "PRIN-010",
+    "standard_id": "CRPD-29",
+    "topic": "Adequacy of accessible voting mechanisms and procedural accommodations for persons with disabilities",
+    "international": {
+      "instrument": "UN Convention on the Rights of Persons with Disabilities (CRPD)",
+      "article": "Art. 29(a)(i)–(ii)",
+      "text": "States Parties shall guarantee to persons with disabilities political rights and the opportunity to enjoy them on an equal basis with others, as follows: (a) Ensure that persons with disabilities can effectively and fully participate in political and public life on an equal basis with others, directly or through freely chosen representatives, including the right and opportunity for persons with disabilities to vote and be elected, inter alia, by: (i) Ensuring that voting procedures, facilities and materials are appropriate, accessible and easy to understand and use; (ii) Protecting the right of persons with disabilities to vote by secret ballot in elections and public referendums without intimidation.",
+      "source_type": "treaty",
+      "authority_level": "binding"
+    },
+    "interpretive_authority": {
+      "instrument": "CRPD Committee — General Comment No. 1 (2014)",
+      "citation": "CRPD/C/GC/1",
+      "key_holding": "All restrictions on voting based on disability or legal incapacity are incompatible with CRPD Art. 29. Physical accessibility of polling stations and materials is a minimum requirement. Supported decision-making must be available."
+    },
+    "domestic_mexico": {
+      "instrument": "LGIPE + INE Administrative Instruments",
+      "article": "LGIPE Art. 3 (non-discrimination) + INE Lineamientos on Accessibility",
+      "text": "LGIPE establece el derecho al voto sin discriminación. El INE emite lineamientos operativos de accesibilidad, pero estos son de rango administrativo y no tienen fuerza de ley.",
+      "anchor_type": "statutory_plus_administrative",
+      "anchor_strength": 3
+    },
+    "domestic_costa_rica": {
+      "instrument": "Código Electoral (Law 8765/2009)",
+      "article": "Art. 2 et seq.; TSE accessibility protocols",
+      "text": "The Electoral Code establishes non-discrimination in voting; TSE issues operational accessibility protocols. Law 7600 (Accessibility) provides the broader framework.",
+      "anchor_type": "statutory",
+      "anchor_strength": 3
+    },
+    "gap_type": "implementation_gap",
+    "gap_severity": "moderate",
+    "gap_reasoning": "Both countries have constitutional and statutory non-discrimination guarantees, but accessibility of electoral procedures for persons with disabilities relies primarily on INE/TSE administrative instruments rather than statutory provisions. CRPD Committee has specifically noted gaps in electoral accessibility for both countries in their respective concluding observations.",
+    "sufficiency_assessment": "PARTIALLY COMPLIANT — non-discrimination basis exists but operational accessibility depends on administrative instruments without statutory backing.",
+    "applicable_jurisprudence": [
+      "CRPD/C/MEX/CO/1 (2014) — Mexico Concluding Observations",
+      "CRPD/C/CRI/CO/1 (2014) — Costa Rica Concluding Observations"
+    ],
+    "recommended_action": "Enact statutory accessibility standards for electoral procedures in both countries, moving beyond administrative-level instruments to a legally enforceable accessibility framework."
+  }
+]

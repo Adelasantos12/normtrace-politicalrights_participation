@@ -1,0 +1,282 @@
+{
+  "countries": {
+    "Mexico": {
+      "iso": "MX",
+      "name": "Mexico",
+      "name_es": "México",
+      "system_type": "Federal Presidential Republic",
+      "system_type_es": "República Federal Presidencial",
+      "territory": "federal_three_level",
+      "territory_label": "Federal (3 niveles: federación, 32 estados, municipios)",
+      "territory_label_en": "Federal system — 3 tiers: federation, 32 states, and municipalities",
+      "legal_tradition": "Romano-Germanic civil law",
+      "government_form": "Presidential (Art. 40 CPEUM)",
+      "constitution_year": 1917,
+      "constitution_current": "Political Constitution of the United Mexican States (CPEUM), as amended to 2026",
+      "intl_law_incorporation": "Constitutional bloc via the pro-persona principle",
+      "intl_law_article": "Art. 1 CPEUM (2011 reform): all persons enjoy the human rights recognised in this Constitution and in international human rights treaties; norms shall be interpreted so as to afford the broadest protection to persons.",
+      "intl_law_note": "The 2011 constitutional reform elevated human rights treaties to constitutional rank via the constitutional bloc (bloque de constitucionalidad). SCJN Contradicción de Tesis 293/2011: express constitutional restrictions in the text of the CPEUM prevail over treaties; however, the pro-persona principle applies in zones of silence.",
+      "treaty_hierarchy": "Human rights treaties at constitutional level via the constitutional bloc; other treaties above federal laws but below the Constitution (Art. 133 CPEUM)",
+      "constitutional_review": "Amparo (individual) + Acción de Inconstitucionalidad (abstract) + Controversia Constitucional",
+      "review_body": "SCJN + TEPJF (electoral matters)",
+      "federal_complication": "32 states each enact their own electoral codes for local elections. Federal electoral law (LGIPE, LGPP) covers federal offices only. Rights may be unequally guaranteed at state and municipal level.",
+      "key_structural_features": [
+        "Pro-persona principle (Art. 1 CPEUM) requires the broadest possible interpretation of rights",
+        "SCJN control de convencionalidad: judges must apply the American Convention on Human Rights (ACHR) directly",
+        "TEPJF has binding jurisprudential criteria on electoral rights",
+        "INE (Art. 41 CPEUM): constitutionally autonomous electoral authority organising federal elections",
+        "OPLEs: state-level electoral bodies for local elections, coordinated by INE on federal matters",
+        "Electoral amparo: limited scope; TEPJF holds jurisdiction over most electoral rights challenges"
+      ],
+      "constitutional_pyramid": [
+        {
+          "layer": 1,
+          "label": "Constitutional Bloc",
+          "instruments": [
+            "CPEUM + Human Rights Treaties (Art. 1 CPEUM, 2011 reform)"
+          ],
+          "note": "Human rights treaties elevated to constitutional rank. Express CPEUM restrictions prevail (CT 293/2011)."
+        },
+        {
+          "layer": 2,
+          "label": "Organic / General Electoral Laws",
+          "instruments": [
+            "LGIPE",
+            "LGPP",
+            "Ley Federal de Consulta Popular",
+            "Ley Federal de Revocación de Mandato"
+          ],
+          "note": "Regulatory statutes for constitutional electoral provisions (Arts. 35, 41, 99 CPEUM)."
+        },
+        {
+          "layer": 3,
+          "label": "Ordinary Federal Laws",
+          "instruments": [
+            "Ley General de Acceso de las Mujeres a una Vida Libre de Violencia",
+            "Ley General para la Inclusión de Personas con Discapacidad"
+          ],
+          "note": "Ordinary laws intersecting with political rights on a cross-cutting basis."
+        },
+        {
+          "layer": 4,
+          "label": "INE Regulations and Agreements",
+          "instruments": [
+            "INE Regulation on Independent Candidacies",
+            "INE/CG572/2020 (indigenous affirmative action measures)"
+          ],
+          "note": "Operational regulation; must conform to LGIPE and the CPEUM."
+        },
+        {
+          "layer": 5,
+          "label": "State Electoral Laws",
+          "instruments": [
+            "32 state electoral codes or laws"
+          ],
+          "note": "Govern local elections. Must respect constitutional bases and the relevant provisions of LGIPE."
+        }
+      ],
+      "treaty_ratification": [
+        {
+          "treaty": "ICCPR",
+          "ratified": true,
+          "date": "1981-03-23",
+          "optional_protocol_1": true,
+          "notes": ""
+        },
+        {
+          "treaty": "ACHR",
+          "ratified": true,
+          "date": "1981-03-24",
+          "iachr_jurisdiction": true,
+          "notes": ""
+        },
+        {
+          "treaty": "CEDAW",
+          "ratified": true,
+          "date": "1981-03-23",
+          "optional_protocol": true,
+          "notes": ""
+        },
+        {
+          "treaty": "CRPD",
+          "ratified": true,
+          "date": "2007-12-17",
+          "optional_protocol": true,
+          "notes": "First country in Latin America to ratify the CRPD. CRPD/C/MEX/CO/1 (2014)."
+        },
+        {
+          "treaty": "ILO 169",
+          "ratified": true,
+          "date": "1990-09-05",
+          "notes": "Second country to ratify ILO 169."
+        },
+        {
+          "treaty": "UNDRIP",
+          "endorsed": true,
+          "binding": false,
+          "date": "2007-09-13",
+          "notes": "Non-binding; soft law instrument."
+        }
+      ],
+      "key_tensions": [
+        {
+          "tension_id": "MX-T001",
+          "label": "Constitutional bloc v. express restrictions (CPEUM Art. 38)",
+          "description": "Art. 1 CPEUM incorporates the CRPD into the constitutional bloc, but Art. 38 contains express restrictions on political rights. SCJN CT 293/2011 holds that express constitutional restrictions prevail over treaties. This creates a zone of tension: can Art. 38 suspend political rights even though CRPD Art. 29 prohibits restrictions based on legal capacity?",
+          "severity": "significant"
+        },
+        {
+          "tension_id": "MX-T002",
+          "label": "INE autonomy (Art. 41 CPEUM) v. popular election of councillors (2023 reform)",
+          "description": "Art. 41 CPEUM establishes the constitutional autonomy of the INE. The 2023 reform (under debate) would introduce popular election of INE councillors. IACHR Advisory Opinion OC-28/21 holds that mechanisms for selecting electoral authorities must guarantee structural independence. Popular election may undermine that independence.",
+          "severity": "significant"
+        },
+        {
+          "tension_id": "MX-T003",
+          "label": "Federalism and unequal coverage of rights",
+          "description": "Political participation rights are guaranteed unevenly across the 32 states. Recall of mandate exists only for the federal president (Art. 35 IX CPEUM). Independent candidacies exist at federal level but their regulation varies across states. ILO 169 was ratified at federal level but implementation varies by state.",
+          "severity": "moderate"
+        }
+      ]
+    },
+    "Costa Rica": {
+      "iso": "CR",
+      "name": "Costa Rica",
+      "name_es": "Costa Rica",
+      "system_type": "Unitary Presidential Republic",
+      "system_type_es": "República Presidencial Unitaria",
+      "territory": "unitary_centralised",
+      "territory_label": "Unitario centralizado (7 provincias, cantons, distritos — sin autonomía legislativa subnacional)",
+      "territory_label_en": "Centralised unitary state (7 provinces, cantons, districts — no subnational legislative autonomy)",
+      "legal_tradition": "Romano-Germanic civil law",
+      "government_form": "Presidential (Art. 1 CN 1949)",
+      "constitution_year": 1949,
+      "constitution_current": "Political Constitution of Costa Rica (1949), as amended",
+      "intl_law_incorporation": "Expanded constitutional bloc via Sala IV jurisprudence",
+      "intl_law_article": "Art. 7 CN: international treaties have authority superior to laws. Sala IV (Voto 9469-2007 and subsequent jurisprudence): human rights treaties may rank equal to or above the Constitution where they afford greater protection to the individual.",
+      "intl_law_note": "Sala IV determines treaty hierarchy on a case-by-case basis. Pro-individuo approach: where a treaty affords greater protection than the Constitution, the treaty prevails. This is broader than the Mexican post-CT 293/2011 model.",
+      "treaty_hierarchy": "Human rights treaties at supra-constitutional level where they afford greater protection; other treaties above ordinary laws (Art. 7 CN)",
+      "constitutional_review": "Recurso de amparo + Acción de inconstitucionalidad before Sala IV (Sala Constitucional)",
+      "review_body": "Sala IV (Constitutional Chamber of the Supreme Court)",
+      "federal_complication": "Not applicable — centralised unitary system. Less normative fragmentation than Mexico. The gap is not between levels of government but between recognised rights and operative implementation mechanisms.",
+      "key_structural_features": [
+        "TSE is the 4th Branch of State (Arts. 9, 99–104 CN): the sole supreme electoral authority",
+        "TSE electoral decisions are final and unappealable (Art. 103 CN) — tension with ACHR Art. 25",
+        "Sala IV: electoral amparo is theoretically available, but the TSE holds exclusive jurisdiction in electoral matters",
+        "Voluntary voting since 1959 (not compulsory)",
+        "No independent candidacies: only registered political parties may nominate candidates (Art. 98 CN)",
+        "Mandatory gender parity in candidacies (Art. 2, Electoral Code)"
+      ],
+      "constitutional_pyramid": [
+        {
+          "layer": 1,
+          "label": "Constitutionality Bloc (Sala IV)",
+          "instruments": [
+            "CN 1949 + Human Rights Treaties (when more favourable to the individual)"
+          ],
+          "note": "Sala IV may elevate treaties above the CN if they afford greater protection. More dynamic framework than the Mexican model."
+        },
+        {
+          "layer": 2,
+          "label": "Organic Laws (qualified majority)",
+          "instruments": [
+            "Organic Law of the TSE",
+            "Organic Law of the Civil Registry"
+          ],
+          "note": "Require 38 votes of the Asamblea Legislativa for approval or reform."
+        },
+        {
+          "layer": 3,
+          "label": "Electoral Code and Electoral Laws",
+          "instruments": [
+            "Código Electoral (Law 8765/2009)",
+            "Ley de Regulación del Referéndum (8492/2006)"
+          ],
+          "note": "Primary electoral framework. Approved by simple majority in the Asamblea."
+        },
+        {
+          "layer": 4,
+          "label": "Ordinary Laws",
+          "instruments": [
+            "CONAI Law (Indigenous Communities)",
+            "Law 7600 (Accessibility)",
+            "Anti-Discrimination Law"
+          ],
+          "note": "Cross-cutting laws affecting the political participation of specific groups."
+        },
+        {
+          "layer": 5,
+          "label": "TSE Regulations and Resolutions",
+          "instruments": [
+            "TSE Regulations",
+            "Electoral Registry Resolutions"
+          ],
+          "note": "Operational regulation. The TSE holds exclusive regulatory power in electoral matters."
+        }
+      ],
+      "treaty_ratification": [
+        {
+          "treaty": "ICCPR",
+          "ratified": true,
+          "date": "1968-11-29",
+          "optional_protocol_1": true,
+          "notes": "One of the first countries to ratify."
+        },
+        {
+          "treaty": "ACHR",
+          "ratified": true,
+          "date": "1970-04-08",
+          "iachr_jurisdiction": true,
+          "notes": "Seat of the IACHR in San José."
+        },
+        {
+          "treaty": "CEDAW",
+          "ratified": true,
+          "date": "1986-04-04",
+          "optional_protocol": true,
+          "notes": ""
+        },
+        {
+          "treaty": "CRPD",
+          "ratified": true,
+          "date": "2008-10-01",
+          "optional_protocol": true,
+          "notes": "CRPD/C/CRI/CO/1 (2014): electoral accessibility noted."
+        },
+        {
+          "treaty": "ILO 169",
+          "ratified": true,
+          "date": "1993-04-02",
+          "notes": "Ratified in 1993, but without specific electoral implementation."
+        },
+        {
+          "treaty": "UNDRIP",
+          "endorsed": true,
+          "binding": false,
+          "date": "2007-09-13",
+          "notes": "Political endorsement; no electoral implementation mechanism."
+        }
+      ],
+      "key_tensions": [
+        {
+          "tension_id": "CR-T001",
+          "label": "TSE Art. 103 (finality) v. ACHR Art. 25 (effective remedy)",
+          "description": "Art. 103 CN establishes that TSE resolutions in electoral matters are final and unappealable. ACHR Art. 25 guarantees an effective judicial remedy against violations of fundamental rights. If the TSE violates rights in an electoral decision, does an effective remedy exist? Sala IV has taken varying positions. The IACHR has not directly resolved this for Costa Rica, but the principle of access to justice requires at least one instance of independent review.",
+          "severity": "significant"
+        },
+        {
+          "tension_id": "CR-T002",
+          "label": "ACHR Art. 23 (participation) v. CN Arts. 96–98 (party monopoly)",
+          "description": "ACHR Art. 23.1(b) guarantees the right to be elected in genuine elections. The IACHR in Castañeda Gutman v. Mexico (2008) held that where a party system is the only route to elective office, it may constitute a disproportionate restriction. CN Arts. 96–98 of Costa Rica prohibit independent candidacies: only registered political parties may nominate candidates. Costa Rica has not yet been subject to specific Inter-American litigation on this point.",
+          "severity": "significant"
+        },
+        {
+          "tension_id": "CR-T003",
+          "label": "ILO 169 Arts. 6–7 (indigenous consultation and participation) v. absence of electoral mechanism",
+          "description": "ILO 169 (ratified 1993) obliges Costa Rica to establish mechanisms for consultation and political participation of indigenous peoples in matters affecting them. The Electoral Code does not include mechanisms for indigenous-specific electoral representation or participation. The Indigenous Law (CONAI) recognises indigenous governance structures but without connection to the formal electoral system.",
+          "severity": "significant"
+        }
+      ]
+    }
+  }
+}

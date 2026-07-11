@@ -1,0 +1,47 @@
+[
+  {
+    "country": "Mexico",
+    "insight_id": "SYS-mexico-001",
+    "insight_type": "strong_statutory_anchoring",
+    "title": "Solid Constitutional/Statutory Core",
+    "finding": "Core mechanisms in Mexico show high anchor strength in rank 1-2 instruments.",
+    "evidence_basis": "source_hierarchy and legal_provisions",
+    "affected_mechanisms": "All",
+    "affected_principles": "PRIN-001, PRIN-002",
+    "affected_actors": "Primary authorities",
+    "legal_preparedness_implication": "High stability of the legal mandate.",
+    "review_priority": "Low",
+    "manual_review_required": "false",
+    "notes": ""
+  },
+  {
+    "country": "Mexico",
+    "insight_id": "SYS-mexico-002",
+    "insight_type": "actor_modelling_caveat",
+    "title": "Actor modelling caveat: Senate patch integrated",
+    "finding": "Functional network edges for the Senate have been manually integrated via patch.",
+    "evidence_basis": "mexico_senado_edges_patch.csv",
+    "affected_mechanisms": "legislative_petition",
+    "affected_principles": "PRIN-004",
+    "affected_actors": "Senate",
+    "legal_preparedness_implication": "Enhanced resolution of legislative participation network.",
+    "review_priority": "Low",
+    "manual_review_required": "false",
+    "notes": ""
+  },
+  {
+    "country": "Costa Rica",
+    "insight_id": "SYS-costa_rica-001",
+    "insight_type": "strong_statutory_anchoring",
+    "title": "Solid Constitutional/Statutory Core",
+    "finding": "Core mechanisms in Costa Rica show high anchor strength in rank 1-2 instruments.",
+    "evidence_basis": "source_hierarchy and legal_provisions",
+    "affected_mechanisms": "All",
+    "affected_principles": "PRIN-001, PRIN-002",
+    "affected_actors": "Primary authorities",
+    "legal_preparedness_implication": "High stability of the legal mandate.",
+    "review_priority": "Low",
+    "manual_review_required": "false",
+    "notes": ""
+  }
+]

@@ -1,0 +1,290 @@
+[
+  {
+    "coupling_id": "CPL-MX-001",
+    "country": "Mexico",
+    "title": "Constitutional bloc (CRPD/ICCPR) ↔ CPEUM Art. 38 (suspension of rights)",
+    "coupling_status": "decoupled",
+    "coupling_label": "Internal constitutional decoupling",
+    "layer_a": {
+      "instrument_id": "MX-CPEUM-ART1",
+      "label": "CPEUM Art. 1 + CRPD + ICCPR (via constitutional bloc)",
+      "layer": "constitutional_block",
+      "layer_label": "Constitutional Bloc",
+      "role": "right_guarantor",
+      "key_provision": "Art. 1 CPEUM (2011 reform): all persons shall enjoy the human rights recognised in this Constitution and in international human rights treaties; the pro-persona principle applies. CRPD Art. 29: no restrictions on the right to vote on the basis of disability. ICCPR GC25: restrictions based on criminal conviction must be proportionate."
+    },
+    "layer_b": {
+      "instrument_id": "MX-CPEUM-ART38",
+      "label": "CPEUM Art. 38 para. II and III",
+      "layer": "constitutional",
+      "layer_label": "Constitutional Text",
+      "role": "right_restrictor",
+      "key_provision": "Art. 38 para. II: suspension of political rights from the issuance of an auto de formal prisión [formal imprisonment order]. Para. III: during the serving of a custodial sentence. Automatic suspension without proportionality analysis or distinction by type of offence."
+    },
+    "connection_expected": "The incorporation of CRPD/ICCPR into the constitutional bloc (Art. 1 CPEUM) should generate a harmonising reading of Art. 38: restrictions on the right to vote would only be valid if they satisfy the proportionality standard of GC25 and are compatible with CRPD Art. 29. The regulatory statute (LGIPE) should develop proportionality criteria.",
+    "connection_actual": "SCJN, Contradicción de Tesis 293/2011: the 'express restrictions' in the constitutional text (Art. 38) prevail over international treaties, including the ICCPR and CRPD. LGIPE does not develop proportionality criteria for the suspension under Art. 38. No mechanism exists for case-by-case judicial review of the suspension.",
+    "bottleneck_type": "internal_constitutional_contradiction_unresolved",
+    "bottleneck_label": "Unresolved internal constitutional contradiction",
+    "bottleneck_description": "CPEUM Art. 1 and Art. 38 coexist without harmonisation. The SCJN established a hierarchy in CT 293/2011 that prioritises restrictive constitutional text, but the international obligation subsists. No ordinary statute can resolve this contradiction — only a constitutional amendment can.",
+    "practical_consequence": "Persons in pre-trial detention automatically lose their political rights before conviction. Persons with disabilities under guardianship (although the Civil Code has been reformed) may face restrictions. Implementation of Art. 38 varies depending on the interpreter.",
+    "diagnosis": "BROKEN PIPE — The governing principle (Art. 1 CPEUM + CRPD) contradicts the express restriction (Art. 38). The pipe of the right to vote carries two opposing pressures: one that expands (constitutional bloc) and one that restricts (Art. 38). Without a regulatory valve (constitutional reform or judicial proportionality criteria), the flow is cut off automatically.",
+    "reform_requirement": "constitutional",
+    "reform_urgency": "high"
+  },
+  {
+    "coupling_id": "CPL-MX-002",
+    "country": "Mexico",
+    "title": "CPEUM Art. 35 para. IX (recall of mandate) ↔ Recall Act (presidency only)",
+    "coupling_status": "partial",
+    "coupling_label": "Partial coupling — incomplete coverage",
+    "layer_a": {
+      "instrument_id": "MX-CPEUM-ART35-IX",
+      "label": "CPEUM Art. 35 para. IX",
+      "layer": "constitutional",
+      "layer_label": "Federal Constitution",
+      "role": "right_creator",
+      "key_provision": "Art. 35 para. IX: It is the right of the citizen to vote in the recall of the mandate of the head of the Executive Branch of the Union in the terms established in this Constitution."
+    },
+    "layer_b": {
+      "instrument_id": "MX-LEY-REVOCACION",
+      "label": "Ley Federal de Revocación de Mandato (2021)",
+      "layer": "statutory",
+      "layer_label": "Federal Organic Act",
+      "role": "right_implementer",
+      "key_provision": "Ley Federal de Revocación de Mandato: regulates the process for the President. Requires 33% of the nominal register for activation; requires at least 40% citizen turnout to be binding."
+    },
+    "connection_expected": "In a federal system, the recall of mandate as a direct participation right should be extendable to state governors and municipal presidents. ILO 169 and the principle of effective political participation require that accountability mechanisms be accessible at the local level, where the majority of citizen interactions occur.",
+    "connection_actual": "The mechanism exists only for the President of the Republic (Art. 35 IX CPEUM). The 32 states are not required to implement recall of mandate for governors. The majority of states do not have this mechanism in their local constitutions. There is no framework law compelling the states to legislate on recall.",
+    "bottleneck_type": "incomplete_vertical_coverage_federal_system",
+    "bottleneck_label": "Incomplete vertical coverage in a federal system",
+    "bottleneck_description": "The recall of mandate exists only at the highest federal level. Mexican federalism does not include an obligation for the states to replicate the mechanism. Municipalities — where the majority of the population lives and where governments have the most direct day-to-day impact — have no recall mechanism.",
+    "practical_consequence": "The Mexican citizen can only exercise the right of recall against the federal president. They cannot recall their governor, their mayor, or their local legislators. The right has very limited real scope (one process every six years, for a single office).",
+    "diagnosis": "SHORT PIPE — The pipe exists but reaches only the first floor (federal presidency). It does not extend to the 33 floors of the federal system (32 states + federation). The plumbing stops at the federal government without reaching where it is most needed.",
+    "reform_requirement": "constitutional_or_federal_framework_law",
+    "reform_urgency": "moderate"
+  },
+  {
+    "coupling_id": "CPL-MX-003",
+    "country": "Mexico",
+    "title": "ILO 169 ratified (1990) ↔ LGIPE Art. 329 (indigenous affirmative action)",
+    "coupling_status": "partial",
+    "coupling_label": "Partial coupling — administrative implementation without constitutional anchorage",
+    "layer_a": {
+      "instrument_id": "INT-ILO169",
+      "label": "ILO Convention 169 (ratified 1990) + constitutional bloc via CPEUM Art. 1",
+      "layer": "constitutional_block",
+      "layer_label": "Constitutional Bloc + Treaty",
+      "role": "right_creator",
+      "key_provision": "ILO 169 Arts. 6–7: indigenous peoples must be able to participate 'to the same extent as other sectors of the population' in elective institutions. Art. 8: apply national legislation with full respect for their customs and customary law."
+    },
+    "layer_b": {
+      "instrument_id": "MX-LGIPE-ART329",
+      "label": "LGIPE Art. 329 + INE Agreement CG572/2020",
+      "layer": "statutory_plus_administrative",
+      "layer_label": "Ordinary Statute + Administrative Agreement",
+      "role": "right_implementer",
+      "key_provision": "LGIPE Art. 329: affirmative action for indigenous candidates in majority-indigenous districts. INE/CG572/2020: 21 federal electoral districts for indigenous candidacies. [No constitutional guarantee of indigenous representation exists; only a revocable administrative instruction.]"
+    },
+    "connection_expected": "ILO 169 requires participation 'to the same extent': this implies a structural guarantee of representation, not merely contingent administrative measures. Indigenous representation should be guaranteed by organic statute or preferably constitutionalised, with prior consultation mechanisms on electoral legislation affecting indigenous peoples.",
+    "connection_actual": "Implementation exists only at the level of an INE administrative agreement (CG572/2020), which can be modified or eliminated without legislative reform. LGIPE Art. 329 mentions affirmative action but does not oblige the INE to maintain the indigenous-district system on a permanent basis. No prior indigenous consultation on electoral legislation exists.",
+    "bottleneck_type": "administrative_fragility_no_constitutional_anchor",
+    "bottleneck_label": "Administrative fragility — no constitutional anchorage",
+    "bottleneck_description": "The international obligation (ILO 169) exists at the constitutional bloc level (Art. 1 CPEUM). Implementation exists at the level of an INE agreement (three levels below). There is no intermediate instrument making implementation structurally mandatory and resistant to shifts in political majority within the INE.",
+    "practical_consequence": "Indigenous representation in the federal Congress depends on INE decisions that can change each electoral cycle. The recognised right can be withdrawn administratively without constitutional amendment and without effective legal recourse for the affected peoples.",
+    "diagnosis": "EXPOSED PIPE — The pipe runs from the constitutional bloc to the federal Congress, but it is made of fragile material (INE agreement) rather than durable material (organic statute or CPEUM). Political pressure can break it.",
+    "reform_requirement": "constitutional_or_organic_law",
+    "reform_urgency": "moderate"
+  },
+  {
+    "coupling_id": "CPL-MX-004",
+    "country": "Mexico",
+    "title": "CPEUM Art. 41 (INE autonomy) ↔ 2023 Reform (popular election of councillors)",
+    "coupling_status": "tension",
+    "coupling_label": "Internal constitutional tension — decoupling risk",
+    "layer_a": {
+      "instrument_id": "MX-CPEUM-ART41-AUTONOMIA",
+      "label": "CPEUM Art. 41 — constitutional autonomy of the INE",
+      "layer": "constitutional",
+      "layer_label": "Federal Constitution",
+      "role": "institutional_guarantee",
+      "key_provision": "Art. 41 CPEUM: The INE is an autonomous public body with its own legal personality and assets, in whose composition citizens and political parties participate [...] The INE is governed by the principles of certainty, legality, independence, impartiality, maximum transparency and objectivity."
+    },
+    "layer_b": {
+      "instrument_id": "MX-CPEUM-ART41-REFORMA2023",
+      "label": "CPEUM Art. 41 (2023 reform) — popular election of councillors",
+      "layer": "constitutional",
+      "layer_label": "Federal Constitution (amended)",
+      "role": "institutional_modifier",
+      "key_provision": "Constitutional amendment approved in 2023 introducing the direct election by popular vote of the INE's electoral councillors and TEPJF magistrates. Councillors are elected from a list proposed to the electorate through a campaign process."
+    },
+    "connection_expected": "The principles of independence and impartiality of the INE (Art. 41) require that the mechanism for appointing councillors guarantees they cannot be politically captured. IACtHR OC-28/21: the selection process for members of electoral bodies must guarantee structural independence. Popular election should include safeguards (restriction on party affiliation, prohibition of campaigns with party support, fixed irremovable term).",
+    "connection_actual": "The 2023 reform introduces popular election but without clear structural safeguards equivalent to those required by OC-28/21. Candidates must campaign, exposing them to political-partisan pressures. The previous selection mechanism (technical committee + Congress) guaranteed greater structural independence, albeit with its own politicisation problems.",
+    "bottleneck_type": "structural_independence_risk",
+    "bottleneck_label": "Institutional capture risk by design of selection mechanism",
+    "bottleneck_description": "Two provisions of the same Art. 41 enter into tension: the principles of independence/impartiality and the new popular election mechanism. If popular election does not guarantee structural post-electoral independence (as OC-28/21 requires), the principle of autonomy is hollowed out by the very mechanism of selection.",
+    "practical_consequence": "Councillors elected by popular vote may feel pressure to be accountable to their electoral bases rather than to act with full impartiality. Political parties may influence councillors' campaigns. The legitimacy of INE decisions may be challenged.",
+    "diagnosis": "PRESSURISED PIPE — The pipe exists (autonomous INE) but the new filling mechanism (popular election) may introduce contaminated air (political-partisan pressure). The internal pressure may cause the pipe to crack from within.",
+    "reform_requirement": "constitutional_safeguards",
+    "reform_urgency": "high"
+  },
+  {
+    "coupling_id": "CPL-CR-001",
+    "country": "Costa Rica",
+    "title": "ACHR Art. 23.1(b) (right to be elected) ↔ CN Arts. 96–98 (party monopoly)",
+    "coupling_status": "decoupled",
+    "coupling_label": "Structural decoupling — ACHR obligation vs. constitutional restriction",
+    "layer_a": {
+      "instrument_id": "INT-ACHR-23",
+      "label": "ACHR Art. 23.1(b) + constitutional bloc (Art. 7 CN + Sala IV)",
+      "layer": "constitutional_block",
+      "layer_label": "Constitutional Bloc",
+      "role": "right_creator",
+      "key_provision": "ACHR Art. 23.1(b): right to be elected. Art. 23.2: exhaustive list of permissible restrictions — does not include the obligation to belong to a political party. Castañeda: an exclusive party system requires a proportionality justification."
+    },
+    "layer_b": {
+      "instrument_id": "CR-CN-ART96-98",
+      "label": "Political Constitution of Costa Rica, Arts. 96–98 + Electoral Code Art. 48",
+      "layer": "constitutional",
+      "layer_label": "National Constitution",
+      "role": "right_restrictor",
+      "key_provision": "Arts. 96–98 CN: only political parties recognised by the TSE may nominate candidates for popularly elected offices. Electoral Code Art. 48: candidacies for popularly elected offices may only be submitted by political parties."
+    },
+    "connection_expected": "The party system as the exclusive route for candidacy should be subject to a proportionality justification under the ACHR Art. 23.2 standard (exhaustive list of permissible restrictions). The restriction should be justified and proportionate to the democratic objectives it pursues. Alternatives: independent candidacy mechanisms with reasonable requirements.",
+    "connection_actual": "The restriction is absolute and is not justified under the criteria of ACHR Art. 23.2. No alternative mechanism exists. The Electoral Code replicates the party exclusivity without evaluating proportionality. No jurisprudence from the TSE or Sala IV has analysed the tension with ACHR Art. 23.",
+    "bottleneck_type": "structural_normative_incompatibility",
+    "bottleneck_label": "Structural normative incompatibility",
+    "bottleneck_description": "The ACHR guarantees the right to be elected (Art. 23.1(b)) with exhaustive permissible restrictions (Art. 23.2). The CN imposes a restriction (mandatory party membership) that does not appear in the exhaustive list of Art. 23.2. The two norms point in opposite directions and no reconciliation mechanism exists in the current system.",
+    "practical_consequence": "No citizen can stand for election to any elective office (president, legislator, mayor) without belonging to a registered political party. Independent leaders, unaffiliated candidates, and forms of non-partisan community organisation are excluded from the electoral system.",
+    "diagnosis": "BLOCKED PIPE — The pipe of political participation (ACHR Art. 23) reaches the Costa Rican constitutional system and encounters a wall (party monopoly). There is no opening valve and no bypass. The flow cannot circulate.",
+    "reform_requirement": "constitutional",
+    "reform_urgency": "high"
+  },
+  {
+    "coupling_id": "CPL-CR-002",
+    "country": "Costa Rica",
+    "title": "ILO 169 ratified (1993) ↔ Electoral Code (no indigenous mechanism)",
+    "coupling_status": "decoupled",
+    "coupling_label": "Decoupling by absence — ratified treaty without electoral implementation",
+    "layer_a": {
+      "instrument_id": "INT-ILO169-CR",
+      "label": "ILO Convention 169 (ratified by CR, 1993) + ACHR Art. 23",
+      "layer": "constitutional_block",
+      "layer_label": "Constitutional Bloc (Art. 7 CN + Sala IV)",
+      "role": "right_creator",
+      "key_provision": "ILO 169 Arts. 6–7: indigenous participation in elective institutions 'to the same extent as other sectors'. Yatama (IACtHR): states must adapt their systems to allow effective indigenous participation."
+    },
+    "layer_b": {
+      "instrument_id": "CR-CODIGO-ELECTORAL-AUSENCIA",
+      "label": "Electoral Code (Law 8765/2009) — absence of indigenous provision",
+      "layer": "statutory",
+      "layer_label": "Electoral Code",
+      "role": "implementer_absent",
+      "key_provision": "[The Electoral Code contains no specific provision on indigenous electoral representation or participation. The ADIIs (Asociaciones de Desarrollo Indígena — Indigenous Development Associations) have no electoral function. The 8 indigenous peoples of Costa Rica have no reserved seats, quotas, or alternative candidacy mechanism.]"
+    },
+    "connection_expected": "Thirty years after the ratification of ILO 169, the Electoral Code (renewed in 2009) should have incorporated mechanisms for indigenous electoral participation. The complete cycle would be: ratification (1993) → legislative adaptation → TSE implementation → effective electoral participation.",
+    "connection_actual": "The chain breaks after ratification. There is no electoral implementation statute. The TSE has no mandate to create indigenous participation mechanisms. The 2009 Electoral Code was a missed opportunity to incorporate this right.",
+    "bottleneck_type": "treaty_ratification_without_statutory_implementation",
+    "bottleneck_label": "Ratification without implementation — gap between treaty and statute",
+    "bottleneck_description": "The treaty was ratified (pipe connected at the international level), but the connection is severed before reaching the national electoral system. The section of pipe running from treaty to Electoral Code does not exist. The obligation exists on paper but does not reach the ballot box.",
+    "practical_consequence": "The 8 indigenous peoples of Costa Rica (Bribri, Cabécar, Huetares, Malekus, Borucas, Téribes, Ngäbe, Chorotegas) have no specific representation mechanism in the Legislative Assembly or in the formal electoral system. Their own organisations (ADIIs) have no recognised electoral function.",
+    "diagnosis": "PIPE WITH LOOSE END — The international pipe (ILO 169) is connected to the Costa Rican constitutional bloc (Art. 7 CN), but the other end hangs loose in the air. There is no connection to the Electoral Code or the electoral system. The flow of rights does not reach its destination.",
+    "reform_requirement": "statutory_electoral_code_amendment",
+    "reform_urgency": "high"
+  },
+  {
+    "coupling_id": "CPL-CR-003",
+    "country": "Costa Rica",
+    "title": "ACHR Art. 25 (effective remedy) ↔ CN Art. 103 (finality of TSE decisions)",
+    "coupling_status": "potential_gap",
+    "coupling_label": "Potential decoupling — finality vs. effective remedy",
+    "layer_a": {
+      "instrument_id": "INT-ACHR-25-CR",
+      "label": "ACHR Art. 25 + constitutional bloc (Art. 7 CN)",
+      "layer": "constitutional_block",
+      "layer_label": "Constitutional Bloc",
+      "role": "right_guarantor",
+      "key_provision": "ACHR Art. 25.1: everyone has the right to simple and prompt recourse, or any other effective recourse, to a competent court or tribunal for protection against acts that violate fundamental rights. The remedy must be real and effective, not illusory."
+    },
+    "layer_b": {
+      "instrument_id": "CR-CN-ART103",
+      "label": "Political Constitution of Costa Rica, Art. 103",
+      "layer": "constitutional",
+      "layer_label": "National Constitution",
+      "role": "remedy_limiter",
+      "key_provision": "Art. 103 CN: The resolutions of the Supreme Electoral Tribunal (TSE) are not subject to any appeal, save for the clarifications and additions established by law. The TSE is the final instance in electoral matters."
+    },
+    "connection_expected": "ACHR Art. 25 requires an effective remedy. The TSE as the 4th Branch of State should incorporate internal mechanisms to guarantee individual rights within its processes. The Sala IV should have clear jurisdiction to hear amparo proceedings against TSE decisions where there is a violation of fundamental rights not strictly electoral in nature.",
+    "connection_actual": "Art. 103 CN establishes the absolute finality of TSE decisions. The Sala IV has admitted some amparo proceedings against TSE decisions on 'connected' fundamental rights (freedom of expression during campaigns, non-discrimination), but no clear rule exists. If the TSE violates an individual right in its decision, the citizen is left without a clear judicial remedy.",
+    "bottleneck_type": "remedy_gap_potential",
+    "bottleneck_label": "Potential remedy gap",
+    "bottleneck_description": "When the TSE acts correctly as an electoral arbitrator, the finality of its resolutions guarantees certainty. But when the TSE violates individual rights (discrimination, improper access), constitutional finality may eliminate the effective remedy required by ACHR Art. 25. No clear mechanism exists for this scenario.",
+    "practical_consequence": "A citizen who believes the TSE violated their political rights in a specific decision faces an uncertain avenue of recourse: Sala IV (if connected fundamental rights are involved)? The Inter-American system directly? The uncertainty about available recourse may deter the exercise of the right.",
+    "diagnosis": "PIPE WITH A SHUT-OFF VALVE — The pipe of remedies (ACHR Art. 25) reaches the constitutional level but there is a valve that can shut it (Art. 103 CN). The valve should open automatically for individual rights, but no mechanism guarantees this. The plumber (Sala IV) does not always enter the TSE's room.",
+    "reform_requirement": "constitutional_or_jurisprudential_clarification",
+    "reform_urgency": "moderate"
+  },
+  {
+    "coupling_id": "CPL-CR-004",
+    "country": "Costa Rica",
+    "title": "CN Art. 123 (citizen initiative) ↔ Implementation (threshold + no mandatory response)",
+    "coupling_status": "partial",
+    "coupling_label": "Partial coupling — constitutional right hollowed out by regulatory statute",
+    "layer_a": {
+      "instrument_id": "CR-CN-ART123",
+      "label": "Political Constitution of Costa Rica, Art. 123",
+      "layer": "constitutional",
+      "layer_label": "National Constitution",
+      "role": "right_creator",
+      "key_provision": "Art. 123 CN: ten thousand citizens registered in the Civil Registry shall have the right to introduce bills to the Legislative Assembly. [Original text: 10,000 citizens; accessible threshold.]"
+    },
+    "layer_b": {
+      "instrument_id": "CR-LEY-INICIATIVA",
+      "label": "Citizen initiative regulatory statute + Legislative Assembly Rules of Procedure",
+      "layer": "statutory",
+      "layer_label": "Ordinary Statute",
+      "role": "right_implementer_restrictive",
+      "key_provision": "The regulatory statute raises the requirement to 5% of the electoral register (approximately 175,000 signatures in 2024). The Legislative Assembly has no obligation to vote on the submitted bill within a fixed period. The bill may be archived without a vote."
+    },
+    "connection_expected": "The regulatory statute should operationalise the right under Art. 123 within the constitutional parameters. It should: (1) maintain an accessible threshold; (2) establish a procedure with a deadline for the Assembly to respond; (3) guarantee that the right does not remain a rhetorical declaration.",
+    "connection_actual": "The regulatory statute raised the threshold 17-fold from the original constitutional text (from 10,000 to approximately 175,000 signatures). The Assembly has no deadline for a vote. Historically, citizen initiative bills have been archived without a vote. The constitutional right exists but the legislative cycle is incomplete.",
+    "bottleneck_type": "statutory_inflation_of_threshold_plus_no_procedural_guarantee",
+    "bottleneck_label": "Statutory inflation of threshold plus absence of procedural guarantee",
+    "bottleneck_description": "Art. 123 CN creates a right. The regulatory statute makes that right practically inaccessible (threshold 17 times higher) and without binding effect (Assembly without obligation to respond). It is like installing an entrance door to the legislative building but with a 17-digit combination that nobody can crack — and even if you get in, nobody is obliged to attend to you.",
+    "practical_consequence": "In practice, the citizen initiative in Costa Rica is exceptional and rarely achieves the threshold or a legislative response. The constitutional right exists nominally but is procedurally and institutionally ineffective.",
+    "diagnosis": "PIPE WITH AN ALMOST-SHUT VALVE — The constitutional pipe (Art. 123) exists but the access valve (5% of signatures) is almost closed. Even if the valve opens, there is no guarantee that the flow will reach its destination (a vote in the Assembly). A right without a guaranteed procedure is not a real right.",
+    "reform_requirement": "statutory_and_reglamentary",
+    "reform_urgency": "moderate"
+  },
+  {
+    "coupling_id": "CPL-CR-005",
+    "country": "Costa Rica",
+    "title": "CRPD Art. 29 (electoral accessibility) ↔ Electoral Code Art. 9 (generic language)",
+    "coupling_status": "partial",
+    "coupling_label": "Recognition without operationalisation — right declared, implementation discretionary",
+    "layer_a": {
+      "instrument_id": "INT-CRPD-29-CR",
+      "label": "CRPD Art. 29(a)(i)-(iii) + Costa Rican constitutional bloc",
+      "layer": "constitutional_block",
+      "layer_label": "Constitutional Bloc",
+      "role": "right_creator",
+      "key_provision": "CRPD Art. 29(a)(i): electoral procedures, facilities and materials that are appropriate, accessible and easy to understand and use. Art. 29(a)(iii): personal assistance chosen by the voter with a disability. Concluding Observations CRPD/C/CRI/CO/1 (2014): the TSE must improve materials in Braille and sign language."
+    },
+    "layer_b": {
+      "instrument_id": "CR-CODIGO-ART9",
+      "label": "Electoral Code (Law 8765/2009), Art. 9",
+      "layer": "statutory",
+      "layer_label": "Electoral Code",
+      "role": "right_implementer_incomplete",
+      "key_provision": "Art. 9: The TSE shall provide the necessary means for all persons to exercise the right to vote, including persons with disabilities. [No catalogue of adaptations by disability type; no personal assistance protocol; no legally binding standards for accessible materials.]"
+    },
+    "connection_expected": "The Electoral Code should translate CRPD Art. 29 into specific operational obligations: (1) materials in Braille, audio and easy-read formats; (2) sign language at polling stations; (3) personal assistance protocol; (4) verifiable physical accessibility standards for polling stations; (5) complaint mechanism for voters with disabilities.",
+    "connection_actual": "Art. 9 of the Electoral Code delegates to the TSE the determination of 'the necessary means', without a specific mandate. The TSE has taken some initiatives (special booths, ballots in Braille), but without a clear legal obligation. The Concluding Observations of the CRPD Committee (2014) already noted this insufficiency.",
+    "bottleneck_type": "discretionary_implementation_no_binding_standards",
+    "bottleneck_label": "Discretionary implementation — no binding standards",
+    "bottleneck_description": "The CRPD obliges; the Electoral Code delegates. The pipe has water (CRPD obligation) but no pressure (specific legal mandate). The TSE may choose how well it serves voters with disabilities, and it is not accountable against a predefined legal standard.",
+    "practical_consequence": "Persons with disabilities in Costa Rica have variable access to electoral resources depending on the level of commitment of the TSE at any given time. The right is real in years when the TSE prioritises accessibility, and less effective when it does not.",
+    "diagnosis": "VARIABLE-FLOW PIPE — The pipe exists (Electoral Code Art. 9) but has no guaranteed constant pressure. The flow (real accessibility) varies according to who operates the valve (TSE), without the voter with a disability having an enforceable right to a minimum pressure.",
+    "reform_requirement": "statutory_amendment_electoral_code",
+    "reform_urgency": "moderate"
+  }
+]
