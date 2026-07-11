@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "NormTrace-Political Rights: Legal-Institutional Activation Mapping of Political Participation Rights in Mexico and Costa Rica"
+abstract: "Academic, open-methodology infrastructure for mapping the legal-institutional conditions under which citizens can activate political participation rights in Mexico and Costa Rica."
+type: software
+authors:
+  - family-names: "Santos Domínguez"
+    given-names: "A. B."
+version: "v0.1.2"
+doi: "10.5281/zenodo.21296393"
+year: 2026
+url: "https://doi.org/10.5281/zenodo.21296393"
+repository-code: "https://github.com/adelasantos12/normtrace-politicalrights_participation"
+license-url: "https://doi.org/10.5281/zenodo.21296393"
+keywords:
+  - political rights
+  - political participation
+  - legal-institutional mapping
+  - Mexico
+  - Costa Rica
+  - comparative constitutional law
+preferred-citation:
+  type: software
+  title: "NormTrace-Political Rights: Legal-Institutional Activation Mapping of Political Participation Rights in Mexico and Costa Rica"
+  authors:
+    - family-names: "Santos Domínguez"
+      given-names: "A. B."
+  version: "v0.1.2"
+  doi: "10.5281/zenodo.21296393"
+  year: 2026
+  publisher:
+    name: "Zenodo"
+  url: "https://doi.org/10.5281/zenodo.21296393"

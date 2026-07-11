@@ -325,8 +325,19 @@ export default function App() {
           {renderView()}
         </div>
 
-        <footer style={{ marginTop: 'auto', padding: '24px 40px', borderTop: '1px solid #e2e8f0', color: '#94a3b8', fontSize: '0.75rem', textAlign: 'center' }}>
-          Diagnostic legal preparedness mapping. Not legal advice or compliance assessment.
+        <footer style={{ marginTop: 'auto', padding: '24px 40px', borderTop: '1px solid #e2e8f0', color: '#94a3b8', fontSize: '0.75rem', textAlign: 'center', lineHeight: 1.7 }}>
+          <div>Diagnostic legal preparedness mapping. Not legal advice or compliance assessment.</div>
+          <div style={{ marginTop: '6px' }}>
+            Santos Domínguez, A. B. (2026). <em>NormTrace-Political Rights</em> (v0.1.2) [Computer software]. Zenodo.{' '}
+            <a
+              href="https://doi.org/10.5281/zenodo.21296393"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#64748b', textDecoration: 'underline' }}
+            >
+              https://doi.org/10.5281/zenodo.21296393
+            </a>
+          </div>
         </footer>
       </main>
 

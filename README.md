@@ -2,6 +2,8 @@
 
 **Legal-institutional activation mapping of political participation rights in Mexico and Costa Rica**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21296393.svg)](https://doi.org/10.5281/zenodo.21296393)
+
 **Version:** 0.1.0-pilot
 **Status:** Work in progress — all outputs are preliminary and require expert legal review
 
@@ -156,7 +158,13 @@ See `00_project/ai_use_disclosure.md` for the full AI use policy.
 
 ## Citation
 
-See `CITATION.cff` for the preferred citation format.
+If you use this software or its outputs, please cite it:
+
+> Santos Domínguez, A. B. (2026). *NormTrace-Political Rights: Legal-Institutional Activation Mapping of Political Participation Rights in Mexico and Costa Rica* (Version v0.1.2) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21296393
+
+DOI: [10.5281/zenodo.21296393](https://doi.org/10.5281/zenodo.21296393)
+
+See `CITATION.cff` for the machine-readable citation format.
 
 ---
 
